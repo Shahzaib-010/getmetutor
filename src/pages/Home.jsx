@@ -1,10 +1,19 @@
 import React from 'react'
-import Navbar from '../components/section/Navbar'
+import SubjectSection from '../components/section/SubjectSection'
+import HeroSection from '../components/section/HeroSection'
+import BannerLoop from '../components/section/BannerLoop'
+import Faq from '../components/section/Faq'
+import PricingSection from '../components/section/PricingSection'
 
 function Home() {
   return (
-    <section>
-        <Navbar/>
+    <section className='w-full h-full'>
+          <HeroSection/>
+          <BannerLoop/>
+          <SubjectSection/>
+          <PricingSection />
+          <Faq/>
+
     </section>
   )
 }

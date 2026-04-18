@@ -13,8 +13,8 @@
  /* #AAFF00 green */ 
 
  :root {
-    --color-primary: #AAFF00;       /* orange */
+    --color-primary: #ff6d10;       /* orange */
     --color-text: #000000 ;        /* black */
-    --color-bg: #ffffff;           /* white */
+    --color-bg: #f9f9f9;           /* white */
     
   }

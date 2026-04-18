@@ -44,9 +44,9 @@ export default function Navbar() {
       <motion.nav
         animate={{ y: hide ? -64 : 0, opacity: hide ? 0 : 1 }}
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_8px_rgba(0,0,0,0.04)] antialiased"
+        className="fixed top-0 z-50 w-full bg-white/45 supports-backdrop-filter:bg-white/35 backdrop-blur-xl backdrop-saturate-150 border-b border-white/40 shadow-[0_1px_12px_rgba(0,0,0,0.06)] ring-1 ring-black/5 antialiased"
       >
-        <div className="w-[90%] mx-auto px-6 h-[64px] flex items-center justify-between">
+        <div className="w-[90%] mx-auto  h-[64px] flex items-center justify-between">
 
           {/* Logo */}
           <NavLink
@@ -74,7 +74,10 @@ export default function Navbar() {
 
           {/* CTA — hidden on tablet & below */}
           <div className="hidden md:flex items-center">
-           <Button/>
+           <button className="px-6 py-2 bg-transparent text-black border border-black hover:bg-black hover:text-white transition-all duration-300 ">
+                Demo
+                
+           </button>
           </div>
 
           {/* Hamburger — visible on tablet & below */}

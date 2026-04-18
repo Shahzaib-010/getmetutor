@@ -3,12 +3,13 @@ import React from "react";
 const Button = () => {
   return (
     <button
-      className="group relative flex items-center overflow-hidden rounded-2xl border border-purple-500 bg-[#a370f0] px-5 pr-14 py-2.5 text-white text-base font-semibold tracking-wide shadow-[inset_0_0_1.6em_-0.6em_#714da6] transition-all duration-300 cursor-pointer leading-none"
+      className="group font-open-sans relative flex items-center overflow-hidden rounded-full border border-black bg-[var(--color-text)] px-5 pr-14 py-2.5 text-white text-base font-normal tracking-wide  transition-all duration-300 cursor-pointer leading-none"
     >
-      <span>Get started</span>
+      {/* text-[var(--color-primary)] */}
+      <span>Demo</span>
 
       <span
-        className="absolute right-1 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-md transition-all duration-300 group-hover:w-[calc(100%-8px)]"
+        className="absolute right-1 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 group-hover:w-[calc(100%-8px)]"
       >
         <svg
           viewBox="0 0 24 24"
