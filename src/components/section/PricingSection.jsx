@@ -290,57 +290,57 @@ function PricingSection({ className = "" }) {
       className={`w-full font-open-sans antialiased ${className}`}
       style={{ backgroundColor: "var(--color-bg)" }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-9 sm:py-11 md:py-14">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold tracking-tight text-gray-900 leading-[1.15]">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-[2rem] font-extrabold tracking-tight text-gray-900 leading-snug">
             Small investment
             <br />
             <span style={{ color: ORANGE }}>Huge learning boost</span>
           </h2>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-xs sm:text-sm text-gray-600">
+          <div className="mt-3.5 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 text-[11px] sm:text-xs text-gray-600">
             {region.subheader.map((item, i) => (
-              <span key={item.text} className="inline-flex items-center gap-1.5">
+              <span key={item.text} className="inline-flex items-center gap-1">
                 {i > 0 && (
                   <span className="text-gray-300 hidden sm:inline" aria-hidden>
                     ·
                   </span>
                 )}
-                <item.icon className="h-3.5 w-3.5 text-gray-400 shrink-0" />
+                <item.icon className="h-3 w-3 text-gray-400 shrink-0" />
                 <span>{item.text}</span>
               </span>
             ))}
           </div>
 
           {/* Social proof */}
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <div className="flex -space-x-2">
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3">
+            <div className="flex -space-x-1.5">
               {[0, 1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="h-8 w-8 rounded-full border-2 border-white bg-linear-to-br from-gray-200 to-gray-300"
+                  className="h-6 w-6 rounded-full border-2 border-white bg-linear-to-br from-gray-200 to-gray-300"
                   aria-hidden
                 />
               ))}
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-700">
+            <div className="flex items-center gap-1.5 text-xs text-gray-700">
               <div className="flex text-amber-400">
                 {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} className="h-4 w-4 fill-current" />
+                  <Star key={s} className="h-3 w-3 fill-current" />
                 ))}
               </div>
               <span className="text-gray-600">
-                from <strong className="text-gray-900">1,000+</strong> happy learners
+                from <strong className="text-gray-900 font-semibold">1,000+</strong> happy learners
               </span>
             </div>
           </div>
 
           {/* Country switcher */}
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <div
               role="tablist"
               aria-label="Select region for pricing"
-              className="inline-flex flex-wrap justify-center gap-1 rounded-xl border border-gray-200 bg-white p-1 shadow-sm"
+              className="inline-flex flex-wrap justify-center gap-0.5 rounded-lg border border-gray-200 bg-white p-0.5 shadow-sm"
             >
               {REGION_KEYS.map((key) => {
                 const active = regionKey === key;
@@ -352,7 +352,7 @@ function PricingSection({ className = "" }) {
                     aria-selected={active}
                     onClick={() => setRegionKey(key)}
                     className={[
-                      "min-w-18 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold transition-colors",
+                      "min-w-14 rounded-md px-2.5 py-1.5 text-[11px] sm:text-xs font-semibold transition-colors",
                       active
                         ? "text-white shadow-sm"
                         : "text-gray-600 hover:text-gray-900 hover:bg-gray-50",
@@ -372,7 +372,7 @@ function PricingSection({ className = "" }) {
         </div>
 
         {/* Cards */}
-        <div className="mt-10 md:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 items-stretch">
+        <div className="mt-8 md:mt-9 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4 items-stretch">
           {plans.map((plan) => (
             <PricingCard
               key={plan.name}
@@ -385,16 +385,16 @@ function PricingSection({ className = "" }) {
         </div>
 
         {/* Footer */}
-        <div className="mt-10 md:mt-12 text-center space-y-3 max-w-2xl mx-auto">
-          <p className="text-xs sm:text-sm text-gray-500 flex flex-wrap items-center justify-center gap-2">
+        <div className="mt-8 md:mt-9 text-center space-y-2 max-w-xl mx-auto">
+          <p className="text-[11px] sm:text-xs text-gray-500 flex flex-wrap items-center justify-center gap-2">
             <span>{region.footerLine1}</span>
           </p>
-          <p className="text-xs sm:text-sm text-gray-500 inline-flex flex-wrap items-center justify-center gap-1.5">
-            <Lock className="h-3.5 w-3.5 text-gray-400" />
+          <p className="text-[11px] sm:text-xs text-gray-500 inline-flex flex-wrap items-center justify-center gap-1">
+            <Lock className="h-3 w-3 text-gray-400 shrink-0" />
             {region.footerLine2}
           </p>
-          <div className="pt-6 border-t border-dashed border-gray-200">
-            <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+          <div className="pt-4 border-t border-dashed border-gray-200">
+            <p className="text-[11px] sm:text-xs text-gray-500 leading-relaxed">
               {region.refundNote}
             </p>
           </div>
@@ -412,16 +412,16 @@ function PricingCard({ plan, region, orange, dark }) {
     <motion.article
       layout
       className={[
-        "relative flex flex-col rounded-2xl border p-6 sm:p-7",
+        "relative flex flex-col rounded-xl border p-4 sm:p-5",
         isFeatured
-          ? "border-gray-800 shadow-xl lg:scale-[1.02] z-10"
-          : "border-gray-200/80 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)]",
+          ? "border-gray-800 shadow-lg lg:scale-[1.01] z-10"
+          : "border-gray-200/80 bg-white shadow-[0_6px_24px_rgba(15,23,42,0.05)]",
       ].join(" ")}
       style={isFeatured ? { backgroundColor: dark } : { backgroundColor: "#ffffff" }}
     >
       {isFeatured && (
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-[52%] rounded-t-2xl opacity-90"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[52%] rounded-t-xl opacity-90"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
@@ -437,17 +437,17 @@ function PricingCard({ plan, region, orange, dark }) {
       )}
       {isFeatured && (
         <span
-          className="absolute top-4 right-4 rounded-md px-2.5 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wide text-white"
+          className="absolute top-2.5 right-2.5 rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white"
           style={{ backgroundColor: orange }}
         >
           Most popular
         </span>
       )}
 
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-2.5">
         <span
           className={[
-            "grid h-10 w-10 shrink-0 place-items-center rounded-xl",
+            "grid h-8 w-8 shrink-0 place-items-center rounded-lg",
             isFeatured ? "" : "bg-gray-100",
           ].join(" ")}
           style={
@@ -457,19 +457,19 @@ function PricingCard({ plan, region, orange, dark }) {
           }
         >
           <Icon
-            className={isFeatured ? "h-5 w-5 text-white" : "h-5 w-5 text-gray-600"}
+            className={isFeatured ? "h-4 w-4 text-white" : "h-4 w-4 text-gray-600"}
           />
         </span>
         <div>
           <h3
-            className={`text-lg font-bold ${
+            className={`text-base font-bold ${
               isFeatured ? "text-white" : "text-gray-900"
             }`}
           >
             {plan.name}
           </h3>
           <p
-            className={`mt-0.5 text-sm ${
+            className={`mt-0.5 text-xs leading-snug ${
               isFeatured ? "text-gray-400" : "text-gray-500"
             }`}
           >
@@ -478,7 +478,7 @@ function PricingCard({ plan, region, orange, dark }) {
         </div>
       </div>
 
-      <div className="mt-6 flex items-baseline gap-2">
+      <div className="mt-4 flex items-baseline gap-1.5">
         <AnimatePresence mode="wait">
           <motion.span
             key={`${region.code}-${plan.price}`}
@@ -486,7 +486,7 @@ function PricingCard({ plan, region, orange, dark }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.15 }}
-            className={`text-4xl sm:text-5xl font-extrabold tabular-nums ${
+            className={`text-3xl sm:text-[2.1rem] font-extrabold tabular-nums tracking-tight ${
               isFeatured ? "text-white" : "text-gray-900"
             }`}
           >
@@ -494,7 +494,7 @@ function PricingCard({ plan, region, orange, dark }) {
           </motion.span>
         </AnimatePresence>
         <span
-          className={`text-base line-through ${
+          className={`text-sm line-through ${
             isFeatured ? "text-gray-500" : "text-gray-400"
           }`}
         >
@@ -505,9 +505,9 @@ function PricingCard({ plan, region, orange, dark }) {
       <button
         type="button"
         className={[
-          "mt-6 w-full rounded-xl py-3 text-sm font-semibold transition-colors",
+          "mt-4 w-full rounded-lg py-2 text-xs font-semibold transition-colors",
           isFeatured
-            ? "text-white shadow-md hover:opacity-95"
+            ? "text-white shadow-sm hover:opacity-95"
             : "border border-gray-900 bg-white text-gray-900 hover:bg-gray-50",
         ].join(" ")}
         style={isFeatured ? { backgroundColor: orange } : undefined}
@@ -516,28 +516,28 @@ function PricingCard({ plan, region, orange, dark }) {
       </button>
 
       <div
-        className={`mt-6 flex items-center gap-2 text-sm ${
+        className={`mt-4 flex items-center gap-1.5 text-xs ${
           isFeatured ? "text-white" : "text-gray-700"
         }`}
       >
         <Laptop
-          className="h-4 w-4 shrink-0"
+          className="h-3.5 w-3.5 shrink-0"
           style={{ color: isFeatured ? orange : undefined }}
         />
         <span className={isFeatured ? "" : "text-gray-600"}>{plan.devices}</span>
       </div>
 
       <div
-        className={`my-5 h-px border-t border-dotted ${
+        className={`my-3.5 h-px border-t border-dotted ${
           isFeatured ? "border-gray-600" : "border-gray-200"
         }`}
       />
 
-      <ul className="space-y-3 flex-1">
+      <ul className="space-y-2 flex-1">
         {plan.features.map((f) => (
-          <li key={f.text} className="flex gap-3 text-sm">
+          <li key={f.text} className="flex gap-2 text-xs leading-relaxed">
             <Check
-              className={`mt-0.5 h-4 w-4 shrink-0 ${
+              className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${
                 isFeatured ? "text-gray-400" : "text-gray-400"
               }`}
             />
