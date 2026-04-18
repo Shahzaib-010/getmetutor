@@ -45,7 +45,10 @@ const SubjectSection = () => {
   };
 
   return (
-    <section className="w-full bg-[#f8fafc] py-20 px-5 sm:px-8 md:px-10 lg:px-16 font-open-sans">
+    <section
+      id="courses"
+      className="w-full bg-[var(--color-bg)] py-20 px-5 sm:px-8 md:px-10 lg:px-16 font-open-sans scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div

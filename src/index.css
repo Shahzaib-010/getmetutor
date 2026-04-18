@@ -10,10 +10,11 @@
 
 
   /* #272727  gray */
- /* #AAFF00 green */ 
+ /* #AAFF00 green #ff6d10 */ 
+ 
 
  :root {
-    --color-primary: #ff6d10;       /* orange */
+    --color-primary: #ff6200;       /* orange */
     --color-text: #000000 ;        /* black */
     --color-bg: #f9f9f9;           /* white */
     

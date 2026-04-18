@@ -6,14 +6,15 @@ import Background from "../components/ui/Background";
 
 function Layout() {
   return (
-   
-      <div className="min-h-screen flex flex-col">
+   <Background>
+      <div className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1 pt-[64px]">
           <Outlet />
         </main>
         <Footer />
       </div>
+      </Background>
     
   );
 }

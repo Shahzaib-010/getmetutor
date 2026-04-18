@@ -4,6 +4,8 @@ import HeroSection from '../components/section/HeroSection'
 import BannerLoop from '../components/section/BannerLoop'
 import Faq from '../components/section/Faq'
 import PricingSection from '../components/section/PricingSection'
+import TestimonialsSection from '../components/section/TestimonialsSection'
+import HowItWorksSection from '../components/section/HowItWorksSection'
 
 function Home() {
   return (
@@ -11,6 +13,8 @@ function Home() {
           <HeroSection/>
           <BannerLoop/>
           <SubjectSection/>
+          <HowItWorksSection />
+          <TestimonialsSection />
           <PricingSection />
           <Faq/>
 

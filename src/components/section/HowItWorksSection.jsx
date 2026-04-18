@@ -1,0 +1,162 @@
+import React from "react";
+import { motion } from "motion/react";
+import { ArrowRight, BookOpen, GraduationCap, Sparkles } from "lucide-react";
+
+const steps = [
+  {
+    n: "01",
+    title: "Choose your subject.",
+    body: "Pick a topic and level—we match you with tutors who teach the way you learn.",
+    icon: BookOpen,
+  },
+  {
+    n: "02",
+    title: "Learn with real support.",
+    body: "Live sessions, clear notes, quizzes, and projects—so concepts stick beyond the call.",
+    icon: Sparkles,
+  },
+  {
+    n: "03",
+    title: "Prove your progress.",
+    body: "Earn certificates and milestones you can share—on your timeline, at your pace.",
+    icon: GraduationCap,
+  },
+];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export default function HowItWorksSection({ className = "" }) {
+  return (
+    <section
+      className={`relative overflow-hidden bg-black font-open-sans text-white ${className}`}
+    >
+      {/* Ambient accents */}
+      <div
+        className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-(--color-primary)/10 blur-[100px]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-(--color-primary)/8 blur-[90px]"
+        aria-hidden
+      />
+
+      <div className="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.55 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-(--color-primary)">
+            How it works
+          </p>
+          <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem] md:leading-tight">
+            How to begin learning with{" "}
+            <span className="text-white">Getme</span>
+            <span className="text-(--color-primary)">Tutor</span>
+            <span className="text-white">?</span>
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base">
+            Three simple steps—from picking a subject to showing what you’ve achieved.
+          </p>
+        </motion.div>
+
+        {/* Desktop: connected row */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="relative mt-14 md:mt-16"
+        >
+          {/* Connector line (md+) */}
+          <div
+            className="pointer-events-none absolute left-[8%] right-[8%] top-11 hidden h-px md:block"
+            aria-hidden
+          >
+            <div className="h-full bg-linear-to-r from-transparent via-white/15 to-transparent" />
+            <motion.div
+              className="absolute inset-y-0 left-0 w-1/3 origin-left bg-linear-to-r from-(--color-primary)/60 to-transparent"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-3 md:gap-6 lg:gap-8">
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <motion.article
+                  key={step.n}
+                  variants={item}
+                  className="group relative flex flex-col"
+                >
+                  {/* Mobile vertical connector */}
+                  {i < steps.length - 1 && (
+                    <div
+                      className="absolute left-7 top-18 h-[calc(100%+2rem)] w-px bg-linear-to-b from-(--color-primary)/40 via-white/10 to-transparent md:hidden"
+                      aria-hidden
+                    />
+                  )}
+
+                  <div className="relative flex flex-1 flex-col rounded-2xl border border-white/8 bg-[#141414] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] transition-all duration-300 hover:border-(--color-primary)/35 hover:shadow-[0_24px_48px_-24px_rgba(0,0,0,0.8)] sm:p-7">
+                    {/* Step index + icon */}
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <span
+                          className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-(--color-primary)/35 bg-(--color-primary)/10 text-sm font-bold tabular-nums text-(--color-primary) shadow-[0_0_20px_-6px_rgba(255,109,16,0.45)] transition-transform duration-300 group-hover:scale-[1.03]"
+                        >
+                          {step.n}
+                        </span>
+                        <div
+                          className="hidden h-10 w-px bg-linear-to-b from-(--color-primary)/50 to-transparent sm:block"
+                          aria-hidden
+                        />
+                      </div>
+                      <Icon
+                        className="h-5 w-5 text-(--color-primary)/80 transition-colors group-hover:text-(--color-primary)"
+                        strokeWidth={1.75}
+                        aria-hidden
+                      />
+                    </div>
+
+                    <h3 className="mt-6 text-lg font-semibold leading-snug text-white sm:text-xl">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/55">
+                      {step.body}
+                    </p>
+
+                    {/* Micro detail: bottom accent bar */}
+                    <div className="mt-6 flex items-center gap-2">
+                      <span className="h-px flex-1 bg-linear-to-r from-(--color-primary)/50 to-transparent" />
+                      <ArrowRight className="h-4 w-4 shrink-0 text-(--color-primary)/70 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

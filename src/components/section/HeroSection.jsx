@@ -1,20 +1,22 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowRight,Star } from "lucide-react";
+import Button from "../ui/Button";
+
+/** Place file at `public/images/trusted-icon.png` (or `.svg` — update path below if needed). */
+const TRUSTED_BADGE_SRC = "/images/trusted-icon1.png";
 
 const HeroSection = () => {
   return (
-    <section className="w-full bg-transparent font-open-sans">
-      <div className="max-w-[90%] mx-auto  py-14 sm:py-16 lg:py-24">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-          {/* LEFT SIDE */}
+    <section className="relative w-full overflow-hidden bg-transparent font-open-sans">
+      <div className="relative mx-auto max-w-[90%] py-12 sm:py-14 lg:py-20">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 text-center lg:text-left"
           >
             {/* TRUSTED BADGE */}
             <div className="flex flex-col items-start gap-2 mb-6">
@@ -31,56 +33,72 @@ const HeroSection = () => {
                   ))}
                 </div>
               </div>
-
-              <div className="flex items-center  gap-3 text-sm text-gray-600">
-                <span className="w-6 h-px bg-gray-400" />
-                Trusted by 120+ students
-                <span className="w-6 h-px bg-gray-400" />
-              </div>
             </div>
 
-            {/* HEADING */}
             <motion.h1
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-none text-black"
+              transition={{ delay: 0.06, duration: 0.55 }}
+              className="text-balance text-3xl font-bold leading-[1.08] tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
             >
-              Build skills with getme<span className="text-[var(--color-primary)]">tutor</span> 
+              Build skills with{" "}
+              <span className="whitespace-nowrap">
+                getme<span className="text-(--color-primary)">tutor</span>
+              </span>
             </motion.h1>
 
-            {/* DESCRIPTION */}
             <motion.p
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="mt-5 text-sm sm:text-base text-gray-600 max-w-xl mx-auto lg:mx-0"
+              transition={{ delay: 0.12, duration: 0.55 }}
+              className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-gray-600 sm:text-base lg:mx-0"
             >
-              Tutory gives you a complete learning experience that helps you gain
-              real, job-ready skills and take the next step in your career.
+              Live sessions, structured paths, and tutors who meet you where you
+              are—so you can learn faster and move your career forward with
+              confidence.
             </motion.p>
 
-            {/* BUTTON */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-8 flex justify-center lg:justify-start"
+              transition={{ delay: 0.18, duration: 0.55 }}
+              className="mt-7 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center lg:justify-start"
             >
               
+              <a
+                href="#courses"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-gray-300 bg-white/80 px-5 py-2.5 text-sm font-semibold text-gray-800 shadow-sm backdrop-blur-sm transition-colors hover:border-gray-400 hover:bg-white"
+              >
+                View courses
+                <ArrowRight className="h-4 w-4 opacity-70 hover:rotate-[-45] transition-all duration-300" aria-hidden />
+              </a>
             </motion.div>
+
+            <p className="mt-4 text-center text-xs text-gray-500 lg:text-left">
+              No credit card required for the demo · Cancel anytime
+            </p>
           </motion.div>
 
-          {/* RIGHT SIDE (IMAGE PLACEHOLDER) */}
+          {/* RIGHT */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="w-full flex justify-center lg:justify-center "
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.65, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className="order-2 flex w-full justify-center lg:justify-end"
           >
-           <img src="/images/hero-img.png" alt="" className=" rounded-3xl" />
+            <div className="relative w-full max-w-lg">
+              <div
+                className="pointer-events-none absolute -inset-4 rounded-4xl bg-linear-to-br from-(--color-primary)/15 via-transparent to-transparent blur-2xl sm:-inset-6"
+                aria-hidden
+              />
+              <img
+                src="/images/hero-img.png"
+                alt="Students learning online with GetmeTutor"
+                className="relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
+                loading="eager"
+              />
+            </div>
           </motion.div>
-
         </div>
       </div>
     </section>
