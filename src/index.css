@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+
+
+  .font-open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+  }
+
+
+  /* #272727  gray */
+ /* #AAFF00 green */ 
+
+ :root {
+    --color-primary: #AAFF00;       /* orange */
+    --color-text: #000000 ;        /* black */
+    --color-bg: #ffffff;           /* white */
+    
+  }
