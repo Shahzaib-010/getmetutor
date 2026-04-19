@@ -21,7 +21,7 @@ function BannerLoop({
   bg = "#000000",
   iconSrc = "/images/star1.svg",
   speedSeconds = 18,
-  className = "h-20 flex justify-center items-center",
+  className = "h-23 flex justify-center items-center",
 }) {
   const shouldReduceMotion = useReducedMotion();
   const viewportRef = useRef(null);

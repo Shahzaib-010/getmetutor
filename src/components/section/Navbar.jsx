@@ -30,6 +30,7 @@ export default function Navbar() {
 
   const menuLinks = [
     { to: "/", label: "Course" },
+    { to: "/demo", label: "Demo" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },
   ];
@@ -46,7 +47,7 @@ export default function Navbar() {
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
         className="fixed top-0 z-50 w-full bg-white/45 supports-backdrop-filter:bg-white/35 backdrop-blur-xl backdrop-saturate-150 border-b border-white/40 shadow-[0_1px_12px_rgba(0,0,0,0.06)] ring-1 ring-black/5 antialiased"
       >
-        <div className="w-[90%] mx-auto  h-[64px] flex items-center justify-between">
+        <div className="w-[90%] mx-auto h-16 flex items-center justify-between">
 
           {/* Logo */}
           <NavLink
@@ -74,16 +75,18 @@ export default function Navbar() {
 
           {/* CTA — hidden on tablet & below */}
           <div className="hidden md:flex items-center">
-           <button className="px-6 py-2 bg-transparent text-black border border-black hover:bg-black hover:text-white transition-all duration-300 ">
-                Demo
-                
-           </button>
+            <NavLink
+              to="/demo"
+              className="px-6 py-2 bg-transparent text-black border border-black hover:bg-black hover:text-white transition-all duration-300"
+            >
+              Demo
+            </NavLink>
           </div>
 
           {/* Hamburger — visible on tablet & below */}
           <button
             onClick={() => setIsOpen((p) => !p)}
-            className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none"
+            className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.25 focus:outline-none"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -94,7 +97,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, rotate: 0 }}
                   exit={{ opacity: 0, rotate: 45 }}
                   transition={{ duration: 0.2 }}
-                  className="flex flex-col gap-[5px] items-center justify-center"
+                  className="flex flex-col gap-1.25 items-center justify-center"
                 >
                   {/* X icon */}
                   <span className="block w-5 h-[1.5px] bg-gray-800 rotate-45 translate-y-[6.5px]" />
@@ -107,7 +110,7 @@ export default function Navbar() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="flex flex-col gap-[5px] items-center justify-center"
+                  className="flex flex-col gap-1.25 items-center justify-center"
                 >
                   <span className="block w-5 h-[1.5px] bg-gray-800" />
                   <span className="block w-5 h-[1.5px] bg-gray-800" />
@@ -167,11 +170,11 @@ export default function Navbar() {
                 className="w-full mt-6"
               >
                 <NavLink
-                  to="/get-started"
+                  to="/demo"
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-center py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-700 transition-colors duration-200 leading-tight"
                 >
-                  Get Started
+                  Demo
                 </NavLink>
               </motion.div>
             </div>

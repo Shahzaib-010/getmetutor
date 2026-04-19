@@ -19,7 +19,7 @@ const HeroSection = () => {
             className="order-1 text-center lg:text-left"
           >
             {/* TRUSTED BADGE */}
-            <div className="flex flex-col items-start gap-2 mb-6">
+            {/* <div className="flex flex-col items-start gap-2 mb-6">
               
               <div className="flex items-center gap-2">
                 <div className="flex gap-1">
@@ -33,13 +33,13 @@ const HeroSection = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.06, duration: 0.55 }}
-              className="text-balance text-3xl font-bold leading-[1.08] tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]"
+              className="text-balance text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-[3.65rem] xl:text-[4.5rem]"
             >
               Build skills with{" "}
               <span className="whitespace-nowrap">
@@ -51,7 +51,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12, duration: 0.55 }}
-              className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-gray-600 sm:text-base lg:mx-0"
+              className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-gray-700 sm:text-base lg:mx-0"
             >
               Live sessions, structured paths, and tutors who meet you where you
               are—so you can learn faster and move your career forward with
@@ -62,7 +62,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.18, duration: 0.55 }}
-              className="mt-7 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center lg:justify-start"
+              className="mt-7 flex flex-col items-center gap-3 sm:mt-4 sm:flex-row sm:justify-center lg:justify-start"
             >
               
               <a

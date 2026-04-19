@@ -47,11 +47,11 @@ export default function HowItWorksSection({ className = "" }) {
     >
       {/* Ambient accents */}
       <div
-        className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-(--color-primary)/10 blur-[100px]"
+        className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-white/6 blur-[100px]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-(--color-primary)/8 blur-[90px]"
+        className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-white/5 blur-[90px]"
         aria-hidden
       />
 
@@ -63,14 +63,13 @@ export default function HowItWorksSection({ className = "" }) {
           transition={{ duration: 0.55 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-(--color-primary)">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
             How it works
           </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem] md:leading-tight">
             How to begin learning with{" "}
-            <span className="text-white">Getme</span>
-            <span className="text-(--color-primary)">Tutor</span>
-            <span className="text-white">?</span>
+            <span className="text-[var(--color-primary)] ">GetmeTutor</span>
+            <span className="text-white/80">?</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base">
             Three simple steps—from picking a subject to showing what you’ve achieved.
@@ -92,7 +91,7 @@ export default function HowItWorksSection({ className = "" }) {
           >
             <div className="h-full bg-linear-to-r from-transparent via-white/15 to-transparent" />
             <motion.div
-              className="absolute inset-y-0 left-0 w-1/3 origin-left bg-linear-to-r from-(--color-primary)/60 to-transparent"
+              className="absolute inset-y-0 left-0 w-1/3 origin-left bg-linear-to-r from-white/55 to-transparent"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
@@ -122,23 +121,23 @@ export default function HowItWorksSection({ className = "" }) {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-3">
                         <span
-                          className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-(--color-primary)/35 bg-(--color-primary)/10 text-sm font-bold tabular-nums text-(--color-primary) shadow-[0_0_20px_-6px_rgba(255,109,16,0.45)] transition-transform duration-300 group-hover:scale-[1.03]"
+                          className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-white/15 bg-white/6 text-lg font-bold tabular-nums text-[var(--color-primary)]  shadow-[0_0_20px_-6px_rgba(255,255,255,0.12)] transition-transform duration-300 group-hover:scale-[1.03]"
                         >
                           {step.n}
                         </span>
                         <div
-                          className="hidden h-10 w-px bg-linear-to-b from-(--color-primary)/50 to-transparent sm:block"
+                          className="hidden h-10 w-px bg-linear-to-b from-white/35 to-transparent sm:block"
                           aria-hidden
                         />
                       </div>
                       <Icon
-                        className="h-5 w-5 text-(--color-primary)/80 transition-colors group-hover:text-(--color-primary)"
+                        className="h-5 w-5 text-white/65 transition-colors group-hover:text-white"
                         strokeWidth={1.75}
                         aria-hidden
                       />
                     </div>
 
-                    <h3 className="mt-6 text-lg font-semibold leading-snug text-white sm:text-xl">
+                    <h3 className="mt-6 text-lg font-semibold leading-snug text-[var(--color-primary)] sm:text-xl">
                       {step.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-white/55">
@@ -147,8 +146,8 @@ export default function HowItWorksSection({ className = "" }) {
 
                     {/* Micro detail: bottom accent bar */}
                     <div className="mt-6 flex items-center gap-2">
-                      <span className="h-px flex-1 bg-linear-to-r from-(--color-primary)/50 to-transparent" />
-                      <ArrowRight className="h-4 w-4 shrink-0 text-(--color-primary)/70 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
+                      <span className="h-px flex-1 bg-linear-to-r from-white/40 to-transparent" />
+                      <ArrowRight className="h-4 w-4 shrink-0 text-white/55 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-white/80 group-hover:opacity-100" />
                     </div>
                   </div>
                 </motion.article>
