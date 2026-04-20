@@ -29,10 +29,13 @@ export default function Navbar() {
   }, [isOpen]);
 
   const menuLinks = [
-    { to: "/", label: "Course" },
+    { to: "/", label: "Home" },
+    { to: "/course", label: "Course" },
     { to: "/demo", label: "Demo" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },
+    
+
   ];
 
   const linkClass =
