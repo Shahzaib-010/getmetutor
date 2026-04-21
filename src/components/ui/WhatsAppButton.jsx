@@ -2,7 +2,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
-  const phone = "923001234567"; // your number (no +)
+  const phone = "+923130672552"; // your number (no +)
   const message = "Hi, I want to book a demo";
 
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;

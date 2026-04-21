@@ -127,13 +127,13 @@ const SubjectSection = () => {
               initial={{ scale: 0.9, opacity: 0, y: 30 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="relative z-10 w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+              className="relative z-10 h-[70vh] w-full md:w-[80%] lg:w-[50%] bg-white rounded-2xl shadow-2xl overflow-hidden"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b">
+              <div className="flex items-center justify-between px-6 py-4 border-b ">
                 <div>
-                  <h3 className="font-bold text-lg">Book Free Trial</h3>
-                  <p className="text-sm text-gray-500">
+                  <h3 className="font-bold text-lg hidden lg:block">Book Free Trial</h3>
+                  <p className="text-sm text-gray-500 hidden lg:block">
                     Selected Subject:{" "}
                     <span className="font-semibold">{modalSubject}</span>
                   </p>
@@ -141,16 +141,16 @@ const SubjectSection = () => {
 
                 <button
                   onClick={closeModal}
-                  className="text-gray-500 hover:text-black"
+                  className="text-gray-500 hover:text-black hidden lg:block"
                 >
                   ✕
                 </button>
               </div>
 
               {/* FORM HERE */}
-              <div className="p-6">
+              <div className="p-2 ">
               <div
-              className="hs-form-frame p-6"
+              className="hs-form-frame "
               data-region="na2"
               data-form-id="293527e0-e5c4-4072-8ddc-edd6539c2096"
               data-portal-id="245970448"
