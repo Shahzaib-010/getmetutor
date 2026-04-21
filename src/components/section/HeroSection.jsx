@@ -43,7 +43,7 @@ const HeroSection = () => {
               transition={{ delay: 0.06, duration: 0.55 }}
               className="text-balance text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-[3.65rem] xl:text-[4.5rem]"
             >
-              1-to-1 Online Tutoring for Maths, English &amp; Science
+              1-to-1 <span className="text-[var(--color-primary)]">Online Tutoring</span>  for Maths, English &amp; Science
             </motion.h1>
 
             <motion.p
@@ -62,18 +62,9 @@ const HeroSection = () => {
               className="mt-7 flex flex-col items-center gap-3 sm:mt-4 sm:flex-row sm:justify-center lg:justify-start"
             >
               
-              <a
-                href="/demo"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[var(--color-primary)] text-white px-5 py-2.5 text-sm font-semibold shadow-sm transition-colors hover:opacity-95"
-              >
-                Book Free Trial
-                <ArrowRight className="h-4 w-4 opacity-90 ml-1" aria-hidden />
-              </a>
+             <Button to="/demo" text="Book Free Demo"/>
             </motion.div>
 
-            <p className="mt-4 text-center text-xs text-gray-500 lg:text-left">
-              No credit card required for the demo · Cancel anytime
-            </p>
           </motion.div>
 
           {/* RIGHT */}

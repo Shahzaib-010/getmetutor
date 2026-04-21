@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, BookOpen, GraduationCap, Globe2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Button from "../ui/Button";
 
 const highlights = [
 	{
@@ -36,17 +37,11 @@ function SubjectSection() {
 						<h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
 							Discover the syllabus flow before you book tutoring.
 						</h2>
-						<p className="mt-4 text-base leading-8 text-slate-600">
+						<p className="mt-4 pb-8 text-base leading-8 text-slate-600">
 							Navigate country-specific subjects, compare progression by grade, and understand what
 							students are expected to master at every stage.
 						</p>
-						<Link
-							to="/syllabus"
-							className="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-orange-500"
-						>
-							Explore syllabus
-							<ArrowRight size={16} />
-						</Link>
+						<Button to="/syllabus" text="Explore syllabus" />
 					</div>
 
 					<div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">

@@ -110,9 +110,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
            <Link
 							to="/syllabus"
-							className=" inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[] font-medium text-white transition hover:bg-orange-500"
+							className=" inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[12px]  text-white transition hover:bg-orange-500"
 						>
-							Explore syllabus
+							Book Free Demo
 							<ArrowRight size={15} />
 						</Link>
           </div>
