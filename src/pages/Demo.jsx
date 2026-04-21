@@ -4,7 +4,7 @@ import BannerLoop from "../components/section/BannerLoop";
 import TestimonialsSection from "../components/section/TestimonialsSection";
 import Faq from "../components/section/Faq";
 
-const CALENDLY_EVENT_URL = "https://calendly.com/letsmail-shahzaib/30min";
+const CALENDLY_EVENT_URL = "https://calendly.com/getmetutoronline/60min";
 
 function Demo() {
   return (
@@ -63,12 +63,7 @@ function Demo() {
       <section className="h-full w-full flex justify-center bg-[var(--color-bg)] p-10 ">
         <div className="w-[55%]">
           <div className="rounded-xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.04)] overflow-hidden">
-            <div
-              className="hs-form-frame p-6"
-              data-region="na2"
-              data-form-id="293527e0-e5c4-4072-8ddc-edd6539c2096"
-              data-portal-id="245970448"
-            />
+            <div className="hs-form-frame" data-region="na2" data-form-id="f0444412-7986-4570-866c-9e0828f7ad10" data-portal-id="245933383"></div>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { BookOpen, ChevronRight, Search, Sparkles, X } from "lucide-react";
+import { BookOpen, ChevronRight, Search, Sparkles } from "lucide-react";
 
 import { countryOrder, syllabusData } from "../data/syllabusData";
 
@@ -39,7 +39,7 @@ function Syllabus() {
   const [selectedCountry, setSelectedCountry] = useState(countryOrder[0]);
   const [selectedSubject, setSelectedSubject] = useState("");
   const [subjectSearch, setSubjectSearch] = useState("");
-  const [activeGrade, setActiveGrade] = useState(null);
+  const [activeGradeId, setActiveGradeId] = useState("");
 
   const subjectSectionRef = useRef(null);
   const gradeSectionRef = useRef(null);
@@ -74,6 +74,18 @@ function Syllabus() {
     [countryContent.subjects, selectedSubject]
   );
 
+  const activeGradeData = useMemo(() => {
+    if (!selectedSubjectData) {
+      return null;
+    }
+
+    return (
+      selectedSubjectData.grades.find((grade) => grade.id === activeGradeId) ??
+      selectedSubjectData.grades[0] ??
+      null
+    );
+  }, [activeGradeId, selectedSubjectData]);
+
   useEffect(() => {
     if (selectedSubjectData && gradeSectionRef.current) {
       gradeSectionRef.current.scrollIntoView({
@@ -81,6 +93,15 @@ function Syllabus() {
         block: "start",
       });
     }
+  }, [selectedSubjectData]);
+
+  useEffect(() => {
+    if (selectedSubjectData?.grades?.length) {
+      setActiveGradeId(selectedSubjectData.grades[0].id);
+      return;
+    }
+
+    setActiveGradeId("");
   }, [selectedSubjectData]);
 
   const handleCountryChange = (country) => {
@@ -91,7 +112,7 @@ function Syllabus() {
     setSelectedCountry(country);
     setSelectedSubject("");
     setSubjectSearch("");
-    setActiveGrade(null);
+    setActiveGradeId("");
 
     requestAnimationFrame(() => {
       subjectSectionRef.current?.scrollIntoView({
@@ -103,7 +124,6 @@ function Syllabus() {
 
   const handleSubjectSelect = (subjectName) => {
     setSelectedSubject(subjectName);
-    setActiveGrade(null);
   };
 
   return (
@@ -137,7 +157,7 @@ function Syllabus() {
           variants={fadeUp}
         >
           <div className="overflow-x-auto rounded-[2rem] border border-slate-200/70 bg-white/90 p-2 shadow-[0_20px_80px_-40px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
-            <div className="grid  snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-4">
+            <div className="grid snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-4">
               {countryOrder.map((country) => {
                 const isActive = country === selectedCountry;
                 const countryMeta = syllabusData[country];
@@ -309,8 +329,8 @@ function Syllabus() {
                     {selectedSubjectData.name} syllabus roadmap
                   </h2>
                   <p className="mt-3 text-base leading-7 text-slate-600">
-                    Browse {countryContent.gradesLabel} with concise learning summaries and drill
-                    into each level for more detail.
+                    Pick a grade from the bar below and the syllabus overview will update instantly
+                    in the section underneath.
                   </p>
                 </div>
                 <div className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}>
@@ -320,103 +340,96 @@ function Syllabus() {
                 </div>
               </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-                {selectedSubjectData.grades.map((grade, index) => (
-                  <motion.article
-                    key={grade.id}
-                    className="group flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_18px_48px_-36px_rgba(15,23,42,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_24px_55px_-30px_rgba(255,98,0,0.28)]"
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: index * 0.03,
-                      duration: 0.35,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
-                    <div className="flex items-center justify-between gap-4">
+              <motion.div
+                className="mt-8 overflow-x-auto rounded-[1.75rem] border border-slate-200 bg-white/90 p-3 shadow-[0_18px_48px_-36px_rgba(15,23,42,0.35)]"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="flex min-w-max gap-3">
+                  {selectedSubjectData.grades.map((grade) => {
+                    const isActive = activeGradeData?.id === grade.id;
+
+                    return (
+                      <button
+                        key={grade.id}
+                        type="button"
+                        onClick={() => setActiveGradeId(grade.id)}
+                        className={`relative rounded-2xl border px-4 py-3 text-sm font-semibold whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 ${
+                          isActive
+                            ? "border-transparent bg-slate-950 text-white shadow-lg"
+                            : "border-slate-200 bg-white text-slate-600 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600"
+                        }`}
+                        aria-pressed={isActive}
+                      >
+                        {grade.title === "Kindergarten" ? "KG" : grade.title}
+                        {isActive ? (
+                          <motion.span
+                            layoutId="active-grade-pill"
+                            className={`absolute inset-x-3 bottom-1 h-1 rounded-full bg-gradient-to-r ${countryContent.accent}`}
+                          />
+                        ) : null}
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+
+              {activeGradeData ? (
+                <motion.article
+                  key={activeGradeData.id}
+                  className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_18px_48px_-36px_rgba(15,23,42,0.55)] transition-all duration-300 sm:p-8"
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="max-w-3xl">
                       <span className="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                        {grade.title}
+                        {activeGradeData.title}
+                      </span>
+                      <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                        {selectedSubjectData.name} for {activeGradeData.title}
+                      </h3>
+                      <p className="mt-4 text-base leading-8 text-slate-600">
+                        {activeGradeData.details}
+                      </p>
+                    </div>
+                    <div className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}>
+                      <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
+                        Selected level
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 grid gap-3 md:grid-cols-3">
+                    {activeGradeData.outcomes.map((outcome) => (
+                      <div
+                        key={outcome}
+                        className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-7 text-slate-600"
+                      >
+                        {outcome}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500 shadow-sm">
+                        Quick summary
                       </span>
                       <span className="text-xs font-medium text-slate-400">Academic Path</span>
                     </div>
-                    <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{grade.summary}</p>
-                    <button
-                      type="button"
-                      onClick={() => setActiveGrade(grade)}
-                      className="mt-5 inline-flex items-center gap-2 self-start rounded-full bg-slate-950 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
-                    >
-                      {grade.ctaLabel}
-                      <ChevronRight size={16} />
-                    </button>
-                  </motion.article>
-                ))}
-              </div>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">
+                      {activeGradeData.summary}
+                    </p>
+                  </div>
+                </motion.article>
+              ) : null}
             </motion.div>
           ) : null}
         </AnimatePresence>
       </div>
-
-      <AnimatePresence>
-        {activeGrade ? (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 px-4 py-8 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActiveGrade(null)}
-          >
-            <motion.div
-              className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white shadow-2xl"
-              initial={{ opacity: 0, y: 30, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.98 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(event) => event.stopPropagation()}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="syllabus-grade-dialog-title"
-            >
-              <div className={`h-2 w-full bg-gradient-to-r ${countryContent.accent}`} />
-              <div className="p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-orange-500">
-                      {selectedCountry} • {selectedSubject}
-                    </p>
-                    <h3
-                      id="syllabus-grade-dialog-title"
-                      className="mt-3 text-2xl font-semibold tracking-tight text-slate-900"
-                    >
-                      {activeGrade.title}
-                    </h3>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setActiveGrade(null)}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-orange-200 hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
-                    aria-label="Close details dialog"
-                  >
-                    <X size={18} />
-                  </button>
-                </div>
-
-                <p className="mt-6 text-base leading-8 text-slate-600">{activeGrade.details}</p>
-
-                <div className="mt-8 grid gap-3">
-                  {activeGrade.outcomes.map((outcome) => (
-                    <div
-                      key={outcome}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-7 text-slate-600"
-                    >
-                      {outcome}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </section>
   );
 }
