@@ -24,12 +24,9 @@ const REGIONS = {
     subheader: [
       { text: "One-time purchase", icon: Sparkles },
       { text: "All features in every plan", icon: Check },
-      { text: "30-day money-back guarantee", icon: Lock },
+      
     ],
-    footerLine1: "Prices in USD. Taxes may apply.",
-    footerLine2: "Secure checkout · Works on modern browsers",
-    refundNote:
-      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
+    
     plans: {
       personal: {
         name: "Personal",
@@ -385,20 +382,9 @@ function PricingSection({ className = "" }) {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 md:mt-9 text-center space-y-2 max-w-xl mx-auto">
-          <p className="text-[11px] sm:text-xs text-gray-500 flex flex-wrap items-center justify-center gap-2">
-            <span>{region.footerLine1}</span>
-          </p>
-          <p className="text-[11px] sm:text-xs text-gray-500 inline-flex flex-wrap items-center justify-center gap-1">
-            <Lock className="h-3 w-3 text-gray-400 shrink-0" />
-            {region.footerLine2}
-          </p>
-          <div className="pt-4 border-t border-dashed border-gray-200">
-            <p className="text-[11px] sm:text-xs text-gray-500 leading-relaxed">
-              {region.refundNote}
-            </p>
+          <div>
+            {/* button */}
           </div>
-        </div>
       </div>
     </section>
   );
