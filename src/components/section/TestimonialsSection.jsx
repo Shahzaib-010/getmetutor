@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Quote, Star } from "lucide-react";
+import { ChevronDown, Quote, Star } from "lucide-react";
 
 const reviews = [
   {
     quote:
-      "I went from barely passing to an A in Maths. My tutor explained topics the way my brain actually works, not just the textbook version.",
+      "Before joining Get Me Tutor, my son was really struggling with GCSE Maths and had lost confidence. His tutor explains everything clearly and patiently, and we’ve already seen a big improvement in his results",
     name: "Sarah M.",
     meta: "A-Level Mathematics · Year 13",
     initials: "SM",
   },
   {
     quote:
-      "Scheduling around a part-time job was impossible until this. Sessions are flexible and I always get prep notes before class.",
-    name: "James K.",
+      "I used to get confused during algebra lessons at school, but my tutor from Get Me Tutor explains everything step by step. Now I understand the topics much better and my grades have improved.",
+    name: "Ethan Student-Texas USA",
     meta: "University prep · Economics",
     initials: "JK",
   },
@@ -30,6 +30,34 @@ const reviews = [
     name: "Priya & Rahul N.",
     meta: "Parents · IB Physics",
     initials: "PN",
+  },
+   {
+    quote:
+      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
+    name: "Priya & Rahul N.",
+    meta: "Parents · IB Physics",
+    initials: "PN",
+  },
+  {
+    quote:
+      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
+    name: "Priya & Rahul N.",
+    meta: "Parents · IB Physics",
+    initials: "PN",
+  },
+  {
+    quote:
+      "Our son finally stopped dreading Chemistry. The sessions were calm, structured, and focused exactly on the areas he kept losing marks in.",
+    name: "Nadia T.",
+    meta: "Parent · GCSE Chemistry",
+    initials: "NT",
+  },
+  {
+    quote:
+      "I liked that every lesson had a clear plan. It never felt random, and my confidence in problem solving improved week by week.",
+    name: "Omar H.",
+    meta: "IGCSE Maths · Year 10",
+    initials: "OH",
   },
 ];
 
@@ -60,12 +88,14 @@ function StarRow({ className = "" }) {
 }
 
 export default function TestimonialsSection({ className = "" }) {
+  const [showMore, setShowMore] = useState(false);
   const [featuredReview, ...supportingReviews] = reviews;
-  const visibleSupportingReviews = supportingReviews.slice(0, 2);
+  const primarySupportingReviews = supportingReviews.slice(0, 2);
+  const extraSupportingReviews = supportingReviews.slice(2, 4);
 
   return (
     <section className={`w-full bg-(--color-bg) font-open-sans ${className}`}>
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-16">
+      <div className="mx-auto w-[90%] px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -91,13 +121,12 @@ export default function TestimonialsSection({ className = "" }) {
                   <span className="text-3xl font-bold tabular-nums text-(--color-text)">4.9</span>
                   <StarRow />
                 </div>
-                <p className="mt-1 text-xs text-gray-500">Average session rating</p>
+                <p className="mt-1 text-xs text-gray-500"> 
+Trusted by students & parents in UK, USA, Canada & Australia
+</p>
               </div>
               <div className="hidden h-10 w-px bg-gray-200 sm:block" aria-hidden />
-              <div>
-                <p className="text-3xl font-bold tabular-nums text-(--color-text)">1,200+</p>
-                <p className="mt-1 text-xs text-gray-500">Reviews from learners</p>
-              </div>
+              
             </div>
           </motion.div>
 
@@ -126,7 +155,7 @@ export default function TestimonialsSection({ className = "" }) {
                       Featured story
                     </div>
                     <StarRow className="mt-5" />
-                    <p className="mt-5 max-w-2xl pr-8 text-base leading-8 text-gray-700 sm:pr-10 sm:text-lg">
+                    <p className="mt-5 max-w-2xl pr-8 text-base leading-8 text-gray-700 sm:pr-10 sm:text-md">
                       "{featuredReview.quote}"
                     </p>
                   </div>
@@ -137,7 +166,7 @@ export default function TestimonialsSection({ className = "" }) {
                     </p>
                     <div className="mt-5 flex items-center gap-4">
                       <div
-                        className="grid h-13 w-13 shrink-0 place-items-center rounded-full bg-(--color-primary) text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-4 ring-white"
+                        className="grid h-13 w-13 shrink-0 place-items-center rounded-full bg-(--color-primary) text-lg font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-4 ring-white"
                         aria-hidden
                       >
                         {featuredReview.initials}
@@ -159,7 +188,7 @@ export default function TestimonialsSection({ className = "" }) {
               </motion.article>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {visibleSupportingReviews.map((review) => (
+                {primarySupportingReviews.map((review) => (
                   <motion.article
                     key={review.name}
                     variants={item}
@@ -194,6 +223,75 @@ export default function TestimonialsSection({ className = "" }) {
                   </motion.article>
                 ))}
               </div>
+
+              {extraSupportingReviews.length > 0 ? (
+                <div className="mt-5">
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: showMore ? "auto" : 0,
+                      opacity: showMore ? 1 : 0,
+                      marginTop: showMore ? 20 : 0,
+                    }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      {extraSupportingReviews.map((review) => (
+                        <motion.article
+                          key={review.name}
+                          initial={{ opacity: 0, y: 16 }}
+                          animate={{
+                            opacity: showMore ? 1 : 0,
+                            y: showMore ? 0 : 16,
+                          }}
+                          transition={{ duration: 0.28 }}
+                          className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-5 shadow-[0_2px_20px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:border-(--color-primary)/25 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.12)] sm:p-6"
+                        >
+                          <Quote
+                            className="pointer-events-none absolute right-3 top-3 h-9 w-9 text-(--color-primary)/12 transition-colors group-hover:text-(--color-primary)/20 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
+                            strokeWidth={1}
+                            aria-hidden
+                          />
+
+                          <StarRow className="mb-4" />
+
+                          <p className="flex-1 pr-10 text-sm leading-relaxed text-gray-700 sm:pr-12 sm:text-[15px]">
+                            "{review.quote}"
+                          </p>
+
+                          <div className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
+                            <div
+                              className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-(--color-primary) text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-2 ring-white"
+                              aria-hidden
+                            >
+                              {review.initials}
+                            </div>
+                            <div className="min-w-0">
+                              <p className="truncate text-sm font-semibold text-(--color-text)">
+                                {review.name}
+                              </p>
+                              <p className="truncate text-xs text-gray-500">{review.meta}</p>
+                            </div>
+                          </div>
+                        </motion.article>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  <button
+                    type="button"
+                    onClick={() => setShowMore((current) => !current)}
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-(--color-primary)/20 bg-white px-4 py-2 text-xs font-semibold text-(--color-text) transition hover:border-(--color-primary)/35 hover:text-(--color-primary) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary) focus-visible:ring-offset-2"
+                  >
+                    {showMore ? "Show less" : "View more"}
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-300 ${showMore ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
+              ) : null}
             </div>
           </motion.div>
         </div>

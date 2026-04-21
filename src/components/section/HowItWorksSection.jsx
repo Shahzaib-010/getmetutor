@@ -69,11 +69,9 @@ export default function HowItWorksSection({ className = "" }) {
 						How It Works
 					</p>
 					<h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem] md:leading-tight">
-						Get started in 3 simple steps
+						Get started in  <span className="text-[var(--color-primary)]"> 3 simple </span> steps
 					</h2>
-					<p className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base">
-						Get started in 3 simple steps
-					</p>
+				
 				</motion.div>
 
 				{/* Desktop: connected row */}
