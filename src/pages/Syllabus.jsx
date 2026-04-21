@@ -137,7 +137,7 @@ function Syllabus() {
           variants={fadeUp}
         >
           <div className="overflow-x-auto rounded-[2rem] border border-slate-200/70 bg-white/90 p-2 shadow-[0_20px_80px_-40px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
-            <div className="grid min-w-max snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-4">
+            <div className="grid  snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-4">
               {countryOrder.map((country) => {
                 const isActive = country === selectedCountry;
                 const countryMeta = syllabusData[country];
