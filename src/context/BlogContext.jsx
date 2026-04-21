@@ -25,7 +25,7 @@ export function BlogProvider({ children }) {
         if (!res.ok) throw new Error(`Failed to fetch blogs: ${res.status}`);
         const data = await res.json();
         // API sometimes returns { blog: [...] } or an array
-        const list = Array.isArray(data) ? data : data.blog || data.data || [];
+        const list = Array.isArray(data) ? data : (data.blogs || data.blog || data.data || []);
         // normalize image URLs
         const withImages = list.map((b) => ({ ...b, image_url: getImageUrl(b.image) }));
         if (mounted) setBlogs(withImages);
