@@ -2,12 +2,14 @@ import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight,Star } from "lucide-react";
 import Button from "../ui/Button";
+import Background from "../ui/Background";
 
 /** Place file at `public/images/trusted-icon.png` (or `.svg` — update path below if needed). */
 const TRUSTED_BADGE_SRC = "/images/trusted-icon1.png";
 
 const HeroSection = () => {
   return (
+    <Background>
     <section className="relative w-full overflow-hidden bg-transparent font-open-sans">
       <div className="relative mx-auto max-w-[90%] py-12 sm:py-14 lg:py-20">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
@@ -41,10 +43,7 @@ const HeroSection = () => {
               transition={{ delay: 0.06, duration: 0.55 }}
               className="text-balance text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-[3.65rem] xl:text-[4.5rem]"
             >
-              Build skills with{" "}
-              <span className="whitespace-nowrap">
-                getme<span className="text-(--color-primary)">tutor</span>
-              </span>
+              1-to-1 Online Tutoring for Maths, English &amp; Science
             </motion.h1>
 
             <motion.p
@@ -53,9 +52,7 @@ const HeroSection = () => {
               transition={{ delay: 0.12, duration: 0.55 }}
               className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-gray-700 sm:text-base lg:mx-0"
             >
-              Live sessions, structured paths, and tutors who meet you where you
-              are—so you can learn faster and move your career forward with
-              confidence.
+              Live 1-to-1 sessions, personalized learning plans, and expert tutors to help your child succeed in school.
             </motion.p>
 
             <motion.div
@@ -66,11 +63,11 @@ const HeroSection = () => {
             >
               
               <a
-                href="#courses"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-gray-300 bg-white/80 px-5 py-2.5 text-sm font-semibold text-gray-800 shadow-sm backdrop-blur-sm transition-colors hover:border-gray-400 hover:bg-white"
+                href="/demo"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[var(--color-primary)] text-white px-5 py-2.5 text-sm font-semibold shadow-sm transition-colors hover:opacity-95"
               >
-                View courses
-                <ArrowRight className="h-4 w-4 opacity-70 hover:rotate-[-45] transition-all duration-300" aria-hidden />
+                Book Free Trial
+                <ArrowRight className="h-4 w-4 opacity-90 ml-1" aria-hidden />
               </a>
             </motion.div>
 
@@ -102,6 +99,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </Background>
   );
 };
 

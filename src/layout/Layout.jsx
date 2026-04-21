@@ -3,18 +3,20 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/section/Navbar";
 import Footer from "../components/section/Footer";
 import Background from "../components/ui/Background";
+import WhatsAppButton from "../components/ui/WhatsAppButton";
 
 function Layout() {
   return (
-   <Background>
-      <div className="min-h-full flex flex-col">
+  
+      <div className="min-h-full flex flex-col bg-[var(--color-bg)]">
         <Navbar />
         <main className="flex-1 pt-[64px]">
           <Outlet />
+          <WhatsAppButton/>
         </main>
         <Footer />
       </div>
-      </Background>
+      
     
   );
 }

@@ -15,7 +15,7 @@ export default function BlogDetails() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-      <img src={img} alt={blog.title} className="w-full h-72 object-cover rounded-lg" />
+      <img src={img} alt={blog.title} className="w-full h-[50vw] lg:h-[30vw] object-cover rounded-lg" />
       <h1 className="mt-6 text-3xl font-bold">{blog.title}</h1>
       <p className="mt-2 text-gray-600">{blog.meta_description}</p>
 

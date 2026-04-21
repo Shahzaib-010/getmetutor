@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import Button from "../ui/Button";
 
@@ -7,6 +7,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hide, setHide] = useState(false);
   const lastScrollY = useRef(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,6 +24,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Scroll to a section on the homepage. If not on home, navigate then scroll.
+  const scrollToSection = (id) => {
+    const doScroll = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    if (location.pathname === "/") {
+      doScroll();
+    } else {
+      navigate("/");
+      // small delay to allow Home to mount — sufficient for this simple app
+      setTimeout(doScroll, 350);
+    }
+    // close mobile menu if open
+    setIsOpen(false);
+  };
+
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -29,13 +49,11 @@ export default function Navbar() {
   }, [isOpen]);
 
   const menuLinks = [
-    { to: "/", label: "Home" },
-    { to: "/course", label: "Course" },
-    { to: "/demo", label: "Demo" },
+    
+    { to: "/syllabus", label: "Syllabus" },
+    { to: "/", label: "How it works", anchor: "howitworks" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },
-    
-
   ];
 
   const linkClass =
@@ -63,16 +81,27 @@ export default function Navbar() {
           {/* Center links — hidden on tablet & below */}
           <div className="hidden md:flex items-center gap-7">
             {menuLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/"}
-                className={({ isActive }) =>
-                  `${linkClass} ${isActive ? activeClass : ""}`
-                }
-              >
-                {link.label}
-              </NavLink>
+              link.anchor ? (
+                <button
+                  key={link.label}
+                  type="button"
+                  onClick={() => scrollToSection(link.anchor)}
+                  className={linkClass}
+                >
+                  {link.label}
+                </button>
+              ) : (
+               <NavLink
+                 key={link.to}
+                 to={link.to}
+                 end={link.to === "/"}
+                 className={({ isActive }) =>
+                   `${linkClass} ${isActive ? activeClass : ""}`
+                 }
+               >
+                 {link.label}
+               </NavLink>
+              )
             ))}
           </div>
 
@@ -145,23 +174,32 @@ export default function Navbar() {
             <div className="flex flex-col items-center gap-2">
               {menuLinks.map((link, i) => (
                 <motion.div
-                  key={link.to}
+                  key={link.to || link.label}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 + i * 0.06 }}
                   className="w-full"
                 >
-                  <NavLink
-                    to={link.to}
-                    onClick={() => setIsOpen(false)}
-                    className={({ isActive }) =>
-                      `block w-full text-center py-3.5 text-xl font-semibold tracking-tight border-b border-gray-100 transition-colors duration-200 leading-snug ${
-                        isActive ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
+                  {link.anchor ? (
+                    <button
+                      onClick={() => scrollToSection(link.anchor)}
+                      className="block w-full text-center py-3.5 text-xl font-semibold tracking-tight border-b border-gray-100 transition-colors duration-200 leading-snug text-gray-500 hover:text-gray-900"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <NavLink
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block w-full text-center py-3.5 text-xl font-semibold tracking-tight border-b border-gray-100 transition-colors duration-200 leading-snug ${
+                          isActive ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
+                        }`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  )}
                 </motion.div>
               ))}
 

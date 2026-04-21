@@ -7,6 +7,7 @@ import Pricing from "../pages/Pricing";
 import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import { BlogProvider } from "../context/BlogContext";
+import Syllabus from "../pages/Syllabus";
 
 export function getRouter() {
   return createBrowserRouter([
@@ -22,9 +23,18 @@ export function getRouter() {
           index: true,
           element: <Home />,
         },
-        {
-          path: "demo",
+         {
+          path: "/demo",
           element: <Demo />,
+        },
+        {
+          path: "#howitworks",
+          element: <Navigate to="/#howitworks" />,
+        
+        },
+        {
+          path: "syllabus",
+          element: <Syllabus />,
         },
         {
           path: "pricing",
