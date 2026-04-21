@@ -5,7 +5,7 @@ import { Quote, Star } from "lucide-react";
 const reviews = [
   {
     quote:
-      "I went from barely passing to an A in Maths. My tutor explained topics the way my brain actually works—not just the textbook version.",
+      "I went from barely passing to an A in Maths. My tutor explained topics the way my brain actually works, not just the textbook version.",
     name: "Sarah M.",
     meta: "A-Level Mathematics · Year 13",
     initials: "SM",
@@ -19,14 +19,14 @@ const reviews = [
   },
   {
     quote:
-      "English was never my strength. The feedback on essays was specific and kind—I finally know what examiners want.",
+      "English was never my strength. The feedback on essays was specific and kind. I finally know what examiners want.",
     name: "Emma L.",
     meta: "GCSE English · Year 11",
     initials: "EL",
   },
   {
     quote:
-      "We booked for our daughter’s Physics mocks. Her confidence jumped in three weeks; worth every session.",
+      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
     name: "Priya & Rahul N.",
     meta: "Parents · IB Physics",
     initials: "PN",
@@ -60,13 +60,13 @@ function StarRow({ className = "" }) {
 }
 
 export default function TestimonialsSection({ className = "" }) {
+  const [featuredReview, ...supportingReviews] = reviews;
+  const visibleSupportingReviews = supportingReviews.slice(0, 2);
+
   return (
-    <section
-      className={`w-full bg-(--color-bg) font-open-sans ${className}`}
-    >
+    <section className={`w-full bg-(--color-bg) font-open-sans ${className}`}>
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-14">
-          {/* Left — editorial intro */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,41 +74,33 @@ export default function TestimonialsSection({ className = "" }) {
             transition={{ duration: 0.55 }}
             className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
           >
-            <p
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-primary)"
-            >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-primary)">
               Testimonials
             </p>
             <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-(--color-text) sm:text-4xl">
-              Real students.{" "}
-              <span className="text-(--color-primary)">Real progress.</span>
+              Real students. <span className="text-(--color-primary)">Real progress.</span>
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-600 sm:text-base">
-              Learners and parents trust GetmeTutor for clear explanations, structured
-              support, and tutors who show up prepared—every time.
+              Learners and parents trust GetmeTutor for clear explanations, structured support,
+              and tutors who show up prepared every time.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-gray-200/90 pt-8">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold tabular-nums text-(--color-text)">
-                    4.9
-                  </span>
+                  <span className="text-3xl font-bold tabular-nums text-(--color-text)">4.9</span>
                   <StarRow />
                 </div>
                 <p className="mt-1 text-xs text-gray-500">Average session rating</p>
               </div>
-              <div className="h-10 w-px bg-gray-200 hidden sm:block" aria-hidden />
+              <div className="hidden h-10 w-px bg-gray-200 sm:block" aria-hidden />
               <div>
-                <p className="text-3xl font-bold tabular-nums text-(--color-text)">
-                  1,200+
-                </p>
+                <p className="text-3xl font-bold tabular-nums text-(--color-text)">1,200+</p>
                 <p className="mt-1 text-xs text-gray-500">Reviews from learners</p>
               </div>
             </div>
           </motion.div>
 
-          {/* Right — cards */}
           <motion.div
             variants={container}
             initial="hidden"
@@ -116,41 +108,92 @@ export default function TestimonialsSection({ className = "" }) {
             viewport={{ once: true, amount: 0.15 }}
             className="lg:col-span-8"
           >
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-              {reviews.map((r) => (
-                <motion.article
-                  key={r.name}
-                  variants={item}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-5 shadow-[0_2px_20px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:border-(--color-primary)/25 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.12)] sm:p-6"
-                >
-                  <Quote
-                    className="pointer-events-none absolute right-3 top-3 h-9 w-9 text-(--color-primary)/12 transition-colors group-hover:text-(--color-primary)/20 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
-                    strokeWidth={1}
-                    aria-hidden
-                  />
+            <div className="grid gap-4 sm:gap-5">
+              <motion.article
+                variants={item}
+                className="group relative flex overflow-hidden rounded-[2rem] border border-(--color-primary)/20 bg-[linear-gradient(180deg,#fff8f2_0%,#ffffff_100%)] p-6 shadow-[0_18px_50px_-24px_rgba(255,98,0,0.25)] transition-shadow duration-300 hover:shadow-[0_24px_64px_-24px_rgba(255,98,0,0.35)] sm:p-8"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-(--color-primary)" />
+                <Quote
+                  className="pointer-events-none absolute right-4 top-4 h-14 w-14 text-(--color-primary)/12 sm:right-6 sm:top-6 sm:h-16 sm:w-16"
+                  strokeWidth={1}
+                  aria-hidden
+                />
 
-                  <StarRow className="mb-4" />
-
-                  <p className="relative z-1 flex-1 pr-10 text-sm leading-relaxed text-gray-700 sm:pr-12 sm:text-[15px] sm:leading-relaxed">
-                    “{r.quote}”
-                  </p>
-
-                  <div className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
-                    <div
-                      className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-(--color-primary) text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-2 ring-white"
-                      aria-hidden
-                    >
-                      {r.initials}
+                <div className="grid w-full gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+                  <div className="max-w-3xl">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-(--color-primary)/15 bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-(--color-primary)">
+                      Featured story
                     </div>
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold text-(--color-text)">
-                        {r.name}
-                      </p>
-                      <p className="truncate text-xs text-gray-500">{r.meta}</p>
-                    </div>
+                    <StarRow className="mt-5" />
+                    <p className="mt-5 max-w-2xl pr-8 text-base leading-8 text-gray-700 sm:pr-10 sm:text-lg">
+                      "{featuredReview.quote}"
+                    </p>
                   </div>
-                </motion.article>
-              ))}
+
+                  <div className="flex flex-col justify-end rounded-[1.5rem] border border-(--color-primary)/10 bg-white/75 p-5 sm:p-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--color-primary)">
+                      Student spotlight
+                    </p>
+                    <div className="mt-5 flex items-center gap-4">
+                      <div
+                        className="grid h-13 w-13 shrink-0 place-items-center rounded-full bg-(--color-primary) text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-4 ring-white"
+                        aria-hidden
+                      >
+                        {featuredReview.initials}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate text-base font-semibold text-(--color-text)">
+                          {featuredReview.name}
+                        </p>
+                        <p className="truncate text-sm text-gray-500">{featuredReview.meta}</p>
+                      </div>
+                    </div>
+                    <div className="mt-5 h-px bg-(--color-primary)/10" />
+                    <p className="mt-5 text-sm leading-7 text-gray-600">
+                      High-impact outcomes, clearer confidence, and tutoring support that feels
+                      personal from the first session.
+                    </p>
+                  </div>
+                </div>
+              </motion.article>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {visibleSupportingReviews.map((review) => (
+                  <motion.article
+                    key={review.name}
+                    variants={item}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-5 shadow-[0_2px_20px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:border-(--color-primary)/25 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.12)] sm:p-6"
+                  >
+                    <Quote
+                      className="pointer-events-none absolute right-3 top-3 h-9 w-9 text-(--color-primary)/12 transition-colors group-hover:text-(--color-primary)/20 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
+                      strokeWidth={1}
+                      aria-hidden
+                    />
+
+                    <StarRow className="mb-4" />
+
+                    <p className="flex-1 pr-10 text-sm leading-relaxed text-gray-700 sm:pr-12 sm:text-[15px]">
+                      "{review.quote}"
+                    </p>
+
+                    <div className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
+                      <div
+                        className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-(--color-primary) text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-2 ring-white"
+                        aria-hidden
+                      >
+                        {review.initials}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-(--color-text)">
+                          {review.name}
+                        </p>
+                        <p className="truncate text-xs text-gray-500">{review.meta}</p>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
