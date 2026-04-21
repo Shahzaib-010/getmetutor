@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight } from "lucide-react";
 import Button from "../ui/Button";
 
 export default function Navbar() {
@@ -107,12 +108,13 @@ export default function Navbar() {
 
           {/* CTA — hidden on tablet & below */}
           <div className="hidden md:flex items-center">
-            <NavLink
-              to="/demo"
-              className="px-6 py-2 bg-transparent text-black border border-black hover:bg-black hover:text-white transition-all duration-300"
-            >
-              Demo
-            </NavLink>
+           <Link
+							to="/syllabus"
+							className=" inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[] font-medium text-white transition hover:bg-orange-500"
+						>
+							Explore syllabus
+							<ArrowRight size={15} />
+						</Link>
           </div>
 
           {/* Hamburger — visible on tablet & below */}
