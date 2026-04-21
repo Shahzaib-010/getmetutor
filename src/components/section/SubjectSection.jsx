@@ -1,128 +1,68 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Calculator,
-  Dna,
-  FlaskConical,
-  Atom,
-  Microscope,
-  Languages,
-  Flag,
-  TrendingUp,
-  Brain,
-  Landmark,
-  Code2,
-} from "lucide-react";
+import React from "react";
+import { ArrowRight, BookOpen, GraduationCap, Globe2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SubjectSection = () => {
-  const subjects = [
-    { name: "Maths", icon: Calculator, color: "text-blue-600" },
-    { name: "Biology", icon: Dna, color: "text-green-600" },
-    { name: "Chemistry", icon: FlaskConical, color: "text-violet-600" },
-    { name: "Physics", icon: Atom, color: "text-indigo-600" },
-    { name: "Science", icon: Microscope, color: "text-teal-600" },
-    { name: "English", icon: Languages, color: "text-pink-600" },
-    { name: "German", icon: Flag, color: "text-orange-500" },
-    { name: "Spanish", icon: Flag, color: "text-red-500" },
-    { name: "Economics", icon: TrendingUp, color: "text-blue-500" },
-    { name: "Psychology", icon: Brain, color: "text-purple-500" },
-    { name: "History", icon: Landmark, color: "text-slate-600" },
-    { name: "Coding", icon: Code2, color: "text-gray-700" },
-  ];
+const highlights = [
+  {
+    title: "Global curricula",
+    description: "Compare pathways across leading academic systems in one guided flow.",
+    icon: Globe2,
+  },
+  {
+    title: "Subject depth",
+    description: "Explore core disciplines with clear progression from early years to senior grades.",
+    icon: BookOpen,
+  },
+  {
+    title: "Grade-by-grade clarity",
+    description: "Preview syllabus expectations before choosing the best-fit tutoring plan.",
+    icon: GraduationCap,
+  },
+];
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0 },
-  };
-
-  // WhatsApp helper: open chat with a prefilled subject message
-  const phone = "+923130672552"; // same number used in WhatsAppButton
-  const openWhatsApp = (subject) => {
-    const message = `Hi, I want to book a Free Trial for ${subject}`;
-    const url = `https://wa.me/${phone.replace(/^\+/, "")}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
-
+function SubjectSection() {
   return (
-    <section
-      id="courses"
-      className="w-full bg-[var(--color-bg)] py-20 px-5 sm:px-8 md:px-10 lg:px-16 font-open-sans scroll-mt-24"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-            Pick a subject to get started
-          </h2>
+    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,#fff8f1_0%,#ffffff_42%,#f8fafc_100%)] p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)] sm:p-8 lg:p-10">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-orange-500">
+              Curriculum support
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Discover the syllabus flow before you book tutoring.
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Navigate country-specific subjects, compare progression by grade, and understand what
+              students are expected to master at every stage.
+            </p>
+            <Link
+              to="/syllabus"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-orange-500"
+            >
+              Explore syllabus
+              <ArrowRight size={16} />
+            </Link>
+          </div>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-2xl mx-auto">
-            Handpicked experts across 30+ subjects from KS2 to A-Level &
-            university.
-          </p>
-        </motion.div>
-
-        {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
-        >
-          {subjects.map((subject, index) => {
-            const Icon = subject.icon;
-
-            return (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{
-                  y: -6,
-                  scale: 1.03,
-                }}
-                transition={{ type: "spring", stiffness: 250 }}
-                className="group cursor-pointer rounded-2xl border border-slate-200 bg-white px-4 py-6 text-center shadow-sm hover:shadow-md hover:border-[var(--color-primary)] transition-all duration-300"
-                onClick={() => openWhatsApp(subject.name)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") openWhatsApp(subject.name); }}
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {highlights.map(({ title, description, icon: Icon }) => (
+              <article
+                key={title}
+                className="rounded-[1.5rem] border border-slate-200 bg-white/90 p-5 shadow-sm"
               >
-                <div
-                  className={`mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 group-hover:bg-[var(--color-primary)]/10 transition-all duration-300`}
-                >
-                  <Icon
-                    size={20}
-                    className={`${subject.color} group-hover:scale-110 transition-all duration-300`}
-                  />
-                </div>
-
-                <h3 className="text-sm sm:text-[15px] font-semibold text-slate-800">
-                  {subject.name}
-                </h3>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-50 text-orange-500">
+                  <Icon size={20} />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* HubSpot modal removed: subject cards now open WhatsApp with prefilled message */}
     </section>
   );
-};
+}
 
 export default SubjectSection;
