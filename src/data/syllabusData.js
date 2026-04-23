@@ -179,6 +179,56 @@ const createGradeContent = (countryName, subjectName, gradeIndex) => {
   };
 };
 
+const extractLegacyDetailsSection = (details, sectionTitle) => {
+  if (typeof details !== "string") {
+    return "";
+  }
+
+  const escapedTitle = sectionTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(
+    `${escapedTitle}:\\n([\\s\\S]*?)(?:\\n\\n[A-Za-z ].*?:|$)`,
+    "i"
+  );
+  const match = details.match(regex);
+  return match?.[1]?.trim() ?? "";
+};
+
+const normalizeGradeShape = (grade) => {
+  const details = grade.details ?? "";
+
+  const overview =
+    grade.overview ??
+    extractLegacyDetailsSection(details, "Overview") ??
+    grade.summary ??
+    "";
+
+  const whatStudentsLearn = Array.isArray(grade.whatStudentsLearn)
+    ? grade.whatStudentsLearn
+    : Array.isArray(grade.outcomes)
+      ? grade.outcomes
+      : [];
+
+  const keySkillsDeveloped = Array.isArray(grade.keySkillsDeveloped)
+    ? grade.keySkillsDeveloped
+    : extractLegacyDetailsSection(details, "Key skills developed")
+        .split(",")
+        .map((item) => item.trim().replace(/\.$/, ""))
+        .filter(Boolean);
+
+  const howWeHelp =
+    grade.howWeHelp ??
+    extractLegacyDetailsSection(details, "How we help at Get Me Tutor") ??
+    "";
+
+  return {
+    ...grade,
+    overview,
+    whatStudentsLearn,
+    keySkillsDeveloped,
+    howWeHelp,
+  };
+};
+
 const createSubject = (countryName, subjectName) => {
   // Canada-specific Maths syllabus (custom grade content)
   if (countryName === "Canada" && subjectName === "Maths") {
@@ -826,6 +876,344 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  // Canada-specific English syllabus (custom grade content)
+  if (countryName === "Canada" && subjectName === "English") {
+    const englishGrades = [
+      {
+        id: `${countryName.toLowerCase()}-english-0`,
+        title: "Kindergarten (KG)",
+        summary:
+          "In Kindergarten English (Canada curriculum), students begin developing early literacy skills through phonics, listening, speaking, and simple reading activities.",
+        overview:
+          "In Kindergarten English (Canada curriculum), students begin developing early literacy skills through phonics, listening, speaking, and simple reading activities. The focus is on building familiarity with letters, sounds, and basic communication.",
+        whatStudentsLearn: [
+          "Letter recognition and phonics sounds",
+          "Basic vocabulary development",
+          "Listening and speaking skills",
+          "Recognizing simple words",
+          "Introduction to reading short texts",
+          "Understanding basic instructions",
+        ],
+        keySkillsDeveloped: [
+          "Early reading readiness",
+          "Listening comprehension",
+          "Vocabulary building",
+          "Confidence in speaking",
+          "Basic communication skills",
+        ],
+        howWeHelp:
+          "We use phonics-based learning, visual aids, and interactive activities to help children build strong early literacy skills in a fun and engaging way.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-1`,
+        title: "Grade 1",
+        summary:
+          "In Grade 1 English (Canada curriculum), students develop basic reading and writing skills, focusing on phonics, sentence formation, and comprehension.",
+        overview:
+          "In Grade 1 English (Canada curriculum), students develop basic reading and writing skills, focusing on phonics, sentence formation, and comprehension.",
+        whatStudentsLearn: [
+          "Reading simple sentences and stories",
+          "Phonics and word decoding",
+          "Writing basic sentences",
+          "Vocabulary expansion",
+          "Introduction to punctuation",
+          "Listening and responding to texts",
+        ],
+        keySkillsDeveloped: [
+          "Reading fluency",
+          "Sentence formation",
+          "Basic comprehension",
+          "Vocabulary usage",
+          "Confidence in writing",
+        ],
+        howWeHelp:
+          "Our tutors guide students step-by-step in reading and writing, helping them build fluency and confidence through structured practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-2`,
+        title: "Grade 2",
+        summary:
+          "In Grade 2, students improve reading fluency and begin writing short paragraphs while developing stronger grammar and comprehension skills.",
+        overview:
+          "In Grade 2, students improve reading fluency and begin writing short paragraphs while developing stronger grammar and comprehension skills.",
+        whatStudentsLearn: [
+          "Reading longer texts with understanding",
+          "Writing short paragraphs",
+          "Grammar basics (nouns, verbs, adjectives)",
+          "Sentence structure",
+          "Vocabulary development",
+          "Answering comprehension questions",
+        ],
+        keySkillsDeveloped: [
+          "Reading fluency",
+          "Comprehension skills",
+          "Grammar understanding",
+          "Writing clarity",
+          "Logical thinking",
+        ],
+        howWeHelp:
+          "We support students with guided reading and structured exercises to strengthen comprehension and writing skills.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-3`,
+        title: "Grade 3",
+        summary:
+          "In Grade 3 English (Canada curriculum), students move from learning to read toward reading to learn, while developing structured writing skills.",
+        overview:
+          "In Grade 3 English (Canada curriculum), students move from learning to read toward reading to learn, while developing structured writing skills.",
+        whatStudentsLearn: [
+          "Reading comprehension strategies",
+          "Writing structured paragraphs",
+          "Grammar and sentence construction",
+          "Vocabulary expansion",
+          "Understanding story elements",
+          "Answering detailed questions",
+        ],
+        keySkillsDeveloped: [
+          "Strong comprehension",
+          "Structured writing",
+          "Analytical reading",
+          "Vocabulary usage",
+          "Communication skills",
+        ],
+        howWeHelp:
+          "We focus on improving comprehension and writing through step-by-step guidance and practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-4`,
+        title: "Grade 4",
+        summary:
+          "In Grade 4, students develop deeper reading comprehension and begin writing longer and more organized pieces.",
+        overview:
+          "In Grade 4, students develop deeper reading comprehension and begin writing longer and more organized pieces.",
+        whatStudentsLearn: [
+          "Reading more complex texts",
+          "Writing paragraphs and short essays",
+          "Grammar rules and sentence variety",
+          "Vocabulary building",
+          "Identifying main ideas and details",
+          "Basic research skills",
+        ],
+        keySkillsDeveloped: [
+          "Analytical reading",
+          "Writing organization",
+          "Grammar accuracy",
+          "Critical thinking",
+          "Improved expression",
+        ],
+        howWeHelp:
+          "We help students structure their writing and improve comprehension through guided practice and feedback.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-5`,
+        title: "Grade 5",
+        summary:
+          "In Grade 5 English (Canada curriculum), students strengthen comprehension and develop essay writing skills.",
+        overview:
+          "In Grade 5 English (Canada curriculum), students strengthen comprehension and develop essay writing skills.",
+        whatStudentsLearn: [
+          "Reading and analyzing texts",
+          "Writing structured essays",
+          "Grammar and punctuation",
+          "Vocabulary development",
+          "Identifying themes and ideas",
+          "Responding to texts",
+        ],
+        keySkillsDeveloped: [
+          "Essay writing",
+          "Critical thinking",
+          "Reading analysis",
+          "Grammar proficiency",
+          "Clear communication",
+        ],
+        howWeHelp:
+          "We guide students in writing structured responses and understanding texts deeply.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-6`,
+        title: "Grade 6",
+        summary:
+          "In Grade 6, students work with more complex texts and improve analytical reading and writing skills.",
+        overview:
+          "In Grade 6, students work with more complex texts and improve analytical reading and writing skills.",
+        whatStudentsLearn: [
+          "Reading detailed texts",
+          "Writing structured essays",
+          "Grammar and sentence variety",
+          "Vocabulary expansion",
+          "Text analysis",
+          "Summarizing information",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Structured writing",
+          "Reading interpretation",
+          "Grammar accuracy",
+          "Communication skills",
+        ],
+        howWeHelp:
+          "We help students break down complex texts and improve writing through structured guidance.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-7`,
+        title: "Grade 7",
+        summary:
+          "In Grade 7 English (Canada curriculum), students focus on deeper text analysis and more advanced writing skills.",
+        overview:
+          "In Grade 7 English (Canada curriculum), students focus on deeper text analysis and more advanced writing skills.",
+        whatStudentsLearn: [
+          "Analyzing literature and informational texts",
+          "Writing argumentative essays",
+          "Grammar and language use",
+          "Vocabulary development",
+          "Understanding tone and style",
+          "Supporting ideas with evidence",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Argumentative writing",
+          "Text analysis",
+          "Evidence-based reasoning",
+          "Communication skills",
+        ],
+        howWeHelp:
+          "We guide students in analyzing texts and writing strong, well-supported responses.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-8`,
+        title: "Grade 8",
+        summary:
+          "In Grade 8, students refine their reading and writing skills and prepare for high school-level English.",
+        overview:
+          "In Grade 8, students refine their reading and writing skills and prepare for high school-level English.",
+        whatStudentsLearn: [
+          "Advanced reading comprehension",
+          "Writing essays and reports",
+          "Grammar and language structure",
+          "Analyzing themes and ideas",
+          "Comparing texts",
+          "Research skills",
+        ],
+        keySkillsDeveloped: [
+          "Analytical reading",
+          "Structured writing",
+          "Critical thinking",
+          "Research ability",
+          "Communication clarity",
+        ],
+        howWeHelp:
+          "We help students build strong foundations in writing and analysis for high school readiness.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9 English (Canada curriculum), students begin high school English with a focus on literature analysis and structured writing.",
+        overview:
+          "In Grade 9 English (Canada curriculum), students begin high school English with a focus on literature analysis and structured writing.",
+        whatStudentsLearn: [
+          "Analyzing literary texts",
+          "Writing essays and responses",
+          "Grammar and style",
+          "Vocabulary development",
+          "Understanding themes and characters",
+          "Supporting arguments with evidence",
+        ],
+        keySkillsDeveloped: [
+          "Literary analysis",
+          "Essay writing",
+          "Critical thinking",
+          "Communication skills",
+          "Argument development",
+        ],
+        howWeHelp:
+          "We support students in developing strong analytical and writing skills required for high school success.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students deepen their understanding of literature and improve advanced writing skills.",
+        overview:
+          "In Grade 10, students deepen their understanding of literature and improve advanced writing skills.",
+        whatStudentsLearn: [
+          "Analyzing complex texts",
+          "Writing analytical essays",
+          "Grammar and language refinement",
+          "Vocabulary building",
+          "Comparing literary works",
+          "Understanding writing styles",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analysis",
+          "Essay structuring",
+          "Critical thinking",
+          "Communication clarity",
+          "Text interpretation",
+        ],
+        howWeHelp:
+          "We guide students in writing well-structured essays and analyzing texts effectively.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-11`,
+        title: "Grade 11",
+        summary:
+          "In Grade 11 English (Canada curriculum), students focus on advanced literature, critical thinking, and exam preparation.",
+        overview:
+          "In Grade 11 English (Canada curriculum), students focus on advanced literature, critical thinking, and exam preparation.",
+        whatStudentsLearn: [
+          "Advanced literary analysis",
+          "Writing argumentative essays",
+          "Understanding rhetorical devices",
+          "Vocabulary development",
+          "Research and writing skills",
+          "Exam preparation",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Argument development",
+          "Advanced writing",
+          "Analytical reasoning",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We help students master advanced writing and analysis skills while preparing for exams.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12, students prepare for college-level English with advanced writing, analysis, and communication skills.",
+        overview:
+          "In Grade 12, students prepare for college-level English with advanced writing, analysis, and communication skills.",
+        whatStudentsLearn: [
+          "Advanced essay writing",
+          "Literary and critical analysis",
+          "Research writing",
+          "Vocabulary and language mastery",
+          "Presentation and communication",
+          "Exam preparation",
+        ],
+        keySkillsDeveloped: [
+          "Advanced communication",
+          "Critical thinking",
+          "Research and writing skills",
+          "Analytical reasoning",
+          "College readiness",
+        ],
+        howWeHelp:
+          "We provide structured support for advanced writing, analysis, and exam preparation to help students succeed beyond school.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-english`,
+      name: "English",
+      shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: englishGrades.map((grade) => normalizeGradeShape(grade)),
+    };
+  }
+
   // US-specific English syllabus (custom grade content)
   if (countryName === "USA" && subjectName === "English") {
     const englishGrades = [
@@ -1043,7 +1431,7 @@ const createSubject = (countryName, subjectName) => {
       id: `${countryName.toLowerCase()}-english`,
       name: "English",
       shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
-      grades: englishGrades,
+      grades: englishGrades.map((grade) => normalizeGradeShape(grade)),
     };
   }
 
@@ -1293,23 +1681,26 @@ const createSubject = (countryName, subjectName) => {
       {
         id: `${countryName.toLowerCase()}-science-10`,
         title: "Grade 10",
-        summary: "In Grade 10, students focus on geometry, trigonometry, and advanced algebra concepts.",
+        summary: " In Grade 10, students deepen their understanding of scientific concepts and improve analytical and experimental skills.",
         overview:
           "In Grade 10, students focus on geometry, trigonometry, and advanced algebra concepts.",
         whatStudentsLearn: [
-          "Geometry and trigonometry",
-          "Coordinate geometry",
-          "Algebraic relationships",
-          "Problem-solving",
+          "Chemistry concepts and reactions",
+          "Physics fundamentals",
+          "Biology systems",
+          "Energy and matter",
+          "Scientific investigations",
+          "Data interpretation",
         ],
         keySkillsDeveloped: [
-          "Spatial reasoning",
-          "Logical thinking",
-          "Mathematical structure",
-          "Analytical skills",
+          "Critical thinking",
+          "Experimental analysis",
+          "Problem-solving",
+          "Logical reasoning",
+          "Scientific communication",
         ],
         howWeHelp:
-          "We simplify complex concepts and help students develop confidence in problem-solving.",
+          "We help students strengthen their understanding through structured lessons and guided problem-solving.",
       },
       {
         id: `${countryName.toLowerCase()}-science-11`,
@@ -1408,23 +1799,27 @@ const createSubject = (countryName, subjectName) => {
         id: `${countryName.toLowerCase()}-physics-11`,
         title: "Year 11 (GCSE)",
         summary:
-          "Year 11 continues GCSE Physics with exam-focused revision, past papers and consolidation of key topics for assessment.",
+          "GCSE Physics (UK curriculum) covers Years 11 and focuses on understanding fundamental physical principles such as forces, energy, waves, and electricity.",
         overview:
-          "Year 11 continues GCSE Physics with exam-focused revision, past papers and consolidation of key topics for assessment. Teachers and tutors focus on exam technique and application under timed conditions.",
+          "GCSE Physics (UK curriculum) covers Years 11 and focuses on understanding fundamental physical principles such as forces, energy, waves, and electricity. This stage is crucial for exam success and future science studies.",
         whatStudentsLearn: [
-          "Revision of forces, energy and electricity",
-          "Practice with waves, optics and space physics",
-          "Exam technique and past paper strategies",
-          "Data interpretation and practical skills",
+          "Forces and motion (speed, acceleration, Newton’s laws)",
+          "Energy (types, transfer, conservation)",
+          "Waves (light, sound, electromagnetic spectrum)",
+          "Electricity (circuits, current, voltage, resistance)",
+          "Magnetism and electromagnetism",
+          "Space physics (planets, stars, universe)",
         ],
-        keySkillsDeveloped: [
-          "Exam technique",
-          "Time management",
-          "Accuracy under pressure",
-          "Advanced problem-solving",
+        examBoards: [
+          "AQA GCSE Physics",
+          "Edexcel (Pearson) GCSE Physics",
+          "OCR GCSE Physics",
+          "WJEC / Eduqas GCSE Physics",
         ],
+        examStructure:
+          "Paper 1 – Core topics (energy, electricity, atomic structure). Paper 2 – Forces, waves, magnetism, space. Questions include multiple-choice, short-answer and extended problem-solving.",
         howWeHelp:
-          "We focus on past paper practice, targeted revision, and exam strategies to help students achieve their best GCSE grades.",
+          "We provide structured GCSE Physics preparation with past paper practice, step-by-step problem solving, weak-area targeting, and exam technique improvement.",
       },
       {
         id: `${countryName.toLowerCase()}-physics-12`,
@@ -1432,7 +1827,7 @@ const createSubject = (countryName, subjectName) => {
         summary:
           "A-Level Physics (Year 12) introduces advanced mechanics, electricity, waves and practical skills with strong mathematical application.",
         overview:
-          "A-Level Physics (UK curriculum) covers Years 12 and 13 and prepares students for university-level study. It focuses on advanced concepts, mathematical application, and deep understanding of physical laws.",
+          "A-Level Physics (UK curriculum) covers Years 12 and prepares students for university-level study. It focuses on advanced concepts, mathematical application, and deep understanding of physical laws.",
         whatStudentsLearn: [
           "Mechanics (motion, forces, momentum)",
           "Electricity and circuits",
@@ -1460,27 +1855,37 @@ const createSubject = (countryName, subjectName) => {
           "We provide topic-by-topic mastery, exam-focused practice, past paper analysis, step-by-step explanations and targeted preparation for top grades.",
       },
       {
-        id: `${countryName.toLowerCase()}-physics-13`,
+        id: `${countryName.toLowerCase()}-physics-12`,
         title: "Year 13 (A-Level)",
         summary:
-          "Year 13 completes the A-Level Physics specification with deeper mathematical work and practical assessment preparation.",
+          "A-Level Physics (Year 13) introduces advanced mechanics, electricity, waves and practical skills with strong mathematical application.",
         overview:
-          "Year 13 completes the A-Level Physics specification with deeper mathematical work, practical assessment preparation and advanced topic consolidation for university readiness.",
+          "A-Level Physics (UK curriculum) covers Years 13 and prepares students for university-level study. It focuses on advanced concepts, mathematical application, and deep understanding of physical laws.",
         whatStudentsLearn: [
-          "Advanced mechanics and rotational dynamics",
-          "In-depth electricity & magnetism",
-          "Waves, quantum ideas and optics",
-          "Thermal and modern physics",
-          "Practical assessments and data analysis",
+          "Mechanics (motion, forces, momentum)",
+          "Electricity and circuits",
+          "Waves and optics",
+          "Thermal physics",
+          "Fields (gravitational, electric, magnetic)",
+          "Nuclear and particle physics introduction",
         ],
         keySkillsDeveloped: [
-          "Critical thinking",
-          "Advanced analysis",
-          "Research and practical skills",
-          "Exam readiness and strategy",
+          "Advanced mathematical problem-solving",
+          "Analytical and critical thinking",
+          "Data interpretation and evaluation",
+          "Scientific reasoning",
+          "Exam readiness",
         ],
+        examBoards: [
+          "AQA A-Level Physics",
+          "Edexcel (Pearson) A-Level Physics",
+          "OCR A-Level Physics",
+          "WJEC / Eduqas A-Level Physics",
+        ],
+        examStructure:
+          "Paper 1 – Advanced mechanics & materials. Paper 2 – Fields, electricity & thermal physics. Paper 3 – Practical skills & data analysis. Includes extended problem-solving and practical-based questions.",
         howWeHelp:
-          "We provide advanced support through topic mastery, past paper practice, and step-by-step explanations to prepare students for top A-Level performance.",
+          "We provide topic-by-topic mastery, exam-focused practice, past paper analysis, step-by-step explanations and targeted preparation for top grades.",
       },
     ];
 
@@ -1497,7 +1902,7 @@ const createSubject = (countryName, subjectName) => {
     const ukChemistryGrades = [
       {
         id: `${countryName.toLowerCase()}-chemistry-10`,
-        title: "Year 10 (GCSE)",
+        title: "Year 10 - 11 (GCSE)",
         summary:
           "GCSE Chemistry (UK curriculum) covers Years 10 and 11 and focuses on understanding matter, chemical reactions, and how substances behave.",
         overview:
@@ -1527,31 +1932,10 @@ const createSubject = (countryName, subjectName) => {
         howWeHelp:
           "We provide focused GCSE Chemistry preparation with step-by-step explanations, past paper practice, weak topic improvement and exam strategy guidance.",
       },
-      {
-        id: `${countryName.toLowerCase()}-chemistry-11`,
-        title: "Year 11 (GCSE)",
-        summary:
-          "Year 11 continues GCSE Chemistry with consolidation, past paper practice and exam-focused revision.",
-        overview:
-          "Year 11 continues GCSE Chemistry with consolidation, past paper practice and exam-focused revision to prepare students for assessment.",
-        whatStudentsLearn: [
-          "Revision of atomic structure and bonding",
-          "Practice balancing and quantitative problems",
-          "Application of rates and equilibrium concepts",
-          "Exam technique and data interpretation",
-        ],
-        keySkillsDeveloped: [
-          "Exam technique",
-          "Problem-solving speed",
-          "Calculation accuracy",
-          "Analytical reasoning",
-        ],
-        howWeHelp:
-          "We support students with targeted revision, past papers and step-by-step problem solving to improve exam performance.",
-      },
+     
       {
         id: `${countryName.toLowerCase()}-chemistry-12`,
-        title: "Year 12 (A-Level)",
+        title: "Year 12 - 13 (A-Level)",
         summary:
           "A-Level Chemistry (Year 12) introduces physical, inorganic and organic chemistry with greater mathematical depth and practical focus.",
         overview:
@@ -1579,28 +1963,7 @@ const createSubject = (countryName, subjectName) => {
         howWeHelp:
           "We support students with topic-by-topic mastery, past paper practice, step-by-step explanations and exam-focused preparation for top-grade achievement.",
       },
-      {
-        id: `${countryName.toLowerCase()}-chemistry-13`,
-        title: "Year 13 (A-Level)",
-        summary:
-          "Year 13 completes the A-Level Chemistry specification with advanced topics, practical assessment and preparation for university study.",
-        overview:
-          "Year 13 completes the A-Level Chemistry specification with advanced topics, practical assessment and preparation for university study.",
-        whatStudentsLearn: [
-          "Advanced organic synthesis and mechanisms",
-          "Kinetics and complex equilibrium",
-          "Electrochemistry and advanced instrumental techniques",
-          "Practical experiment design and data analysis",
-        ],
-        keySkillsDeveloped: [
-          "Research and practical skills",
-          "Advanced analysis",
-          "Exam readiness",
-          "Problem-solving at scale",
-        ],
-        howWeHelp:
-          "We provide intensive A-Level support including past papers, practical preparation and targeted topic mastery to help students achieve top results.",
-      },
+     
     ];
 
     return {
@@ -1616,7 +1979,7 @@ const createSubject = (countryName, subjectName) => {
     const ukBiologyGrades = [
       {
         id: `${countryName.toLowerCase()}-biology-10`,
-        title: "Year 10 (GCSE)",
+        title: "Year 10 - 11 (GCSE)",
         summary:
           "GCSE Biology (UK curriculum) covers Years 10 and 11 and focuses on understanding living organisms, body systems, and ecosystems.",
         overview:
@@ -1647,31 +2010,10 @@ const createSubject = (countryName, subjectName) => {
         howWeHelp:
           "We provide structured GCSE Biology preparation with clear concept explanations, diagrams, past paper practice and targeted revision for weak areas.",
       },
-      {
-        id: `${countryName.toLowerCase()}-biology-11`,
-        title: "Year 11 (GCSE)",
-        summary:
-          "Year 11 continues GCSE Biology with exam-focused consolidation and past paper practice.",
-        overview:
-          "Year 11 continues GCSE Biology with exam-focused consolidation and past paper practice to prepare students for assessments.",
-        whatStudentsLearn: [
-          "Revision of key biological topics",
-          "Practice with exam-style questions",
-          "Data interpretation and practical skills",
-          "Targeted revision of weak topics",
-        ],
-        keySkillsDeveloped: [
-          "Exam technique",
-          "Analytical thinking",
-          "Time management",
-          "Data analysis",
-        ],
-        howWeHelp:
-          "We focus on past papers, visual learning and targeted revision to help students achieve their best GCSE outcomes.",
-      },
+      
       {
         id: `${countryName.toLowerCase()}-biology-12`,
-        title: "Year 12 (A-Level)",
+        title: "Year 12 -13 (A-Level)",
         summary:
           "A-Level Biology (Year 12) introduces advanced biological concepts, research skills and practical techniques with greater depth.",
         overview:
@@ -1700,28 +2042,7 @@ const createSubject = (countryName, subjectName) => {
         howWeHelp:
           "We provide topic-by-topic mastery, visual and diagram-based learning, past paper practice and exam-focused preparation to support top-grade achievement.",
       },
-      {
-        id: `${countryName.toLowerCase()}-biology-13`,
-        title: "Year 13 (A-Level)",
-        summary:
-          "Year 13 completes the A-Level Biology specification with deeper analysis, practical assessment and research-focused study.",
-        overview:
-          "Year 13 completes the A-Level Biology specification with deeper analysis, practical assessment and research-focused study, preparing students for higher education.",
-        whatStudentsLearn: [
-          "Advanced genetics and molecular biology",
-          "Evolution and biodiversity",
-          "Human physiology in depth",
-          "Practical investigations and data analysis",
-        ],
-        keySkillsDeveloped: [
-          "Research and investigation skills",
-          "Advanced analysis",
-          "Exam readiness",
-          "Independent study skills",
-        ],
-        howWeHelp:
-          "We support students with topic mastery, past paper practice, visual learning and exam-focused preparation to help secure top A-Level grades.",
-      },
+     
     ];
 
     return {

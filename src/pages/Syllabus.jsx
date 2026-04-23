@@ -347,7 +347,7 @@ function Syllabus() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="flex min-w-max gap-3">
-                  {selectedSubjectData.grades.map((grade) => {
+                  {(selectedSubjectData.grades ?? []).map((grade) => {
                     const isActive = activeGradeData?.id === grade.id;
 
                     return (
@@ -431,7 +431,7 @@ function Syllabus() {
                         </span>
                       </div>
                       <ul className="mt-4 space-y-3">
-                        {activeGradeData.whatStudentsLearn.map((item) => (
+                        {(activeGradeData.whatStudentsLearn ?? []).map((item) => (
                           <li
                             key={item}
                             className="flex gap-3 text-sm leading-7 text-slate-600"
@@ -450,7 +450,7 @@ function Syllabus() {
                         </span>
                       </div>
                       <ul className="mt-4 space-y-3">
-                        {activeGradeData.keySkillsDeveloped.map((item) => (
+                        {(activeGradeData.keySkillsDeveloped ?? []).map((item) => (
                           <li
                             key={item}
                             className="flex gap-3 text-sm leading-7 text-slate-600"
