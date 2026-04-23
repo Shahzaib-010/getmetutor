@@ -10,6 +10,7 @@ import { BlogProvider } from "../context/BlogContext";
 import Syllabus from "../pages/Syllabus";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Terms from "../pages/Terms";
+import About from "../pages/About";
 
 export function getRouter() {
   return createBrowserRouter([
@@ -41,6 +42,10 @@ export function getRouter() {
         {
           path: "pricing",
           element: <Pricing />,
+        },
+        {
+          path: "about",
+          element: <About />,
         },
         {
           path: "blogs",

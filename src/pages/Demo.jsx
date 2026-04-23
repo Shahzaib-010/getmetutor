@@ -77,14 +77,7 @@ function Demo() {
       </section>
 
       <BannerLoop
-        items={[
-          "BOOK DEMO",
-          "AVAILABLE SLOTS",
-          "INSTANT CONFIRMATION",
-          "MEET YOUR TUTOR",
-          "LEARN FASTER",
-        ]}
-        bg="#0b0b0b"
+        
       />
 
       <section
@@ -96,16 +89,13 @@ function Demo() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
               Book a meeting
             </p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
               Reserve Your Demo Session
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-              Now that the visitor has context, the booking section arrives at the right
-              moment. Pick any available slot and confirm the session in under a minute.
-            </p>
+            
           </div>
 
-          <div className="bg-[var(--color-bg)] px-2 pb-2 pt-4 sm:px-4 sm:pb-4">
+          <div className=" bg-[var(--color-bg)] px-2 pb-2 pt-4 sm:px-4 sm:pb-4">
             <InlineWidget
               url={CALENDLY_EVENT_URL}
               styles={{ height: "640px" }}
@@ -118,7 +108,7 @@ function Demo() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-bg)] px-5 py-12 sm:px-8 md:px-10 lg:px-16">
+      <section className="w-full bg-[var(--color-bg)] px-5 py-12 sm:px-8 md:px-10 lg:px-16 srolllbar-hide">
         <div className="mx-auto max-w-4xl">
           <div className="overflow-hidden rounded-[1.75rem] border border-gray-200 bg-white shadow-[0_18px_50px_-35px_rgba(15,23,42,0.3)]">
             <div
