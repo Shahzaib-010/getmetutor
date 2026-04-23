@@ -1732,6 +1732,22 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  // If subject is a high-school science (Physics, Chemistry, Biology) but there is no
+  // country-specific override above, expose only Grade 9-12 entries (high-school range).
+  if (["Physics", "Chemistry", "Biology"].includes(subjectName)) {
+    const highSchoolIndices = [9, 10, 11, 12];
+    const hsGrades = highSchoolIndices.map((gradeIndex) =>
+      createGradeContent(countryName, subjectName, gradeIndex)
+    );
+
+    return {
+      id: `${countryName.toLowerCase()}-${subjectName.toLowerCase().replace(/\s+/g, "-")}`,
+      name: subjectName,
+      shortDescription: `${subjectName} pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: hsGrades,
+    };
+  }
+
   return {
     id: `${countryName.toLowerCase()}-${subjectName.toLowerCase().replace(/\s+/g, "-")}`,
     name: subjectName,
