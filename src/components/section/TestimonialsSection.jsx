@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { ChevronDown, Quote, Star } from "lucide-react";
+import Button from "../ui/Button";
+
+const WHATSAPP_URL =
+  "https://wa.me/923160479437?text=" +
+  encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
 const reviews = [
   {
@@ -127,6 +132,14 @@ Trusted by students & parents in UK, USA, Canada & Australia
               </div>
               <div className="hidden h-10 w-px bg-gray-200 sm:block" aria-hidden />
               
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                text="Contact Us"
+              />
             </div>
           </motion.div>
 

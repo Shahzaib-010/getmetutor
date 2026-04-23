@@ -150,14 +150,14 @@ function Syllabus() {
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-12 w-full max-w-[90%]"
+          className="mx-auto mt-12 w-full max-w-5xl"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeUp}
         >
           <div className="overflow-x-auto rounded-[2rem] border border-slate-200/70 bg-white/90 p-2 shadow-[0_20px_80px_-40px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/75">
-            <div className="grid snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-4">
+            <div className="grid snap-x snap-mandatory grid-cols-1 gap-2 sm:grid-cols-2 lg:min-w-0 lg:grid-cols-3">
               {countryOrder.map((country) => {
                 const isActive = country === selectedCountry;
                 const countryMeta = syllabusData[country];
@@ -250,7 +250,7 @@ function Syllabus() {
           </div>
 
           <motion.div
-            className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:flex xl:flex-wrap"
+            className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
             variants={subjectContainer}
             initial="hidden"
             animate="visible"
@@ -264,7 +264,7 @@ function Syllabus() {
                   type="button"
                   variants={subjectItem}
                   onClick={() => handleSubjectSelect(subject.name)}
-                  className={`group relative overflow-hidden rounded-[1.5rem] border p-5 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 xl:min-w-[220px] xl:flex-1 ${
+                  className={`group relative overflow-hidden rounded-[1.5rem] border p-5 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 ${
                     isActive
                       ? "border-transparent bg-slate-950 text-white shadow-xl"
                       : "border-slate-200 bg-white hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg"
@@ -391,9 +391,6 @@ function Syllabus() {
                       <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
                         {selectedSubjectData.name} for {activeGradeData.title}
                       </h3>
-                      <p className="mt-4 text-base leading-8 text-slate-600">
-                        {activeGradeData.details}
-                      </p>
                     </div>
                     <div className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}>
                       <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
@@ -402,27 +399,68 @@ function Syllabus() {
                     </div>
                   </div>
 
-                  <div className="mt-8 grid gap-3 md:grid-cols-3">
-                    {activeGradeData.outcomes.map((outcome) => (
-                      <div
-                        key={outcome}
-                        className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-7 text-slate-600"
-                      >
-                        {outcome}
+                  <div className="mt-8 grid gap-5 lg:grid-cols-2">
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500 shadow-sm">
+                          Overview
+                        </span>
                       </div>
-                    ))}
+                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                        {activeGradeData.overview}
+                      </p>
+                    </div>
+
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500 shadow-sm">
+                          How We Help at Get Me Tutor
+                        </span>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                        {activeGradeData.howWeHelp}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="mt-8 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500 shadow-sm">
-                        Quick summary
-                      </span>
-                      <span className="text-xs font-medium text-slate-400">Academic Path</span>
+                  <div className="mt-5 grid gap-5 lg:grid-cols-2">
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="inline-flex rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+                          What Students Learn
+                        </span>
+                      </div>
+                      <ul className="mt-4 space-y-3">
+                        {activeGradeData.whatStudentsLearn.map((item) => (
+                          <li
+                            key={item}
+                            className="flex gap-3 text-sm leading-7 text-slate-600"
+                          >
+                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-orange-400" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">
-                      {activeGradeData.summary}
-                    </p>
+
+                    <div className="rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="inline-flex rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+                          Key Skills Developed
+                        </span>
+                      </div>
+                      <ul className="mt-4 space-y-3">
+                        {activeGradeData.keySkillsDeveloped.map((item) => (
+                          <li
+                            key={item}
+                            className="flex gap-3 text-sm leading-7 text-slate-600"
+                          >
+                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </motion.article>
               ) : null}

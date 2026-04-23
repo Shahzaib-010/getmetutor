@@ -4,6 +4,11 @@ import { motion } from "motion/react";
 import { ArrowRight, Clock3, Sparkles } from "lucide-react";
 
 import { useBlogs } from "../../context/BlogContext";
+import Button from "../ui/Button";
+
+const WHATSAPP_URL =
+  "https://wa.me/923160479437?text=" +
+  encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
 function estimateReadTime(blog) {
   const contentText = String(blog?.content || "")
@@ -81,6 +86,10 @@ export default function BlogsPreviewSection() {
             Show more
             <ArrowRight size={16} />
           </Link>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" text="Contact Us" />
         </div>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">

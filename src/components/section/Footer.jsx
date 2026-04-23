@@ -5,14 +5,15 @@ import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   const footerLinks = {
     product: [
-      { name: "Our Products", path: "/products" },
-      { name: "GetmeTutor for Students", path: "/students" },
-      { name: "GetmeTutor for Tutors", path: "/tutors" },
-    ],
-    company: [
+      { name: "Home", path: "/" },
       { name: "About Us", path: "/about" },
-      { name: "Blog", path: "/blog" },
+      { name: "How It Works", path: "#howitworks" },
+      { name: "Demo", path: "/demo" },
+      { name: "Syllabus", path: "/syllabus" },
+
     ],
+  
+
     legal: [
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Terms & Conditions", path: "/terms" },
@@ -45,7 +46,7 @@ const Footer = () => {
         <NavLink to="/" className="flex items-center gap-3 w-fit">
           <div className="w-3 h-3 rounded-full bg-[var(--color-primary)]" />
           <h2 className="text-2xl font-semibold tracking-wide">
-            GetmeTutor
+            GetMeTutor
           </h2>
         </NavLink>
 
@@ -69,7 +70,7 @@ const Footer = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
-            Product
+            Quick Links
           </h3>
 
           <div className="space-y-3">
@@ -85,30 +86,7 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Company */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
-            Company
-          </h3>
-
-          <div className="space-y-3">
-            {footerLinks.company.map((item, i) => (
-              <NavLink
-                key={i}
-                to={item.path}
-                className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
-              >
-                {item.name}
-              </NavLink>
-            ))}
-          </div>
-        </motion.div>
+       
 
         {/* Contact */}
         <motion.div
@@ -178,7 +156,7 @@ const Footer = () => {
         className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       >
         <p className="text-xs sm:text-sm text-gray-500">
-          All rights reserved 2026 © GetmeTutor
+          All rights reserved 2026 © GetMeTutor
         </p>
 
         <div className="flex flex-wrap gap-5">

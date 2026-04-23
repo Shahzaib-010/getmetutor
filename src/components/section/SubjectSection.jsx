@@ -41,7 +41,7 @@ function SubjectSection() {
 							Navigate country-specific subjects, compare progression by grade, and understand what
 							students are expected to master at every stage.
 						</p>
-						<Button to="/syllabus" text="Explore syllabus" />
+						<Button to="/demo" text="Book Free Demo" />
 					</div>
 
 					<div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">

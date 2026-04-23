@@ -109,7 +109,7 @@ export default function Navbar() {
           {/* CTA — hidden on tablet & below */}
           <div className="hidden md:flex items-center">
            <Link
-							to="/syllabus"
+							to="/demo"
 							className=" inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[12px]  text-white transition hover:bg-orange-500"
 						>
 							Book Free Demo

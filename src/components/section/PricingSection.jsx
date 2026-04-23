@@ -10,6 +10,7 @@ import {
   User,
   Zap,
 } from "lucide-react";
+import Button from "../ui/Button";
 
 /** Design tokens — match reference */
 const ORANGE = "#FF6B35";
@@ -29,7 +30,7 @@ const REGIONS = {
       personal: {
         name: "Package 1",
         tagline: "Good for steady weekly progress",
-        price: 200,
+        price: 200, // 8 lessons x $25
         was: 240,
         cta: "Book Free Trial",
         devices: "8 Lessons / Month",
@@ -44,7 +45,7 @@ const REGIONS = {
       standard: {
         name: "Package 2",
         tagline: "Most Popular — Best for faster improvement and exam prep",
-        price: 264,
+        price: 264, // 12 lessons x $22
         was: 312,
         cta: "Book Free Trial",
         devices: "12 Lessons / Month",
@@ -91,8 +92,8 @@ const REGIONS = {
       personal: {
         name: "Package 1",
         tagline: "Good for steady weekly progress",
-        price: 200,
-        was: 240,
+        price: 160, // 8 lessons x £20
+        was: 192,
         cta: "Book Free Trial",
         devices: "8 Lessons / Month",
         icon: User,
@@ -100,14 +101,14 @@ const REGIONS = {
           { text: "8 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
           { text: "Monthly billing" },
-          { text: "$25 per lesson" },
+          { text: "£20 per lesson" },
         ],
       },
       standard: {
         name: "Package 2",
         tagline: "Most Popular — Best for faster improvement and exam prep",
-        price: 264,
-        was: 312,
+        price: 216, // 12 lessons x £18
+        was: 256,
         cta: "Book Free Trial",
         devices: "12 Lessons / Month",
         icon: Zap,
@@ -116,7 +117,7 @@ const REGIONS = {
           { text: "12 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
           { text: "Monthly billing" },
-          { text: "$22 per lesson" },
+          { text: "£18 per lesson" },
         ],
       },
       pro: {
@@ -153,7 +154,7 @@ const REGIONS = {
       personal: {
         name: "Package 1",
         tagline: "Good for steady weekly progress",
-        price: 200,
+        price: 200, // 8 lessons x $25
         was: 240,
         cta: "Book Free Trial",
         devices: "8 Lessons / Month",
@@ -168,7 +169,7 @@ const REGIONS = {
       standard: {
         name: "Package 2",
         tagline: "Most Popular — Best for faster improvement and exam prep",
-        price: 264,
+        price: 264, // 12 lessons x $22
         was: 312,
         cta: "Book Free Trial",
         devices: "12 Lessons / Month",
@@ -215,7 +216,7 @@ const REGIONS = {
       personal: {
         name: "Package 1",
         tagline: "Good for steady weekly progress",
-        price: 200,
+        price: 200, // 8 lessons x $25
         was: 240,
         cta: "Book Free Trial",
         devices: "8 Lessons / Month",
@@ -230,7 +231,7 @@ const REGIONS = {
       standard: {
         name: "Package 2",
         tagline: "Most Popular — Best for faster improvement and exam prep",
-        price: 264,
+        price: 264, // 12 lessons x $22
         was: 312,
         cta: "Book Free Trial",
         devices: "12 Lessons / Month",
@@ -376,9 +377,9 @@ function PricingSection({ className = "" }) {
         </div>
 
         {/* Footer */}
-          <div>
-            {/* button */}
-          </div>
+        <div className="mt-10 flex justify-center">
+          <Button to="/demo" text="Book Free Demo" />
+        </div>
       </div>
     </section>
   );

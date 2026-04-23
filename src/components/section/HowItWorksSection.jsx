@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 
 import { ArrowRight, BookOpen, GraduationCap, Sparkles } from "lucide-react";
+import Button from "../ui/Button";
 
 const steps = [
 	{
@@ -154,13 +155,7 @@ export default function HowItWorksSection({ className = "" }) {
 
 				{/* CTA below steps */}
 				<div className="mt-10 text-center">
-					<a
-						href="/demo"
-						className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95 hover:text-black"
-					>
-						Book Free Trial 
-            <ArrowRight size={15} />
-					</a>
+					<Button to="/demo" text="Book Free Demo" className="bg-[var(--color-primary)] text-sm font-semibold hover:text-white" />
 				</div>
 			</div>
 		</section>

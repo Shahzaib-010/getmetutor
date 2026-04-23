@@ -7,19 +7,19 @@ import {
 } from "motion/react";
 
 const DEFAULT_ITEMS = [
-  "MOTION GRAPHIC",
-  "ART DIRECTION",
-  "DESIGN",
-  "BRANDING",
-  "DEVELOPMENT",
-  "STRATEGY",
-  "PRODUCT DESIGN",
+  "/images/banner-imgs/cambridge.png",
+  "/images/banner-imgs/aqa.png",
+  "/images/banner-imgs/act.png",
+  "/images/banner-imgs/pearson.png",
+  "/images/banner-imgs/acara.png",
+  "/images/banner-imgs/nzqa.png",
+  "/images/banner-imgs/qsta.png",
+  "/images/banner-imgs/ap-student.png",
 ];
 
 function BannerLoop({
   items = DEFAULT_ITEMS,
-  bg = "#000000",
-  iconSrc = "/images/star1.svg",
+  bg = "#ffffff",
   speedSeconds = 18,
   className = "h-23 flex justify-center items-center",
 }) {
@@ -81,7 +81,7 @@ function BannerLoop({
       aria-label="Scrolling banner"
     >
       <div ref={viewportRef} className="relative w-full">
-        <motion.div className="flex w-max items-center whitespace-nowrap" style={{ x }}>
+        <motion.div className="flex w-max items-center whitespace-nowrap border" style={{ x }}>
           {Array.from({ length: copyCount }).map((_, copyIdx) => (
             <div
               key={copyIdx}
@@ -89,30 +89,58 @@ function BannerLoop({
               className="flex items-center"
               aria-hidden={copyIdx !== 0}
             >
-              {safeItems.map((label, idx) => (
-                <div
-                  key={`${copyIdx}-${label}-${idx}`}
-                  className="flex items-center py-3 sm:py-3.5 md:py-4"
-                >
-                  <span className="px-5 sm:px-6 md:px-7 text-[11px] sm:text-xs md:text-[18px] font-semibold tracking-[0.18em] text-white/90 uppercase">
-                    {label}
-                  </span>
-                  <img
-                    src={iconSrc}
-                    alt=""
-                    aria-hidden="true"
-                    className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-[22px] md:w-[22px] opacity-95"
-                    loading="lazy"
-                    draggable="false"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
+              {safeItems.map((item, idx) => {
+                const isImage = typeof item === "string" && /\.(png|jpe?g|svg|avif|webp)$/i.test(item);
+                return (
+                  <div
+                    key={`${copyIdx}-${item}-${idx}`}
+                    className="flex items-center py-2 sm:py-3 md:py-4"
+                  >
+                    {isImage ? (
+                      <>
+                        <img
+                          src={item}
+                          alt="trusted partner"
+                          aria-hidden="false"
+                          className="h-6 w-auto px-3 sm:h-8 sm:px-6 md:h-10 md:px-8 object-contain"
+                          loading="lazy"
+                          draggable="false"
+                        />
 
-export default BannerLoop;
+                        {/* star separator (visible between logos) */}
+                        <img
+                          src="/images/star1.svg"
+                          alt="separator"
+                          aria-hidden="true"
+                          className="h-4 w-4 opacity-90 sm:h-5 sm:w-5 md:h-6 md:w-6 mx-1 sm:mx-2"
+                          loading="lazy"
+                          draggable="false"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <span className="px-3 sm:px-6 md:px-7 text-[11px] sm:text-xs md:text-[22px] font-semibold tracking-[0.18em] text-white/90 uppercase">
+                          {item}
+                        </span>
+                        <img
+                          src="/images/star1.svg"
+                          alt="separator"
+                          aria-hidden="true"
+                          className="h-4 w-4 opacity-90 sm:h-5 sm:w-5 md:h-6 md:w-6 mx-1 sm:mx-2"
+                          loading="lazy"
+                          draggable="false"
+                        />
+                      </>
+                    )}
+                  </div>
+                );
+              })}
+             </div>
+           ))}
+         </motion.div>
+       </div>
+     </section>
+   );
+ }
+ 
+ export default BannerLoop;

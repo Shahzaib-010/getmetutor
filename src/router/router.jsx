@@ -8,6 +8,8 @@ import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import { BlogProvider } from "../context/BlogContext";
 import Syllabus from "../pages/Syllabus";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Terms from "../pages/Terms";
 
 export function getRouter() {
   return createBrowserRouter([
@@ -47,6 +49,14 @@ export function getRouter() {
         {
           path: "blogs/:slug",
           element: <BlogDetails />,
+        },
+        {
+          path: "privacy-policy",
+          element: <PrivacyPolicy />,
+        },
+        {
+          path: "terms",
+          element: <Terms />,
         },
       ],
     },

@@ -1,8 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Minus, Plus } from "lucide-react";
+import Button from "../ui/Button";
 
 const ORANGE = "#E94D35";
+const WHATSAPP_URL =
+  "https://wa.me/923160479437?text=" +
+  encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
 export default function Faq({
   title = "Frequently Asked Questions",
@@ -16,31 +20,43 @@ export default function Faq({
         ? items
         : [
             {
-              q: "What types of courses do you offer?",
-              a: "We offer skill-based courses across technology, design, and business—built with real-world projects and modern workflows.",
+              q: "What subjects do you offer?",
+              a: "We cover Math, English, Physics, Chemistry, Biology, and Science.",
             },
             {
-              q: "Are the courses beginner-friendly?",
-              a: "Yes. Each course is structured from fundamentals to advanced topics, with guided exercises and clear milestones.",
+              q: "Who are the tutors?",
+              a: "Our tutors are experienced educators and subject specialists with strong backgrounds in teaching students across grade levels.",
             },
             {
-              q: "How do I access the courses after enrolling?",
-              a: "After enrollment, you’ll get instant access from your dashboard on desktop and mobile—anytime, anywhere.",
+              q: "How do online tutoring sessions work?",
+              a: "Sessions are conducted live online through an easy-to-use platform where students can interact with tutors in real time for questions, explanations, and guided practice.",
             },
             {
-              q: "Are the courses self-paced?",
-              a: "Most courses are self‑paced with suggested weekly plans so you can move faster or slower as needed.",
+              q: "Can I choose my tutor?",
+              a: "Yes — you can select a tutor based on subject expertise and availability. We also provide recommendations if you prefer our matching support.",
             },
             {
-              q: "Do I receive a certificate after completion?",
-              a: "Yes, you'll receive a certificate of completion after successfully finishing a course, which you can share on your resume or social profiles.",
+              q: "Do you offer a free trial session?",
+              a: "Yes, we offer a free trial session so you can meet a tutor and experience our teaching approach before committing.",
+            },
+            {
+              q: "What grades or levels do you support?",
+              a: "We provide tutoring for Reception to Year 13 (UK, Australia, New Zealand) and KG to Grade 12 (USA, Canada).",
+            },
+            {
+              q: "How do I schedule a session?",
+              a: "Book sessions directly online at your preferred time — click 'Book Now' to fill out a short form and our team will contact you to confirm.",
+            },
+            {
+              q: "Is there a refund policy?",
+              a: "Yes, we have a refund policy. Please review our Refund Policy page or contact support for details.",
             },
           ],
     [items]
   );
 
 
-  const [openIdx, setOpenIdx] = useState(4);
+  const [openIdx, setOpenIdx] = useState(1);
 
   return (
     <section className={`w-full font-open-sans ${className}`}>
@@ -118,6 +134,15 @@ export default function Faq({
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <Button
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            text="Contact Us"
+          />
         </div>
       </div>
     </section>
