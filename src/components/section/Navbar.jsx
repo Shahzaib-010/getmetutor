@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Logo */}
           <NavLink
             to="/"
-            className="sm:w-30 md:w-34 lg:w-40"
+            className="w-32 md:w-34 lg:w-40"
           >
             <img src="/images/Logo.png" alt="" />
           </NavLink>
@@ -158,72 +158,87 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 flex flex-col justify-between px-6 pt-24 pb-12 antialiased"
+            className="fixed inset-0 z-40 px-6 pt-24 pb-10 antialiased"
             style={{
-              background: "rgba(255,255,255,0.75)",
-              backdropFilter: "blur(24px) saturate(180%)",
-              WebkitBackdropFilter: "blur(24px) saturate(180%)",
-              borderBottom: "1px solid rgba(0,0,0,0.06)",
+              background: "rgba(255,255,255,0.94)",
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
             }}
           >
-            {/* Links */}
-            <div className="flex flex-col items-center gap-2">
-              {menuLinks.map((link, i) => (
-                <motion.div
-                  key={link.to || link.label}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 + i * 0.06 }}
-                  className="w-full"
-                >
-                  {link.anchor ? (
-                    <button
-                      onClick={() => scrollToSection(link.anchor)}
-                      className="block w-full text-center py-3.5 text-xl font-semibold tracking-tight border-b border-gray-100 transition-colors duration-200 leading-snug text-gray-500 hover:text-gray-900"
-                    >
-                      {link.label}
-                    </button>
-                  ) : (
-                    <NavLink
-                      to={link.to}
-                      onClick={() => setIsOpen(false)}
-                      className={({ isActive }) =>
-                        `block w-full text-center py-3.5 text-xl font-semibold tracking-tight border-b border-gray-100 transition-colors duration-200 leading-snug ${
-                          isActive ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
-                        }`
-                      }
-                    >
-                      {link.label}
-                    </NavLink>
-                  )}
-                </motion.div>
-              ))}
+            <div className="mx-auto flex h-full w-full max-w-sm flex-col items-center">
+              <div className="relative mt-4 h-16 w-full overflow-hidden">
+                <div className="absolute left-1/2 top-0 h-24 w-24 -translate-x-1/2 rounded-full bg-orange-200/45 blur-3xl" />
+                <div className="absolute left-1/2 top-3 h-14 w-56 -translate-x-1/2 rounded-full bg-white/65 blur-2xl" />
+              </div>
 
-              {/* CTA in mobile menu */}
+              <div className="w-full border-b border-gray-200/80">
+                <div className="flex flex-col">
+                  {menuLinks.map((link, i) => (
+                    <motion.div
+                      key={link.to || link.label}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 + i * 0.06 }}
+                      className="w-full border-b border-gray-200/80 last:border-b-0"
+                    >
+                      {link.anchor ? (
+                        <button
+                          onClick={() => scrollToSection(link.anchor)}
+                          className="block w-full py-5 text-center text-[1.08rem] font-semibold tracking-tight text-gray-700 transition-all duration-200 hover:bg-gray-50/70 hover:text-gray-950"
+                        >
+                          {link.label}
+                        </button>
+                      ) : (
+                        <NavLink
+                          to={link.to}
+                          onClick={() => setIsOpen(false)}
+                          className={({ isActive }) =>
+                            `block w-full py-5 text-center text-[1.08rem] font-semibold tracking-tight transition-all duration-200 ${
+                              isActive
+                                ? "bg-gray-50/80 text-gray-950"
+                                : "text-gray-700 hover:bg-gray-50/70 hover:text-gray-950"
+                            }`
+                          }
+                        >
+                          {link.label}
+                        </NavLink>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 + menuLinks.length * 0.06 }}
-                className="w-full mt-6"
+                transition={{ duration: 0.3, ease: "easeOut", delay: 0.38 }}
+                className="mt-auto flex items-center justify-center gap-6 pb-2 pt-8"
               >
-                <NavLink
-                  to="/demo"
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-center py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-700 transition-colors duration-200 leading-tight"
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
                 >
-                  Demo
-                </NavLink>
+                  Instagram
+                </a>
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
+                >
+                  LinkedIn
+                </a>
               </motion.div>
-            </div>
-
-            {/* Footer socials */}
-            <div className="flex justify-center gap-8 text-xs uppercase tracking-[0.22em] text-gray-400 font-semibold">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-colors">
-                GitHub
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-colors">
-                LinkedIn
-              </a>
             </div>
           </motion.div>
         )}

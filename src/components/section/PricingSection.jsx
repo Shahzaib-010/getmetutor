@@ -379,7 +379,7 @@ function  PricingSection({ className = "" }) {
 
         {/* Footer */}
         <div className="mt-10 flex justify-center">
-          <Button to="/demo" text="Book Free Demo" />
+          <Button to="/demo" text="Book Free Trial" />
         </div>
       </div>
     </section>
