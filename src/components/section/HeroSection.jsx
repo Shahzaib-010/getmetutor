@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <Background>
     <section className="relative w-full overflow-hidden bg-transparent font-open-sans">
-      <div className="relative mx-auto max-w-[90%] py-12 sm:py-14 lg:py-20">
+      <div className="relative mx-auto max-w-[90%] py-12 sm:py-14 lg:py-13">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           {/* LEFT */}
           <motion.div
@@ -82,7 +82,7 @@ const HeroSection = () => {
               <img
                 src="/images/hero-img1.jpg"
                 alt="Students learning online with GetmeTutor"
-                className="relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
+                className="h-[80vh] relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
                 loading="eager"
               />
             </div>

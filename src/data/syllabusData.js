@@ -827,6 +827,368 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  if (countryName === "USA" && subjectName === "Maths") {
+    const mathGrades = [
+      {
+        id: `${countryName.toLowerCase()}-maths-0`,
+        title: "Kindergarten (KG)",
+        summary:
+          "In Kindergarten, students begin developing foundational mathematical understanding through visual and hands-on learning.",
+        overview:
+          "In Kindergarten, students begin developing foundational mathematical understanding through visual and hands-on learning. The focus is on number recognition, counting, patterns, and simple operations that build early confidence in maths.",
+        whatStudentsLearn: [
+          "Counting numbers up to 100 using objects and visuals",
+          "Recognizing, reading, and writing numbers",
+          "Basic addition and subtraction using pictures and real-life examples",
+          "Identifying and naming shapes (circle, square, triangle, rectangle)",
+          "Understanding patterns and sorting objects",
+          "Comparing quantities (greater than, less than, equal to)",
+          "Introduction to measurement concepts (length, size, weight)",
+        ],
+        keySkillsDeveloped: [
+          "Strong number sense and recognition",
+          "Visual understanding of mathematical concepts",
+          "Early problem-solving ability",
+          "Logical thinking and pattern recognition",
+          "Confidence in basic numerical tasks",
+        ],
+        howWeHelp:
+          "We use engaging activities, visual tools, and simple explanations to make maths enjoyable and easy to understand. Our tutors focus on building strong foundational skills while ensuring each child learns at their own pace.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-1`,
+        title: "Grade 1",
+        summary:
+          "In Grade 1, students strengthen their understanding of numbers and begin solving more structured mathematical problems.",
+        overview:
+          "In Grade 1, students strengthen their understanding of numbers and begin solving more structured mathematical problems. The focus is on building fluency in addition and subtraction, improving number sense, and introducing basic measurement and time concepts.",
+        whatStudentsLearn: [
+          "Addition and subtraction within 20",
+          "Understanding place value using tens and ones",
+          "Counting forward and backward within 100",
+          "Comparing numbers and identifying greater than or less than",
+          "Solving simple word problems",
+          "Telling time to the hour and half hour",
+          "Measuring lengths using non-standard and standard units",
+          "Recognizing basic two-dimensional and three-dimensional shapes",
+        ],
+        keySkillsDeveloped: [
+          "Fluency with basic addition and subtraction",
+          "Improved number sense and mental maths",
+          "Early problem-solving strategies",
+          "Ability to understand and compare quantities",
+          "Confidence in applying maths to everyday situations",
+        ],
+        howWeHelp:
+          "Our tutors guide students step by step to strengthen core arithmetic skills and improve understanding of number relationships. We use simple explanations, consistent practice, and engaging examples to help children become more confident and accurate in maths.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-2`,
+        title: "Grade 2",
+        summary:
+          "In Grade 2, students expand their arithmetic knowledge and begin working more confidently with larger numbers.",
+        overview:
+          "In Grade 2, students expand their arithmetic knowledge and begin working more confidently with larger numbers. The year focuses on addition, subtraction, early multiplication concepts, place value, and real-life applications such as time and money.",
+        whatStudentsLearn: [
+          "Addition and subtraction within 100 and beyond",
+          "Understanding place value up to hundreds",
+          "Skip counting and introduction to multiplication concepts",
+          "Solving one-step and two-step word problems",
+          "Working with money and making simple calculations",
+          "Reading clocks and understanding time intervals",
+          "Measuring length using standard units",
+          "Interpreting simple charts and picture graphs",
+        ],
+        keySkillsDeveloped: [
+          "Accuracy in addition and subtraction",
+          "Stronger number fluency and place value understanding",
+          "Improved problem-solving ability",
+          "Ability to connect maths with real-life situations",
+          "Growing confidence in handling larger numbers",
+        ],
+        howWeHelp:
+          "We help students strengthen their arithmetic foundations through guided practice, visual models, and real-life examples. Our tutors focus on helping learners understand the logic behind calculations so they can apply maths with greater confidence and independence.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-3`,
+        title: "Grade 3",
+        summary:
+          "In Grade 3, students move from basic arithmetic to more structured problem-solving.",
+        overview:
+          "In Grade 3, students move from basic arithmetic to more structured problem-solving. The focus is on building strong multiplication and division foundations, understanding fractions, and applying maths in practical and meaningful ways.",
+        whatStudentsLearn: [
+          "Multiplication and division within 100",
+          "Understanding and representing fractions",
+          "Solving one-step and multi-step word problems",
+          "Measuring length, mass, and volume",
+          "Understanding area and perimeter at an introductory level",
+          "Reading and interpreting bar graphs and picture graphs",
+          "Recognizing patterns and number relationships",
+          "Working with basic geometry concepts",
+        ],
+        keySkillsDeveloped: [
+          "Strong multiplication and division fluency",
+          "Improved problem-solving and reasoning",
+          "Better understanding of number relationships",
+          "Ability to apply maths to real-life situations",
+          "Confidence in handling more complex questions",
+        ],
+        howWeHelp:
+          "At Get Me Tutor, we break multiplication, division, and fractions into simple, understandable steps. Our tutors provide focused practice and support to help students build fluency, improve accuracy, and feel more confident in solving problems independently.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-4`,
+        title: "Grade 4",
+        summary:
+          "In Grade 4, students deepen their understanding of arithmetic and begin handling larger numbers and more detailed operations.",
+        overview:
+          "In Grade 4, students deepen their understanding of arithmetic and begin handling larger numbers and more detailed operations. The year focuses on multi-digit multiplication, division, fractions, decimals, and stronger problem-solving skills.",
+        whatStudentsLearn: [
+          "Multi-digit addition and subtraction",
+          "Multi-digit multiplication",
+          "Long division basics",
+          "Understanding equivalent fractions and comparing fractions",
+          "Introduction to decimals",
+          "Measuring angles and exploring geometry concepts",
+          "Solving word problems involving multiple operations",
+          "Interpreting and organizing data",
+        ],
+        keySkillsDeveloped: [
+          "Accuracy in calculations with larger numbers",
+          "Stronger step-by-step problem-solving ability",
+          "Better understanding of fractions and decimals",
+          "Logical reasoning and organization",
+          "Confidence in using multiple operations together",
+        ],
+        howWeHelp:
+          "Our tutors help students approach larger calculations with clear methods and structured guidance. We simplify difficult concepts such as long division and fractions, helping learners build strong understanding and avoid confusion as maths becomes more advanced.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-5`,
+        title: "Grade 5",
+        summary:
+          "In Grade 5, students strengthen their understanding of fractions, decimals, measurement, and introductory algebraic thinking.",
+        overview:
+          "In Grade 5, students strengthen their understanding of fractions, decimals, measurement, and introductory algebraic thinking. The focus is on building precision, reasoning, and readiness for middle school mathematics.",
+        whatStudentsLearn: [
+          "Adding, subtracting, multiplying, and dividing fractions",
+          "Working confidently with decimals",
+          "Understanding volume and measurement",
+          "Interpreting numerical expressions",
+          "Solving multi-step word problems",
+          "Plotting points on coordinate grids",
+          "Understanding patterns and basic algebraic relationships",
+          "Interpreting graphs and data sets",
+        ],
+        keySkillsDeveloped: [
+          "Precision in working with fractions and decimals",
+          "Improved analytical thinking",
+          "Stronger multi-step problem-solving",
+          "Better understanding of mathematical patterns",
+          "Readiness for more abstract mathematical concepts",
+        ],
+        howWeHelp:
+          "We support students by making fractions, decimals, and multi-step problems easier to understand through clear explanations and guided practice. Our tutors focus on building both confidence and accuracy so students are prepared for the transition into middle school maths.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-6`,
+        title: "Grade 6",
+        summary:
+          "In Grade 6, students transition into more advanced mathematical thinking.",
+        overview:
+          "In Grade 6, students transition into more advanced mathematical thinking. The curriculum introduces ratios, integers, algebraic expressions, and data analysis, helping students move from arithmetic into more abstract concepts.",
+        whatStudentsLearn: [
+          "Ratios, rates, and percentages",
+          "Operations with fractions and decimals",
+          "Integers and rational numbers",
+          "Writing and evaluating algebraic expressions",
+          "Solving simple equations",
+          "Understanding area, surface area, and volume",
+          "Interpreting statistical data",
+          "Working with coordinate planes and graphs",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking and reasoning",
+          "Ability to understand and use algebraic language",
+          "Greater confidence with problem-solving",
+          "Stronger conceptual understanding of number operations",
+          "Improved ability to interpret data and relationships",
+        ],
+        howWeHelp:
+          "Our tutors guide students through the transition from basic arithmetic to abstract mathematical thinking. We explain new concepts in a step-by-step way, reinforce understanding through practice, and help learners become more confident in handling middle school maths.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-7`,
+        title: "Grade 7",
+        summary:
+          "In Grade 7, students continue building on algebraic and numerical concepts while developing stronger reasoning and problem-solving skills.",
+        overview:
+          "In Grade 7, students continue building on algebraic and numerical concepts while developing stronger reasoning and problem-solving skills. The curriculum becomes more analytical and focuses on applying maths in a structured way.",
+        whatStudentsLearn: [
+          "Operations with rational numbers",
+          "Algebraic expressions and equations",
+          "Proportional relationships",
+          "Percent problems and real-life applications",
+          "Geometry involving angles, area, and volume",
+          "Probability and simple statistics",
+          "Solving multi-step equations and inequalities",
+          "Analyzing graphs and mathematical relationships",
+        ],
+        keySkillsDeveloped: [
+          "Stronger algebraic thinking",
+          "Improved logical reasoning",
+          "Ability to solve multi-step problems",
+          "Better understanding of proportional relationships",
+          "Greater confidence in applying concepts in different contexts",
+        ],
+        howWeHelp:
+          "We help students build strong algebra foundations while improving their understanding of proportions, equations, and geometry. Our tutors focus on clarity, method, and repeated practice so learners can apply mathematical ideas more independently and accurately.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-8`,
+        title: "Grade 8",
+        summary:
+          "In Grade 8, students prepare for high school mathematics by working with linear equations, functions, transformations, and more advanced geometry.",
+        overview:
+          "In Grade 8, students prepare for high school mathematics by working with linear equations, functions, transformations, and more advanced geometry. The focus is on connecting concepts and building readiness for algebra and higher-level maths.",
+        whatStudentsLearn: [
+          "Linear equations and systems of equations",
+          "Functions and graphing relationships",
+          "Exponents and scientific notation",
+          "Understanding slope and rate of change",
+          "Transformations in geometry",
+          "Volume and geometry applications",
+          "Data analysis and statistics",
+          "Solving real-world algebraic problems",
+        ],
+        keySkillsDeveloped: [
+          "Advanced problem-solving ability",
+          "Graph interpretation and analysis",
+          "Stronger algebraic reasoning",
+          "Ability to connect equations with real-life situations",
+          "Readiness for high school level maths",
+        ],
+        howWeHelp:
+          "Our tutors help students understand how equations, graphs, and functions are connected. We provide structured support for more advanced topics and ensure learners build the confidence and skills needed for success in high school mathematics.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9, students begin high school mathematics with a strong focus on Algebra I concepts.",
+        overview:
+          "In Grade 9, students begin high school mathematics with a strong focus on Algebra I concepts. The curriculum emphasizes equations, inequalities, functions, graphing, and foundational algebraic reasoning.",
+        whatStudentsLearn: [
+          "Solving linear equations and inequalities",
+          "Understanding and graphing functions",
+          "Working with polynomials",
+          "Factoring algebraic expressions",
+          "Solving systems of equations",
+          "Interpreting graphs and mathematical models",
+          "Using algebra in word problems",
+          "Introduction to quadratic relationships",
+        ],
+        keySkillsDeveloped: [
+          "Strong algebraic thinking",
+          "Logical reasoning and mathematical organization",
+          "Ability to model real-world situations using equations",
+          "Improved graph analysis",
+          "Confidence in solving more abstract problems",
+        ],
+        howWeHelp:
+          "We help students build a strong high school maths foundation by teaching algebra in a clear and structured way. Our tutors focus on helping learners understand not just how to solve problems, but why each method works, which leads to better retention and performance.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students usually focus on geometry while continuing to strengthen algebra skills.",
+        overview:
+          "In Grade 10, students usually focus on geometry while continuing to strengthen algebra skills. The curriculum emphasizes reasoning, proofs, coordinate geometry, trigonometry basics, and spatial understanding.",
+        whatStudentsLearn: [
+          "Properties of lines, angles, and triangles",
+          "Congruence and similarity",
+          "Coordinate geometry",
+          "Circles and geometric constructions",
+          "Area, surface area, and volume",
+          "Introductory trigonometry",
+          "Writing and understanding geometric proofs",
+          "Applying geometry in real-world contexts",
+        ],
+        keySkillsDeveloped: [
+          "Spatial reasoning",
+          "Logical proof-based thinking",
+          "Stronger understanding of geometric relationships",
+          "Ability to solve multi-step geometry problems",
+          "Greater confidence in visual and analytical reasoning",
+        ],
+        howWeHelp:
+          "Our tutors simplify geometry by explaining concepts visually and logically. We help students understand proofs, shapes, angles, and relationships in a structured way so they can solve geometry problems more accurately and confidently.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-11`,
+        title: "Grade 11",
+        summary:
+          "In Grade 11, students often study Algebra II, advanced functions, and trigonometry.",
+        overview:
+          "In Grade 11, students often study Algebra II, advanced functions, and trigonometry. The curriculum becomes more rigorous and focuses on preparing students for upper-level maths and standardized exams.",
+        whatStudentsLearn: [
+          "Advanced algebraic expressions and equations",
+          "Functions and transformations",
+          "Polynomial, exponential, and logarithmic functions",
+          "Trigonometric ratios and identities",
+          "Sequences and series",
+          "Complex numbers",
+          "Graphing advanced functions",
+          "Solving higher-level word problems",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Stronger function analysis and graph interpretation",
+          "Ability to solve complex equations",
+          "Improved mathematical reasoning",
+          "Preparation for pre-calculus and college readiness",
+        ],
+        howWeHelp:
+          "We support students through advanced algebra and trigonometry with step-by-step explanations and focused practice. Our tutors help learners build deeper conceptual understanding so they can handle challenging topics with greater confidence.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-maths-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12, students prepare for college-level mathematics through advanced topics such as pre-calculus, trigonometry, probability, and statistics.",
+        overview:
+          "In Grade 12, students prepare for college-level mathematics through advanced topics such as pre-calculus, trigonometry, probability, and statistics. The focus is on mastering higher-level reasoning and exam readiness.",
+        whatStudentsLearn: [
+          "Advanced functions and their behavior",
+          "Pre-calculus concepts",
+          "Trigonometric functions and equations",
+          "Probability and statistics",
+          "Mathematical modeling",
+          "Advanced graphing and analysis",
+          "Problem-solving involving multiple concepts",
+          "Preparation for final assessments and college-level expectations",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking and advanced reasoning",
+          "Ability to solve complex multi-step problems",
+          "Strong readiness for college-level maths",
+          "Improved exam strategy and confidence",
+          "Deeper understanding of advanced mathematical relationships",
+        ],
+        howWeHelp:
+          "At Get Me Tutor, we provide structured support for advanced maths and exam preparation. Our tutors help students strengthen weak areas, master higher-level concepts, and approach final assessments with confidence and clarity.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-maths`,
+      name: "Maths",
+      shortDescription: `Maths pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: mathGrades,
+    };
+  }
+
   if (subjectName === "Maths") {
     const grade2MathsTemplate = {
       overview:
@@ -1435,6 +1797,343 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  if (countryName === "USA" && subjectName === "Science") {
+    const scienceGrades = [
+      {
+        id: `${countryName.toLowerCase()}-science-0`,
+        title: "Kindergarten (KG)",
+        summary:
+          "In Kindergarten, students are introduced to basic scientific concepts through observation, exploration, and hands-on activities.",
+        overview:
+          "In Kindergarten, students are introduced to basic scientific concepts through observation, exploration, and hands-on activities. The focus is on understanding the world around them in a simple and engaging way.",
+        whatStudentsLearn: [
+          "Identifying plants and animals",
+          "Understanding weather and seasons",
+          "Exploring basic needs of living things",
+          "Recognizing simple patterns in nature",
+          "Introduction to senses and observation",
+          "Basic concepts of movement and force",
+        ],
+        keySkillsDeveloped: [
+          "Observation skills",
+          "Curiosity and exploration",
+          "Basic questioning skills",
+          "Understanding of surroundings",
+          "Early scientific thinking",
+        ],
+        howWeHelp:
+          "We make science fun and interactive by using simple explanations, visual examples, and real-life connections to help young learners stay curious and engaged.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-1`,
+        title: "Grade 1",
+        summary:
+          "Grade 1 builds on early scientific awareness and introduces students to simple experiments and basic scientific ideas related to life, earth, and physical science.",
+        overview:
+          "Grade 1 builds on early scientific awareness and introduces students to simple experiments and basic scientific ideas related to life, earth, and physical science.",
+        whatStudentsLearn: [
+          "Living and non-living things",
+          "Basic plant and animal characteristics",
+          "Weather patterns and seasons",
+          "Introduction to light and sound",
+          "Simple forces like push and pull",
+          "Basic experiments and observations",
+        ],
+        keySkillsDeveloped: [
+          "Observation and recording",
+          "Understanding basic concepts",
+          "Asking questions",
+          "Simple problem-solving",
+          "Curiosity about nature",
+        ],
+        howWeHelp:
+          "We guide students through simple experiments and explanations to help them understand science concepts in a clear and engaging way.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-2`,
+        title: "Grade 2",
+        summary:
+          "In Grade 2, students begin to explore science in more detail, focusing on how things work and interact in the natural world.",
+        overview:
+          "In Grade 2, students begin to explore science in more detail, focusing on how things work and interact in the natural world.",
+        whatStudentsLearn: [
+          "Life cycles of plants and animals",
+          "States of matter (solid, liquid, gas)",
+          "Basic ecosystems",
+          "Energy and simple machines",
+          "Weather and environmental changes",
+          "Observing and recording data",
+        ],
+        keySkillsDeveloped: [
+          "Logical thinking",
+          "Observation and comparison",
+          "Understanding cause and effect",
+          "Early data interpretation",
+          "Scientific curiosity",
+        ],
+        howWeHelp:
+          "We help students understand scientific ideas through examples, visual aids, and simple experiments that make learning enjoyable and meaningful.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-3`,
+        title: "Grade 3",
+        summary:
+          "Grade 3 introduces more structured scientific learning, with a focus on understanding systems, environments, and basic physical science concepts.",
+        overview:
+          "Grade 3 introduces more structured scientific learning, with a focus on understanding systems, environments, and basic physical science concepts.",
+        whatStudentsLearn: [
+          "Plant and animal adaptations",
+          "Ecosystems and food chains",
+          "Forces and motion",
+          "Basic properties of matter",
+          "Weather patterns and climate",
+          "Introduction to scientific investigations",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Understanding relationships in nature",
+          "Problem-solving",
+          "Observation and recording",
+          "Applying concepts to real life",
+        ],
+        howWeHelp:
+          "We break down scientific concepts into simple explanations and provide structured support to help students understand and apply their knowledge.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-4`,
+        title: "Grade 4",
+        summary:
+          "In Grade 4, students deepen their understanding of science by exploring energy, earth science, and life science in greater detail.",
+        overview:
+          "In Grade 4, students deepen their understanding of science by exploring energy, earth science, and life science in greater detail.",
+        whatStudentsLearn: [
+          "Energy types and transfer",
+          "Human body systems basics",
+          "Earth structure and natural resources",
+          "Properties of matter",
+          "Simple electrical circuits",
+          "Scientific experiments and observations",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Understanding scientific processes",
+          "Experimentation skills",
+          "Data interpretation",
+          "Logical reasoning",
+        ],
+        howWeHelp:
+          "We guide students through experiments and concept-based learning to build strong understanding and confidence in science.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-5`,
+        title: "Grade 5",
+        summary:
+          "Grade 5 focuses on developing deeper understanding of scientific principles and applying them to real-world situations.",
+        overview:
+          "Grade 5 focuses on developing deeper understanding of scientific principles and applying them to real-world situations.",
+        whatStudentsLearn: [
+          "Human body systems in detail",
+          "Ecosystems and environmental science",
+          "Matter and its changes",
+          "Energy and forces",
+          "Earth and space science",
+          "Conducting simple investigations",
+        ],
+        keySkillsDeveloped: [
+          "Scientific reasoning",
+          "Problem-solving",
+          "Data analysis",
+          "Understanding systems and processes",
+          "Applying knowledge",
+        ],
+        howWeHelp:
+          "We help students connect scientific concepts with real-life examples and strengthen their understanding through structured lessons and practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-6`,
+        title: "Grade 6",
+        summary:
+          "In Grade 6, students transition into more advanced scientific thinking, focusing on earth science, physical science, and life science concepts.",
+        overview:
+          "In Grade 6, students transition into more advanced scientific thinking, focusing on earth science, physical science, and life science concepts.",
+        whatStudentsLearn: [
+          "Cells and basic biology",
+          "Earth systems and geology",
+          "Energy and motion",
+          "Chemical and physical changes",
+          "Introduction to scientific methods",
+          "Data collection and analysis",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Scientific investigation",
+          "Problem-solving",
+          "Data interpretation",
+          "Logical reasoning",
+        ],
+        howWeHelp:
+          "We help students understand complex scientific ideas through step-by-step explanations and structured learning.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-7`,
+        title: "Grade 7",
+        summary:
+          "Grade 7 builds deeper understanding of life science and physical science, focusing on systems and interactions.",
+        overview:
+          "Grade 7 builds deeper understanding of life science and physical science, focusing on systems and interactions.",
+        whatStudentsLearn: [
+          "Cells and biological systems",
+          "Human body systems",
+          "Forces and motion",
+          "Energy transformations",
+          "Ecology and ecosystems",
+          "Scientific experimentation",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Understanding systems",
+          "Experimentation skills",
+          "Analytical reasoning",
+          "Scientific communication",
+        ],
+        howWeHelp:
+          "We guide students in understanding systems and relationships in science while improving their ability to analyze and explain concepts.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-8`,
+        title: "Grade 8",
+        summary:
+          "In Grade 8, students prepare for high school science by exploring more advanced topics in physics, chemistry, and biology.",
+        overview:
+          "In Grade 8, students prepare for high school science by exploring more advanced topics in physics, chemistry, and biology.",
+        whatStudentsLearn: [
+          "Chemical reactions",
+          "Forces, motion, and energy",
+          "Waves and sound",
+          "Genetics basics",
+          "Earth science and space",
+          "Scientific analysis",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Scientific reasoning",
+          "Problem-solving",
+          "Understanding cause and effect",
+          "Data interpretation",
+        ],
+        howWeHelp:
+          "We help students connect concepts across different areas of science and prepare them for high school-level learning.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-9`,
+        title: "Grade 9",
+        summary:
+          "Grade 9 introduces high school science, focusing on foundational concepts in biology, chemistry, and physics.",
+        overview:
+          "Grade 9 introduces high school science, focusing on foundational concepts in biology, chemistry, and physics.",
+        whatStudentsLearn: [
+          "Basic biology concepts",
+          "Introduction to chemistry",
+          "Motion and forces",
+          "Scientific measurement",
+          "Laboratory skills",
+          "Data analysis",
+        ],
+        keySkillsDeveloped: [
+          "Scientific thinking",
+          "Laboratory skills",
+          "Analytical reasoning",
+          "Problem-solving",
+          "Concept application",
+        ],
+        howWeHelp:
+          "We support students in building strong foundations and understanding key scientific concepts required for high school success.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students deepen their understanding of core scientific disciplines and develop stronger analytical and experimental skills.",
+        overview:
+          "In Grade 10, students deepen their understanding of core scientific disciplines and develop stronger analytical and experimental skills.",
+        whatStudentsLearn: [
+          "Chemistry concepts and reactions",
+          "Physics fundamentals",
+          "Biology systems",
+          "Energy and matter",
+          "Scientific investigations",
+          "Data interpretation",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Experimental analysis",
+          "Problem-solving",
+          "Logical reasoning",
+          "Scientific communication",
+        ],
+        howWeHelp:
+          "We help students strengthen their understanding through structured lessons and practical problem-solving approaches.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-11`,
+        title: "Grade 11",
+        summary:
+          "Grade 11 focuses on advanced scientific concepts and prepares students for specialized study in biology, chemistry, or physics.",
+        overview:
+          "Grade 11 focuses on advanced scientific concepts and prepares students for specialized study in biology, chemistry, or physics.",
+        whatStudentsLearn: [
+          "Advanced biology concepts",
+          "Chemical reactions and equations",
+          "Physics laws and principles",
+          "Data analysis and experiments",
+          "Scientific research methods",
+          "Exam preparation",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Scientific reasoning",
+          "Problem-solving",
+          "Research skills",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We guide students through advanced topics with detailed explanations and focused practice to build confidence and understanding.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-12`,
+        title: "Grade 12",
+        summary:
+          "Grade 12 prepares students for college-level science with advanced concepts, research, and exam-focused learning.",
+        overview:
+          "Grade 12 prepares students for college-level science with advanced concepts, research, and exam-focused learning.",
+        whatStudentsLearn: [
+          "Advanced biology, chemistry, or physics topics",
+          "Scientific research and analysis",
+          "Complex problem-solving",
+          "Laboratory techniques",
+          "Data interpretation",
+          "Exam preparation",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced problem-solving",
+          "Scientific analysis",
+          "Research and evaluation",
+          "College readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam preparation to help students succeed in their final assessments and prepare for higher education.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-science`,
+      name: "Science",
+      shortDescription: `Science pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: scienceGrades,
+    };
+  }
+
   // Canada-specific Science syllabus (custom grade content)
   if (countryName === "Canada" && subjectName === "Science") {
     const scienceGrades = [
@@ -1759,6 +2458,230 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  if (countryName === "USA" && subjectName === "Physics") {
+    const physicsGrades = [
+      {
+        id: `${countryName.toLowerCase()}-physics-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9, students are introduced to the fundamental principles of physics, focusing on motion, forces, and basic energy concepts.",
+        overview:
+          "In Grade 9, students are introduced to the fundamental principles of physics, focusing on motion, forces, and basic energy concepts. This stage builds the foundation for understanding how physical laws apply to real-world situations.",
+        whatStudentsLearn: [
+          "Motion and kinematics (distance, speed, velocity)",
+          "Introduction to Newton's laws of motion",
+          "Basic forces and interactions",
+          "Work, energy, and power",
+          "Units, measurements, and scientific notation",
+          "Introduction to waves and sound",
+        ],
+        keySkillsDeveloped: [
+          "Understanding motion and physical relationships",
+          "Basic mathematical application in physics",
+          "Logical reasoning and problem-solving",
+          "Interpreting graphs and data",
+          "Conceptual understanding of physical laws",
+        ],
+        howWeHelp:
+          "We focus on building strong fundamentals by explaining concepts step-by-step and helping students apply formulas correctly. Our tutors ensure students understand both theory and problem-solving techniques.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students deepen their understanding of mechanics and begin exploring electricity, waves, and energy in more detail.",
+        overview:
+          "In Grade 10, students deepen their understanding of mechanics and begin exploring electricity, waves, and energy in more detail. The focus is on applying concepts to solve structured problems.",
+        whatStudentsLearn: [
+          "Advanced motion and acceleration",
+          "Newton's laws and dynamics",
+          "Work, energy, and conservation laws",
+          "Introduction to electricity and circuits",
+          "Waves, sound, and basic light concepts",
+          "Problem-solving using formulas",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Mathematical problem-solving",
+          "Understanding relationships between variables",
+          "Applying physics laws to real situations",
+          "Accuracy in calculations",
+        ],
+        howWeHelp:
+          "We help students strengthen their problem-solving skills by breaking down complex questions and guiding them through structured methods and practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-11`,
+        title: "Grade 11",
+        summary:
+          "Grade 11 focuses on advanced physics topics, including mechanics, electricity, and waves, with increased mathematical application and conceptual depth.",
+        overview:
+          "Grade 11 focuses on advanced physics topics, including mechanics, electricity, and waves, with increased mathematical application and conceptual depth.",
+        whatStudentsLearn: [
+          "Advanced mechanics and motion",
+          "Work, energy, and momentum",
+          "Electricity and magnetism",
+          "Waves and optics",
+          "Introduction to thermodynamics",
+          "Data analysis and experiments",
+        ],
+        keySkillsDeveloped: [
+          "Advanced problem-solving",
+          "Strong mathematical application",
+          "Analytical reasoning",
+          "Understanding complex systems",
+          "Experimental interpretation",
+        ],
+        howWeHelp:
+          "We guide students through complex concepts with clear explanations and focused practice. Our tutors help build confidence in solving challenging problems and understanding advanced topics.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12, students prepare for college-level physics with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12, students prepare for college-level physics with advanced topics and exam-focused learning. The emphasis is on mastering concepts and applying them in complex scenarios.",
+        whatStudentsLearn: [
+          "Advanced mechanics and rotational motion",
+          "Electricity and magnetism in depth",
+          "Waves and advanced optics",
+          "Modern physics (atoms, nuclear physics)",
+          "Thermodynamics",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced analytical reasoning",
+          "Complex problem-solving",
+          "Exam readiness and strategy",
+          "Deep conceptual understanding",
+        ],
+        howWeHelp:
+          "We provide structured lessons and exam-focused preparation, helping students master advanced concepts and approach assessments with confidence.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-physics`,
+      name: "Physics",
+      shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: physicsGrades,
+    };
+  }
+
+  if (countryName === "Canada" && subjectName === "Physics") {
+    const physicsGrades = [
+      {
+        id: `${countryName.toLowerCase()}-physics-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9 Physics (Canada curriculum), students are introduced to the fundamental principles of motion, forces, and energy.",
+        overview:
+          "In Grade 9 Physics (Canada curriculum), students are introduced to the fundamental principles of motion, forces, and energy. The focus is on building a clear understanding of how physical laws explain everyday phenomena.",
+        whatStudentsLearn: [
+          "Motion and basic kinematics (distance, speed, velocity)",
+          "Introduction to forces and Newton's laws",
+          "Work, energy, and power",
+          "Basic waves and sound",
+          "Measurement, units, and scientific notation",
+          "Interpreting simple graphs and data",
+        ],
+        keySkillsDeveloped: [
+          "Understanding motion and relationships between variables",
+          "Basic mathematical application in physics",
+          "Logical reasoning and problem-solving",
+          "Interpreting graphs and experimental data",
+          "Conceptual understanding of physical laws",
+        ],
+        howWeHelp:
+          "We build strong foundations by explaining concepts step-by-step and helping students apply formulas correctly. Our tutors focus on both understanding theory and solving problems confidently.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10 Physics, students deepen their understanding of mechanics and begin exploring electricity, waves, and energy in more detail.",
+        overview:
+          "In Grade 10 Physics, students deepen their understanding of mechanics and begin exploring electricity, waves, and energy in more detail.",
+        whatStudentsLearn: [
+          "Advanced motion and acceleration",
+          "Newton's laws and dynamics",
+          "Work, energy, and conservation laws",
+          "Basic electricity and simple circuits",
+          "Waves, sound, and light basics",
+          "Problem-solving using formulas",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Mathematical problem-solving",
+          "Understanding relationships between physical quantities",
+          "Applying physics concepts to real-world situations",
+          "Accuracy in calculations",
+        ],
+        howWeHelp:
+          "We guide students through structured problem-solving methods, helping them understand how to approach and solve physics questions with clarity and accuracy.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-11`,
+        title: "Grade 11",
+        summary:
+          "In Grade 11 Physics (Canada curriculum), students study more advanced concepts in mechanics, electricity, and waves with increased mathematical depth.",
+        overview:
+          "In Grade 11 Physics (Canada curriculum), students study more advanced concepts in mechanics, electricity, and waves with increased mathematical depth.",
+        whatStudentsLearn: [
+          "Advanced mechanics and motion",
+          "Work, energy, and momentum",
+          "Electricity and magnetism",
+          "Waves and optics",
+          "Introduction to thermodynamics",
+          "Experimental analysis and data interpretation",
+        ],
+        keySkillsDeveloped: [
+          "Advanced problem-solving",
+          "Strong mathematical application",
+          "Analytical reasoning",
+          "Understanding complex systems",
+          "Experimental thinking",
+        ],
+        howWeHelp:
+          "We break down complex physics concepts into manageable steps and provide targeted practice to help students build confidence and improve accuracy.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-physics-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12 Physics, students prepare for college-level studies with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12 Physics, students prepare for college-level studies with advanced topics and exam-focused learning. The emphasis is on mastering concepts and applying them in complex scenarios.",
+        whatStudentsLearn: [
+          "Advanced mechanics and rotational motion",
+          "Electricity and magnetism in depth",
+          "Waves and advanced optics",
+          "Modern physics (atomic and nuclear concepts)",
+          "Thermodynamics",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced analytical reasoning",
+          "Complex problem-solving",
+          "Concept mastery",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured lessons and exam-focused preparation to help students master advanced physics concepts and perform confidently in assessments.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-physics`,
+      name: "Physics",
+      shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: physicsGrades,
+    };
+  }
+
   // UK-specific Physics syllabus (GCSE Years 10-11, A-Level Years 12-13)
   if (countryName === "UK" && subjectName === "Physics") {
     const ukPhysicsGrades = [
@@ -1894,6 +2817,238 @@ const createSubject = (countryName, subjectName) => {
       name: "Physics",
       shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
       grades: ukPhysicsGrades,
+    };
+  }
+
+  if (countryName === "USA" && subjectName === "Chemistry") {
+    const chemistryGrades = [
+      {
+        id: `${countryName.toLowerCase()}-chemistry-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9, students are introduced to the fundamental concepts of chemistry, focusing on matter, atomic structure, and basic chemical reactions.",
+        overview:
+          "In Grade 9, students are introduced to the fundamental concepts of chemistry, focusing on matter, atomic structure, and basic chemical reactions. This stage builds a strong foundation for understanding how substances interact and change.",
+        whatStudentsLearn: [
+          "States of matter and their properties",
+          "Atomic structure (protons, neutrons, electrons)",
+          "Elements, compounds, and mixtures",
+          "Introduction to the periodic table",
+          "Basic chemical reactions",
+          "Measurement and lab safety",
+          "Scientific notation and units",
+        ],
+        keySkillsDeveloped: [
+          "Understanding basic chemical concepts",
+          "Observation and analysis",
+          "Logical thinking",
+          "Interpreting simple chemical data",
+          "Laboratory awareness",
+        ],
+        howWeHelp:
+          "We simplify core chemistry concepts using clear explanations and visual methods. Our tutors help students understand the basics step-by-step and build confidence in both theory and problem-solving.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students expand their understanding of chemical reactions, the periodic table, and begin applying concepts in structured problem-solving and laboratory work.",
+        overview:
+          "In Grade 10, students expand their understanding of chemical reactions, the periodic table, and begin applying concepts in structured problem-solving and laboratory work.",
+        whatStudentsLearn: [
+          "Chemical bonding (ionic and covalent)",
+          "Periodic table trends and properties",
+          "Types of chemical reactions",
+          "Balancing chemical equations",
+          "Acids, bases, and pH",
+          "Introduction to stoichiometry",
+          "Basic laboratory experiments",
+        ],
+        keySkillsDeveloped: [
+          "Problem-solving with chemical equations",
+          "Understanding chemical relationships",
+          "Analytical thinking",
+          "Applying theoretical concepts",
+          "Accuracy in calculations",
+        ],
+        howWeHelp:
+          "We guide students through chemical reactions and equations step-by-step, helping them understand how and why reactions occur while improving their accuracy in calculations.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-11`,
+        title: "Grade 11",
+        summary:
+          "Grade 11 focuses on advanced chemistry concepts, including deeper understanding of reactions, quantitative chemistry, and introduction to organic chemistry.",
+        overview:
+          "Grade 11 focuses on advanced chemistry concepts, including deeper understanding of reactions, quantitative chemistry, and introduction to organic chemistry.",
+        whatStudentsLearn: [
+          "Advanced stoichiometry",
+          "Gas laws and behavior of gases",
+          "Thermochemistry (energy changes in reactions)",
+          "Chemical equilibrium",
+          "Acids and bases in detail",
+          "Introduction to organic chemistry",
+          "Laboratory analysis and experiments",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Quantitative problem-solving",
+          "Understanding chemical processes",
+          "Data interpretation",
+          "Experimental reasoning",
+        ],
+        howWeHelp:
+          "We help students handle complex chemistry topics by breaking them into manageable steps and providing targeted practice to strengthen both understanding and accuracy.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12, students prepare for college-level chemistry with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12, students prepare for college-level chemistry with advanced topics and exam-focused learning. The emphasis is on mastering concepts and applying them in complex scenarios.",
+        whatStudentsLearn: [
+          "Advanced organic chemistry",
+          "Chemical kinetics (reaction rates)",
+          "Electrochemistry",
+          "Advanced equilibrium concepts",
+          "Solutions and concentrations",
+          "Thermodynamics",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced problem-solving",
+          "Analytical reasoning",
+          "Understanding complex reactions",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam-focused preparation to help students master advanced chemistry concepts and perform confidently in their final assessments.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-chemistry`,
+      name: "Chemistry",
+      shortDescription: `Chemistry pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: chemistryGrades,
+    };
+  }
+
+  if (countryName === "Canada" && subjectName === "Chemistry") {
+    const chemistryGrades = [
+      {
+        id: `${countryName.toLowerCase()}-chemistry-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9 Chemistry (Canada curriculum), students are introduced to the basic concepts of matter, atomic structure, and simple chemical changes.",
+        overview:
+          "In Grade 9 Chemistry (Canada curriculum), students are introduced to the basic concepts of matter, atomic structure, and simple chemical changes. The focus is on building foundational knowledge and understanding how substances behave and interact.",
+        whatStudentsLearn: [
+          "States of matter and their properties",
+          "Atomic structure (protons, neutrons, electrons)",
+          "Elements, compounds, and mixtures",
+          "Introduction to the periodic table",
+          "Basic chemical reactions",
+          "Measurement, units, and lab safety",
+          "Scientific notation and simple calculations",
+        ],
+        keySkillsDeveloped: [
+          "Understanding fundamental chemistry concepts",
+          "Observation and analysis",
+          "Logical thinking",
+          "Interpreting basic chemical data",
+          "Laboratory awareness and safety",
+        ],
+        howWeHelp:
+          "We simplify core chemistry concepts with clear explanations and visual methods, helping students build a strong foundation and confidence in both theory and basic problem-solving.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10 Chemistry, students expand their understanding of chemical reactions, bonding, and the periodic table, with more focus on applying concepts through calculations and experiments.",
+        overview:
+          "In Grade 10 Chemistry, students expand their understanding of chemical reactions, bonding, and the periodic table, with more focus on applying concepts through calculations and experiments.",
+        whatStudentsLearn: [
+          "Chemical bonding (ionic and covalent)",
+          "Periodic table trends and properties",
+          "Types of chemical reactions",
+          "Balancing chemical equations",
+          "Acids, bases, and pH",
+          "Introduction to stoichiometry",
+          "Laboratory experiments and analysis",
+        ],
+        keySkillsDeveloped: [
+          "Problem-solving with chemical equations",
+          "Understanding relationships between elements",
+          "Analytical thinking",
+          "Applying theoretical concepts",
+          "Accuracy in calculations",
+        ],
+        howWeHelp:
+          "We guide students step-by-step through reactions and equations, helping them understand how and why chemical processes occur while improving their problem-solving accuracy.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-11`,
+        title: "Grade 11",
+        summary:
+          "In Grade 11 Chemistry (Canada curriculum), students explore more advanced concepts including quantitative chemistry, gas behavior, and chemical processes.",
+        overview:
+          "In Grade 11 Chemistry (Canada curriculum), students explore more advanced concepts including quantitative chemistry, gas behavior, and chemical processes.",
+        whatStudentsLearn: [
+          "Advanced stoichiometry",
+          "Gas laws and behavior of gases",
+          "Thermochemistry (energy changes in reactions)",
+          "Chemical equilibrium",
+          "Acids and bases in depth",
+          "Introduction to organic chemistry",
+          "Experimental analysis and lab work",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Quantitative problem-solving",
+          "Understanding chemical processes",
+          "Data interpretation",
+          "Experimental reasoning",
+        ],
+        howWeHelp:
+          "We break down complex topics into manageable steps and provide targeted practice to help students strengthen both understanding and accuracy.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-chemistry-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12 Chemistry, students prepare for college-level studies with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12 Chemistry, students prepare for college-level studies with advanced topics and exam-focused learning. The emphasis is on mastering complex chemical concepts and applying them in problem-solving.",
+        whatStudentsLearn: [
+          "Advanced organic chemistry",
+          "Chemical kinetics (reaction rates)",
+          "Electrochemistry",
+          "Advanced equilibrium concepts",
+          "Solutions and concentration calculations",
+          "Thermodynamics",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced problem-solving",
+          "Analytical reasoning",
+          "Understanding complex reactions",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam-focused preparation, helping students master advanced chemistry concepts and approach assessments with confidence.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-chemistry`,
+      name: "Chemistry",
+      shortDescription: `Chemistry pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: chemistryGrades,
     };
   }
 
@@ -2050,6 +3205,238 @@ const createSubject = (countryName, subjectName) => {
       name: "Biology",
       shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
       grades: ukBiologyGrades,
+    };
+  }
+
+  if (countryName === "USA" && subjectName === "Biology") {
+    const biologyGrades = [
+      {
+        id: `${countryName.toLowerCase()}-biology-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9, students are introduced to the fundamental concepts of biology, focusing on living organisms, cells, and basic life processes.",
+        overview:
+          "In Grade 9, students are introduced to the fundamental concepts of biology, focusing on living organisms, cells, and basic life processes. This stage builds a strong foundation for understanding how living systems function.",
+        whatStudentsLearn: [
+          "Cell structure and function",
+          "Differences between plant and animal cells",
+          "Basic cell processes (respiration, photosynthesis)",
+          "Classification of living organisms",
+          "Introduction to genetics",
+          "Human body systems (basic overview)",
+          "Laboratory safety and basic experiments",
+        ],
+        keySkillsDeveloped: [
+          "Understanding of biological systems",
+          "Observation and analysis",
+          "Logical thinking",
+          "Basic scientific reasoning",
+          "Interpreting simple biological data",
+        ],
+        howWeHelp:
+          "We simplify core biology concepts using clear explanations and visual aids. Our tutors help students understand how living systems work and build confidence in both theory and application.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10, students deepen their understanding of biological processes and systems, focusing on genetics, ecosystems, and the structure of organisms.",
+        overview:
+          "In Grade 10, students deepen their understanding of biological processes and systems, focusing on genetics, ecosystems, and the structure of organisms.",
+        whatStudentsLearn: [
+          "Genetics and heredity",
+          "DNA structure and function",
+          "Evolution and natural selection",
+          "Ecosystems and environmental science",
+          "Human body systems in detail",
+          "Plant biology and processes",
+          "Introduction to scientific investigations",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Understanding relationships in biology",
+          "Problem-solving",
+          "Data interpretation",
+          "Scientific investigation skills",
+        ],
+        howWeHelp:
+          "We guide students through complex biological concepts step-by-step and help them connect ideas across different topics for better understanding.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-11`,
+        title: "Grade 11",
+        summary:
+          "Grade 11 focuses on advanced biological concepts, including cellular processes, genetics, and systems biology, with greater depth and detail.",
+        overview:
+          "Grade 11 focuses on advanced biological concepts, including cellular processes, genetics, and systems biology, with greater depth and detail.",
+        whatStudentsLearn: [
+          "Advanced cell biology",
+          "DNA replication and protein synthesis",
+          "Advanced genetics",
+          "Human physiology",
+          "Ecology and environmental interactions",
+          "Biological processes and systems",
+          "Laboratory experiments and analysis",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Understanding complex biological systems",
+          "Data analysis and interpretation",
+          "Scientific reasoning",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We help students understand advanced topics through structured lessons and clear explanations, ensuring strong conceptual understanding and confidence.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12, students prepare for college-level biology with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12, students prepare for college-level biology with advanced topics and exam-focused learning. The focus is on mastering concepts and applying them in complex scenarios.",
+        whatStudentsLearn: [
+          "Advanced genetics and molecular biology",
+          "Evolution and biodiversity",
+          "Human physiology in depth",
+          "Ecology and environmental systems",
+          "Biotechnology basics",
+          "Research and data analysis",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced problem-solving",
+          "Analytical reasoning",
+          "Research skills",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam-focused preparation to help students master advanced biology concepts and perform confidently in their final assessments.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-biology`,
+      name: "Biology",
+      shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: biologyGrades,
+    };
+  }
+
+  if (countryName === "Canada" && subjectName === "Biology") {
+    const biologyGrades = [
+      {
+        id: `${countryName.toLowerCase()}-biology-9`,
+        title: "Grade 9",
+        summary:
+          "In Grade 9 Biology (Canada curriculum), students are introduced to the basic principles of life sciences, focusing on cells, living organisms, and fundamental biological processes.",
+        overview:
+          "In Grade 9 Biology (Canada curriculum), students are introduced to the basic principles of life sciences, focusing on cells, living organisms, and fundamental biological processes. The aim is to build a strong foundation in understanding how living systems function.",
+        whatStudentsLearn: [
+          "Cell structure and function",
+          "Differences between plant and animal cells",
+          "Basic cellular processes (respiration, photosynthesis)",
+          "Classification of living organisms",
+          "Introduction to genetics",
+          "Overview of human body systems",
+          "Basic laboratory skills and safety",
+        ],
+        keySkillsDeveloped: [
+          "Understanding biological systems",
+          "Observation and analysis",
+          "Logical thinking",
+          "Basic scientific reasoning",
+          "Interpreting simple biological data",
+        ],
+        howWeHelp:
+          "We simplify core biology concepts using clear explanations and visual aids, helping students understand how living systems work while building confidence in both theory and application.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-10`,
+        title: "Grade 10",
+        summary:
+          "In Grade 10 Biology, students deepen their understanding of biological systems, genetics, and ecosystems, with more focus on how living organisms interact with their environment.",
+        overview:
+          "In Grade 10 Biology, students deepen their understanding of biological systems, genetics, and ecosystems, with more focus on how living organisms interact with their environment.",
+        whatStudentsLearn: [
+          "Genetics and heredity",
+          "DNA structure and function",
+          "Evolution and natural selection",
+          "Ecosystems and environmental science",
+          "Human body systems in more detail",
+          "Plant biology and processes",
+          "Scientific investigations and data collection",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Understanding biological relationships",
+          "Problem-solving",
+          "Data interpretation",
+          "Scientific investigation skills",
+        ],
+        howWeHelp:
+          "We guide students through complex biological topics step-by-step, helping them connect concepts and improve understanding across different areas of biology.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-11`,
+        title: "Grade 11",
+        summary:
+          "In Grade 11 Biology (Canada curriculum), students explore advanced biological concepts including cellular processes, genetics, and physiology with greater depth and detail.",
+        overview:
+          "In Grade 11 Biology (Canada curriculum), students explore advanced biological concepts including cellular processes, genetics, and physiology with greater depth and detail.",
+        whatStudentsLearn: [
+          "Advanced cell biology",
+          "DNA replication and protein synthesis",
+          "Advanced genetics concepts",
+          "Human physiology and body systems",
+          "Ecology and environmental interactions",
+          "Biological processes and systems",
+          "Laboratory experiments and analysis",
+        ],
+        keySkillsDeveloped: [
+          "Advanced analytical thinking",
+          "Understanding complex biological systems",
+          "Data analysis and interpretation",
+          "Scientific reasoning",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We help students understand advanced topics through structured lessons and clear explanations, ensuring strong conceptual understanding and confidence.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-biology-12`,
+        title: "Grade 12",
+        summary:
+          "In Grade 12 Biology, students prepare for college-level studies with advanced topics and exam-focused learning.",
+        overview:
+          "In Grade 12 Biology, students prepare for college-level studies with advanced topics and exam-focused learning. The emphasis is on mastering complex biological concepts and applying them effectively.",
+        whatStudentsLearn: [
+          "Advanced genetics and molecular biology",
+          "Evolution and biodiversity",
+          "Human physiology in depth",
+          "Ecology and environmental systems",
+          "Biotechnology basics",
+          "Research methods and data analysis",
+          "Exam-focused problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced problem-solving",
+          "Analytical reasoning",
+          "Research skills",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam-focused preparation to help students master advanced biology concepts and perform confidently in their final assessments.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-biology`,
+      name: "Biology",
+      shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: biologyGrades,
     };
   }
 
