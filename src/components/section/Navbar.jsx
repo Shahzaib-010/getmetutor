@@ -53,6 +53,7 @@ export default function Navbar() {
     
     { to: "/curriculum", label: "Curriculum" },
     { to: "/", label: "How it works", anchor: "howitworks" },
+    { to: "/", label: "Reviews", anchor: "reviews" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },
   ];
@@ -215,7 +216,7 @@ export default function Navbar() {
                 className="mt-auto flex items-center justify-center gap-6 pb-2 pt-8"
               >
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/getmetutor.online"
                   target="_blank"
                   rel="noreferrer"
                   className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
@@ -223,7 +224,7 @@ export default function Navbar() {
                   Instagram
                 </a>
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/getmetutoronline"
                   target="_blank"
                   rel="noreferrer"
                   className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
@@ -231,7 +232,15 @@ export default function Navbar() {
                   Facebook
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.youtube.com/@GetMeTutorOnline"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"
+                >
+                  YouTube
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/get-me-tutor-online/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400 transition-colors duration-200 hover:text-gray-700"

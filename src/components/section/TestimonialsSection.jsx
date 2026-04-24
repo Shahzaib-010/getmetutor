@@ -109,7 +109,7 @@ export default function TestimonialsSection({ className = "" }) {
   const extraSupportingReviews = supportingReviews.slice(2, 4);
 
   return (
-    <section className={`w-full bg-(--color-bg) font-open-sans ${className}`}>
+    <section id="reviews" className={`w-full bg-(--color-bg) font-open-sans ${className}`}>
       <div className="mx-auto w-[90%] px-5 py-16 sm:px-8 sm:py-20 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           <motion.div

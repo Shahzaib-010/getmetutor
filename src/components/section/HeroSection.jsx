@@ -104,7 +104,7 @@ const HeroSection = () => {
               <img
                 src="/images/hero-img2.jpg"
                 alt="Students learning online with GetmeTutor"
-                className="h-[60vh] relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
+                className="h-[60vh] md:h-[70vh] relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
                 loading="eager"
               />
             </div>

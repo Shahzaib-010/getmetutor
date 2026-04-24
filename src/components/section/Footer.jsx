@@ -4,16 +4,21 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
 const Footer = () => {
   const footerLinks = {
-    product: [
+    quick: [
       { name: "Home", path: "/" },
       { name: "About Us", path: "/about" },
-      { name: "How It Works", path: "#howitworks" },
       { name: "Demo", path: "/demo" },
-      { name: "Curriculum", path: "/curriculum" },
+      { name: "Privacy Policy", path: "/privacy-policy" },
+      { name: "Terms & Conditions", path: "/terms" },
       { name: "Refund Policy", path: "/refund-policy" },
-
     ],
-  
+    menu: [
+      { name: "Curriculum", path: "/curriculum" },
+      { name: "How It Works", path: "/#howitworks", isHash: true },
+      { name: "Reviews", path: "/#reviews", isHash: true },
+      { name: "Pricing", path: "/pricing" },
+      { name: "Blogs", path: "/blogs" },
+    ],
 
     legal: [
       { name: "Privacy Policy", path: "/privacy-policy" },
@@ -68,7 +73,7 @@ const Footer = () => {
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Product */}
+        {/* Quick Links */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -81,7 +86,7 @@ const Footer = () => {
           </h3>
 
           <div className="space-y-3">
-            {footerLinks.product.map((item, i) => (
+            {footerLinks.quick.map((item, i) => (
               <NavLink
                 key={i}
                 to={item.path}
@@ -90,6 +95,41 @@ const Footer = () => {
                 {item.name}
               </NavLink>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Menu */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
+            Menu
+          </h3>
+
+          <div className="space-y-3">
+            {footerLinks.menu.map((item, i) =>
+              item.isHash ? (
+                <a
+                  key={i}
+                  href={item.path}
+                  className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <NavLink
+                  key={i}
+                  to={item.path}
+                  className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
+                >
+                  {item.name}
+                </NavLink>
+              )
+            )}
           </div>
         </motion.div>
 
@@ -138,6 +178,7 @@ const Footer = () => {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="lg:flex lg:flex-col lg:items-end"
         >
+         
           <div className="flex gap-3 mb-6">
             {socials.map((item, i) => {
               const Icon = item.icon;
