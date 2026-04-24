@@ -44,7 +44,7 @@ function Demo() {
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Button
                 href="#book-demo"
-                text="Book Free Demo"
+                text="Book Free Trial"
                 className="justify-center bg-orange-500 px-5 py-3 text-sm font-semibold hover:bg-slate-950"
               />
             </div>

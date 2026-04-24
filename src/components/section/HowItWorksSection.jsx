@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-import { ArrowRight, BookOpen, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowRight, CalendarDays, LineChart, UserRound } from "lucide-react";
 import Button from "../ui/Button";
 
 const steps = [
@@ -9,19 +9,19 @@ const steps = [
 		n: "01",
 		title: "Book a Free Trial",
 		body: "Schedule a session in seconds or message us on WhatsApp.",
-		icon: BookOpen,
+		icon: CalendarDays,
 	},
 	{
 		n: "02",
 		title: "Meet Your Tutor",
 		body: "We match your child with the right tutor based on subject and level.",
-		icon: Sparkles,
+		icon: UserRound,
 	},
 	{
 		n: "03",
 		title: "Start Learning",
 		body: "Continue with regular 1-to-1 sessions and track progress.",
-		icon: GraduationCap,
+		icon: LineChart,
 	},
 ];
 
@@ -155,7 +155,9 @@ export default function HowItWorksSection({ className = "" }) {
 
 				{/* CTA below steps */}
 				<div className="mt-10 text-center">
-					<Button to="/demo" text="Book Free Demo" className="bg-[var(--color-primary)] text-sm font-semibold hover:text-white" />
+					<button className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-black transition-colors duration-300 hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]">
+						Book Free Trial
+					</button>
 				</div>
 			</div>
 		</section>

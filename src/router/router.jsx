@@ -37,7 +37,7 @@ export function getRouter() {
         
         },
         {
-          path: "syllabus",
+          path: "curriculum",
           element: <Syllabus />,
         },
         {

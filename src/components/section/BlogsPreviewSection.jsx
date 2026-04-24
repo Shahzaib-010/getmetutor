@@ -79,18 +79,19 @@ export default function BlogsPreviewSection() {
             </p>
           </div>
 
-          <Link
-            to="/blogs"
-            className="inline-flex items-center gap-2 self-start rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-orange-500"
-          >
-            Show more
-            <ArrowRight size={16} />
-          </Link>
+         
         </div>
 
+<div className="flex gap-3">
         <div className="mt-6 flex flex-wrap gap-3">
           <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" text="Contact Us" />
         </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button href="/blogs" target="_blank" rel="noopener noreferrer" text="See More" />
+        </div>
+
+        </div>
+         
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {latestBlogs.map((blog, index) => (

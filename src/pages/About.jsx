@@ -107,7 +107,7 @@ function About() {
               <h4 className="text-lg font-semibold text-slate-900">Ready to Begin?</h4>
               <p className="mt-2 text-slate-600">Join hundreds of students already improving their grades with personalised tutoring.</p>
               <div className="mt-4 flex justify-center">
-                <Button href="/demo" text="Book Free Demo" className="bg-orange-500" />
+                <Button href="/demo" text="Book Free Trial" className="bg-orange-500" />
               </div>
             </div>
           </aside>

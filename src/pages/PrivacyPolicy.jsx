@@ -105,7 +105,7 @@ function PrivacyPolicy() {
               <div className="flex">
                 <div>
                   <p className="text-sm text-slate-700">Ready to start your learning journey with us?</p>
-                  <Button to="/demo" text="Book Free Demo" className="mt-2" />
+                  <Button to="/demo" text="Book Free Trial" className="mt-2" />
                 </div>
               </div>
             </div>

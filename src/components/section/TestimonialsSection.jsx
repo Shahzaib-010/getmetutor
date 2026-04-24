@@ -7,6 +7,15 @@ const WHATSAPP_URL =
   "https://wa.me/923160479437?text=" +
   encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
+const PFP_IMAGES = [
+  "/images/pfp1.jpg",
+  "/images/pfp2.jpg",
+  "/images/pfp3.jpg",
+  "/images/pfp4.jpg",
+  "/images/pfp5.jpg",
+  "/images/pfp6.jpg",
+];
+
 const reviews = [
   {
     quote:
@@ -25,30 +34,30 @@ const reviews = [
   {
     quote:
       "English was never my strength. The feedback on essays was specific and kind. I finally know what examiners want.",
-    name: "Emma L.",
+    name: "Peter L.",
     meta: "GCSE English · Year 11",
     initials: "EL",
   },
   {
     quote:
-      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
-    name: "Priya & Rahul N.",
-    meta: "Parents · IB Physics",
-    initials: "PN",
-  },
-   {
-    quote:
-      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
-    name: "Priya & Rahul N.",
+      "I’m preparing for my 11+ exams and my tutor helps me practice regularly and understand difficult questions. I feel much more confident now.",
+    name: " Ayaan",
     meta: "Parents · IB Physics",
     initials: "PN",
   },
   {
     quote:
-      "We booked for our daughter's Physics mocks. Her confidence jumped in three weeks and it was worth every session.",
-    name: "Priya & Rahul N.",
-    meta: "Parents · IB Physics",
-    initials: "PN",
+      "We’ve tried a few tutoring services before, but Get Me Tutor really stands out. The tutor is always prepared, and my child stays engaged throughout the lesson. The progress has been excellent.",
+    name: "Daniel",
+    meta: "Parent · Sydney, Australia",
+    initials: "DA",
+  },
+  {
+    quote:
+      "I’m preparing for my 11+ exams and my tutor helps me practice regularly and understand difficult questions. I feel much more confident now.",
+    name: "Ayaan",
+    meta: "Student · Birmingham, UK",
+    initials: "AY",
   },
   {
     quote:
@@ -94,7 +103,8 @@ function StarRow({ className = "" }) {
 
 export default function TestimonialsSection({ className = "" }) {
   const [showMore, setShowMore] = useState(false);
-  const [featuredReview, ...supportingReviews] = reviews;
+  const featuredReview = reviews[0];
+  const supportingReviews = reviews.slice(1);
   const primarySupportingReviews = supportingReviews.slice(0, 2);
   const extraSupportingReviews = supportingReviews.slice(2, 4);
 
@@ -178,12 +188,12 @@ Trusted by students & parents in UK, USA, Canada & Australia
                       Student spotlight
                     </p>
                     <div className="mt-5 flex items-center gap-4">
-                      <div
-                        className="grid h-13 w-13 shrink-0 place-items-center rounded-full bg-(--color-primary) text-lg font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-4 ring-white"
-                        aria-hidden
-                      >
-                        {featuredReview.initials}
-                      </div>
+                      <img
+                        src={PFP_IMAGES[0]}
+                        alt={featuredReview.name}
+                        className="h-13 w-13 shrink-0 rounded-full object-cover ring-4 ring-white"
+                        loading="lazy"
+                      />
                       <div className="min-w-0">
                         <p className="truncate text-base font-semibold text-(--color-text)">
                           {featuredReview.name}
@@ -201,9 +211,9 @@ Trusted by students & parents in UK, USA, Canada & Australia
               </motion.article>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {primarySupportingReviews.map((review) => (
+                {primarySupportingReviews.map((review, index) => (
                   <motion.article
-                    key={review.name}
+                    key={`${review.name}-${index}`}
                     variants={item}
                     className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200/90 bg-white p-5 shadow-[0_2px_20px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:border-(--color-primary)/25 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.12)] sm:p-6"
                   >
@@ -220,12 +230,12 @@ Trusted by students & parents in UK, USA, Canada & Australia
                     </p>
 
                     <div className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
-                      <div
-                        className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-(--color-primary) text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-2 ring-white"
-                        aria-hidden
-                      >
-                        {review.initials}
-                      </div>
+                      <img
+                        src={PFP_IMAGES[(index + 1) % PFP_IMAGES.length]}
+                        alt={review.name}
+                        className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white"
+                        loading="lazy"
+                      />
                       <div className="min-w-0">
                         <p className="truncate text-sm font-semibold text-(--color-text)">
                           {review.name}
@@ -250,9 +260,9 @@ Trusted by students & parents in UK, USA, Canada & Australia
                     className="overflow-hidden"
                   >
                     <div className="grid gap-4 sm:grid-cols-2">
-                      {extraSupportingReviews.map((review) => (
+                      {extraSupportingReviews.map((review, index) => (
                         <motion.article
-                          key={review.name}
+                          key={`${review.name}-${index}`}
                           initial={{ opacity: 0, y: 16 }}
                           animate={{
                             opacity: showMore ? 1 : 0,
@@ -274,12 +284,12 @@ Trusted by students & parents in UK, USA, Canada & Australia
                           </p>
 
                           <div className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
-                            <div
-                              className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-(--color-primary) text-xs font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] ring-2 ring-white"
-                              aria-hidden
-                            >
-                              {review.initials}
-                            </div>
+                            <img
+                              src={PFP_IMAGES[(index + 3) % PFP_IMAGES.length]}
+                              alt={review.name}
+                              className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white"
+                              loading="lazy"
+                            />
                             <div className="min-w-0">
                               <p className="truncate text-sm font-semibold text-(--color-text)">
                                 {review.name}

@@ -3,6 +3,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { BookOpen, ChevronRight, Search, Sparkles } from "lucide-react";
 
 import { countryOrder, syllabusData } from "../data/syllabusData";
+import TestimonialsSection from "../components/section/TestimonialsSection";
+import PricingSection from "../components/section/PricingSection";
+import Faq from "../components/section/Faq";
+import BannerLoop from "../components/section/BannerLoop";
 
 const STORAGE_KEY = "syllabus-selected-country";
 
@@ -64,14 +68,18 @@ function Syllabus() {
     }
 
     return countryContent.subjects.filter((subject) =>
-      `${subject.name} ${subject.shortDescription}`.toLowerCase().includes(query)
+      `${subject.name} ${subject.shortDescription}`
+        .toLowerCase()
+        .includes(query),
     );
   }, [countryContent.subjects, subjectSearch]);
 
   const selectedSubjectData = useMemo(
     () =>
-      countryContent.subjects.find((subject) => subject.name === selectedSubject) ?? null,
-    [countryContent.subjects, selectedSubject]
+      countryContent.subjects.find(
+        (subject) => subject.name === selectedSubject,
+      ) ?? null,
+    [countryContent.subjects, selectedSubject],
   );
 
   const activeGradeData = useMemo(() => {
@@ -127,8 +135,8 @@ function Syllabus() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(255,98,0,0.10),_transparent_30%),linear-gradient(180deg,#fffdf8_0%,#ffffff_38%,#f8fafc_100%)] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.9),_rgba(255,255,255,0))]" />
+    <section className="relative isolate overflow-hidden  py-16   lg:py-24">
+      <div className="absolute inset-x-0 top-0 -z-10 h-72 " />
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="mx-auto max-w-3xl text-center"
@@ -145,7 +153,7 @@ function Syllabus() {
             Choose Your Curriculum
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Select your country to explore available subjects and syllabus.
+            Select your country to explore available subjects and curriculum.
           </p>
         </motion.div>
 
@@ -223,7 +231,7 @@ function Syllabus() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
                 <BookOpen size={16} className="text-orange-500" />
-                {countryContent.label} syllabus pathways
+                {countryContent.label} curriculum pathways
               </div>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
                 Explore subjects for {countryContent.label}
@@ -273,7 +281,9 @@ function Syllabus() {
                 >
                   <div
                     className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${countryContent.accent} ${
-                      isActive ? "opacity-100" : "opacity-0 transition-opacity group-hover:opacity-100"
+                      isActive
+                        ? "opacity-100"
+                        : "opacity-0 transition-opacity group-hover:opacity-100"
                     }`}
                   />
                   <div className="flex items-start justify-between gap-3">
@@ -326,14 +336,16 @@ function Syllabus() {
                     {selectedCountry} • {selectedSubjectData.name}
                   </p>
                   <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-                    {selectedSubjectData.name} syllabus roadmap
+                    {selectedSubjectData.name} curriculum roadmap
                   </h2>
                   <p className="mt-3 text-base leading-7 text-slate-600">
-                    Pick a grade from the bar below and the syllabus overview will update instantly
-                    in the section underneath.
+                    Pick a grade from the bar below and the curriculum overview
+                    will update instantly in the section underneath.
                   </p>
                 </div>
-                <div className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}>
+                <div
+                  className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}
+                >
                   <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
                     {selectedSubjectData.grades.length} grade levels available
                   </div>
@@ -392,7 +404,9 @@ function Syllabus() {
                         {selectedSubjectData.name} for {activeGradeData.title}
                       </h3>
                     </div>
-                    <div className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}>
+                    <div
+                      className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}
+                    >
                       <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
                         Selected level
                       </div>
@@ -431,15 +445,17 @@ function Syllabus() {
                         </span>
                       </div>
                       <ul className="mt-4 space-y-3">
-                        {(activeGradeData.whatStudentsLearn ?? []).map((item) => (
-                          <li
-                            key={item}
-                            className="flex gap-3 text-sm leading-7 text-slate-600"
-                          >
-                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-orange-400" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
+                        {(activeGradeData.whatStudentsLearn ?? []).map(
+                          (item) => (
+                            <li
+                              key={item}
+                              className="flex gap-3 text-sm leading-7 text-slate-600"
+                            >
+                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-orange-400" />
+                              <span>{item}</span>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     </div>
 
@@ -450,15 +466,17 @@ function Syllabus() {
                         </span>
                       </div>
                       <ul className="mt-4 space-y-3">
-                        {(activeGradeData.keySkillsDeveloped ?? []).map((item) => (
-                          <li
-                            key={item}
-                            className="flex gap-3 text-sm leading-7 text-slate-600"
-                          >
-                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
+                        {(activeGradeData.keySkillsDeveloped ?? []).map(
+                          (item) => (
+                            <li
+                              key={item}
+                              className="flex gap-3 text-sm leading-7 text-slate-600"
+                            >
+                              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900" />
+                              <span>{item}</span>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -468,6 +486,10 @@ function Syllabus() {
           ) : null}
         </AnimatePresence>
       </div>
+      <BannerLoop  className="my-[7rem]"/>
+      <TestimonialsSection/>
+      <PricingSection/>
+      <Faq/>
     </section>
   );
 }

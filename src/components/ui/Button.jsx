@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 const Button = ({
-  to = "/syllabus",
+  to = "/curriculum",
   href,
-  text = "Book Free Demo",
+  text = "Book Free Trial",
   className = "font-semibold",
   target,
   rel,

@@ -9,7 +9,8 @@ const Footer = () => {
       { name: "About Us", path: "/about" },
       { name: "How It Works", path: "#howitworks" },
       { name: "Demo", path: "/demo" },
-      { name: "Syllabus", path: "/syllabus" },
+      { name: "Curriculum", path: "/curriculum" },
+      { name: "Refund Policy", path: "/refund-policy" },
 
     ],
   
@@ -17,7 +18,6 @@ const Footer = () => {
     legal: [
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Terms & Conditions", path: "/terms" },
-      { name: "Refund Policy", path: "/refund-policy" },
     ],
   };
 

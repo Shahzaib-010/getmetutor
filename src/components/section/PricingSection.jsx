@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useNavigate } from "react-router-dom";
 import {
   Check,
   Laptop,
@@ -28,7 +29,7 @@ const REGIONS = {
     ],
     plans: {
       personal: {
-        name: "Package 1",
+        name: "Standard Plan",
         tagline: "Good for steady weekly progress",
         price: 200, // 8 lessons x $25
         was: 240,
@@ -43,7 +44,7 @@ const REGIONS = {
         ],
       },
       standard: {
-        name: "Package 2",
+        name: "Popular Plan",
         tagline: "Most Popular — Best for faster improvement and exam prep",
         price: 264, // 12 lessons x $22
         was: 312,
@@ -90,7 +91,7 @@ const REGIONS = {
       "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
     plans: {
       personal: {
-        name: "Package 1",
+        name: "Standard Plan",
         tagline: "Good for steady weekly progress",
         price: 160, // 8 lessons x £20
         was: 192,
@@ -105,7 +106,7 @@ const REGIONS = {
         ],
       },
       standard: {
-        name: "Package 2",
+        name: "Popular Plan",
         tagline: "Most Popular — Best for faster improvement and exam prep",
         price: 216, // 12 lessons x £18
         was: 256,
@@ -152,7 +153,7 @@ const REGIONS = {
       "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
     plans: {
       personal: {
-        name: "Package 1",
+        name: "Standard Plan",
         tagline: "Good for steady weekly progress",
         price: 200, // 8 lessons x $25
         was: 240,
@@ -167,7 +168,7 @@ const REGIONS = {
         ],
       },
       standard: {
-        name: "Package 2",
+        name: "Popular Plan",
         tagline: "Most Popular — Best for faster improvement and exam prep",
         price: 264, // 12 lessons x $22
         was: 312,
@@ -214,7 +215,7 @@ const REGIONS = {
       "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
     plans: {
       personal: {
-        name: "Package 1",
+        name: "Standard Plan",
         tagline: "Good for steady weekly progress",
         price: 200, // 8 lessons x $25
         was: 240,
@@ -229,7 +230,7 @@ const REGIONS = {
         ],
       },
       standard: {
-        name: "Package 2",
+        name: "Popular Plan",
         tagline: "Most Popular — Best for faster improvement and exam prep",
         price: 264, // 12 lessons x $22
         was: 312,
@@ -263,9 +264,16 @@ const REGIONS = {
 };
 
 const REGION_KEYS = ["USA", "UK", "Canada", "Australia"];
+const PFP_IMAGES = [
+  "/images/pfp1.jpg",
+  "/images/pfp2.jpg",
+  "/images/pfp3.jpg",
+  "/images/pfp4.jpg",
+];
 
-function PricingSection({ className = "" }) {
+function  PricingSection({ className = "" }) {
   const [regionKey, setRegionKey] = useState("USA");
+  const navigate = useNavigate();
   const region = REGIONS[regionKey];
 
   const plans = useMemo(
@@ -291,27 +299,19 @@ function PricingSection({ className = "" }) {
             <span style={{ color: ORANGE }}>Huge learning boost</span>
           </h2>
           <div className="mt-3.5 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 text-[11px] sm:text-xs text-gray-600">
-            {region.subheader.map((item, i) => (
-              <span key={item.text} className="inline-flex items-center gap-1">
-                {i > 0 && (
-                  <span className="text-gray-300 hidden sm:inline" aria-hidden>
-                    ·
-                  </span>
-                )}
-                <item.icon className="h-3 w-3 text-gray-400 shrink-0" />
-                <span>{item.text}</span>
-              </span>
-            ))}
+           
           </div>
 
           {/* Social proof */}
           <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3">
             <div className="flex -space-x-1.5">
-              {[0, 1, 2, 3].map((i) => (
-                <div
+              {PFP_IMAGES.map((src, i) => (
+                <img
                   key={i}
-                  className="h-6 w-6 rounded-full border-2 border-white bg-linear-to-br from-gray-200 to-gray-300"
-                  aria-hidden
+                  src={src}
+                  alt={`Learner ${i + 1}`}
+                  className="h-6 w-6 rounded-full border-2 border-white object-cover"
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -372,6 +372,7 @@ function PricingSection({ className = "" }) {
               region={region}
               orange={ORANGE}
               dark={DARK_CARD}
+              onCardClick={() => navigate("/demo")}
             />
           ))}
         </div>
@@ -385,15 +386,24 @@ function PricingSection({ className = "" }) {
   );
 }
 
-function PricingCard({ plan, region, orange, dark }) {
+function PricingCard({ plan, region, orange, dark, onCardClick }) {
   const Icon = plan.icon;
   const isFeatured = plan.featured;
 
   return (
     <motion.article
       layout
+      role="button"
+      tabIndex={0}
+      onClick={onCardClick}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onCardClick();
+        }
+      }}
       className={[
-        "relative flex flex-col rounded-xl border p-4 sm:p-5",
+        "relative flex flex-col rounded-xl border p-4 sm:p-5 cursor-pointer",
         isFeatured
           ? "border-gray-800 shadow-lg lg:scale-[1.01] z-10"
           : "border-gray-200/80 bg-white shadow-[0_6px_24px_rgba(15,23,42,0.05)]",
@@ -485,7 +495,7 @@ function PricingCard({ plan, region, orange, dark }) {
 
       <button
         type="button"
-        
+        onClick={onCardClick}
         className={[
           "mt-4 w-full rounded-lg py-2 text-xs font-semibold transition-colors",
           isFeatured

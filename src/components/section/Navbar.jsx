@@ -51,7 +51,7 @@ export default function Navbar() {
 
   const menuLinks = [
     
-    { to: "/syllabus", label: "Curriculum" },
+    { to: "/curriculum", label: "Curriculum" },
     { to: "/", label: "How it works", anchor: "howitworks" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },

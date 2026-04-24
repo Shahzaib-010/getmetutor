@@ -1,11 +1,16 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowRight,Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Button from "../ui/Button";
 import Background from "../ui/Background";
 
 /** Place file at `public/images/trusted-icon.png` (or `.svg` — update path below if needed). */
-const TRUSTED_BADGE_SRC = "/images/trusted-icon1.png";
+const HERO_AVATARS = [
+  "/images/pfp1.jpg",
+  "/images/pfp2.jpg",
+  "/images/pfp3.jpg",
+  "/images/pfp4.jpg",
+];
 
 const HeroSection = () => {
   return (
@@ -20,22 +25,39 @@ const HeroSection = () => {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 text-center lg:text-left"
           >
-            {/* TRUSTED BADGE */}
-            {/* <div className="flex flex-col items-start gap-2 mb-6">
-              
-              <div className="flex items-center gap-2">
-                <div className="flex gap-1">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.03, duration: 0.5 }}
+              className="mb-5 flex items-center justify-center gap-3 lg:justify-start"
+            >
+              <div className="flex -space-x-2">
+                {HERO_AVATARS.map((avatar, index) => (
+                  <img
+                    key={avatar}
+                    src={avatar}
+                    alt={`Get Me Tutor learner ${index + 1}`}
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover shadow-sm"
+                    loading="eager"
+                  />
+                ))}
+              </div>
+
+              <div className="rounded-full border border-white/75 bg-white/88 px-3 py-2 text-left shadow-[0_18px_40px_-22px_rgba(15,23,42,0.35)] ring-1 ring-gray-200/60 backdrop-blur">
+                <div className="flex gap-0.5" aria-hidden>
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      size={14}
-                      fill="black"
-                      className="text-black"
+                      size={12}
+                      className="fill-[var(--color-primary)] text-[var(--color-primary)]"
                     />
                   ))}
                 </div>
+                <p className="mt-1 text-xs text-gray-600 sm:text-sm">
+                  Loved by students and parents.
+                </p>
               </div>
-            </div> */}
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -62,7 +84,7 @@ const HeroSection = () => {
               className="mt-7 flex flex-col items-center gap-3 sm:mt-4 sm:flex-row sm:justify-center lg:justify-start"
             >
               
-             <Button to="/demo" text="Book Free Demo"/>
+             <Button to="/demo" text="Book Free Trial"/>
             </motion.div>
 
           </motion.div>
@@ -80,7 +102,7 @@ const HeroSection = () => {
                 aria-hidden
               />
               <img
-                src="/images/hero-img1.jpg"
+                src="/images/hero-img2.jpg"
                 alt="Students learning online with GetmeTutor"
                 className="h-[80vh] relative z-1 w-full rounded-3xl border border-gray-200/80 bg-white/40 object-cover shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)]"
                 loading="eager"

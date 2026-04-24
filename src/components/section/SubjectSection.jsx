@@ -16,7 +16,7 @@ const highlights = [
 	},
 	{
 		title: "Grade-by-grade clarity",
-		description: "Preview syllabus expectations before choosing the best-fit tutoring plan.",
+		description: "Preview curriculum expectations before choosing the best-fit tutoring plan.",
 		icon: GraduationCap,
 	},
 ];
@@ -35,7 +35,7 @@ function SubjectSection() {
 							Curriculum support
 						</p>
 						<h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-							Discover the syllabus flow before you book tutoring.
+							Discover the curriculum flow before you book tutoring.
 						</h2>
 						<p className="mt-4 pb-8 text-base leading-8 text-slate-600">
 							Navigate country-specific subjects, compare progression by grade, and understand what
