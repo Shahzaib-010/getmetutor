@@ -6,11 +6,11 @@ const Button = ({
   to = "/syllabus",
   href,
   text = "Book Free Demo",
-  className = "",
+  className = "font-semibold",
   target,
   rel,
 }) => {
-  const sharedClassName = `group inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[12px] text-white transition hover:bg-orange-500 ${className}`;
+  const sharedClassName = `group inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[14px] text-white transition hover:bg-orange-500 ${className}`;
 
   if (href) {
     return (

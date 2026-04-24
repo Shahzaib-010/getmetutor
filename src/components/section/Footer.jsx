@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
 const Footer = () => {
   const footerLinks = {
     product: [
@@ -17,13 +17,20 @@ const Footer = () => {
     legal: [
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Terms & Conditions", path: "/terms" },
+      { name: "Refund Policy", path: "/refund-policy" },
     ],
   };
 
   const socials = [
-    { icon: FaYoutube, link: "#" },
-    { icon: FaLinkedin, link: "#" },
-    { icon: FaInstagram, link: "#" },
+    { icon: FaFacebook, link: "https://www.facebook.com/getmetutoronline", label: "Facebook" },
+    { icon: FaInstagram, link: "https://www.instagram.com/getmetutor.online", label: "Instagram" },
+    { icon: FaYoutube, link: "https://www.youtube.com/@GetMeTutorOnline", label: "YouTube" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/company/get-me-tutor-online/", label: "LinkedIn" },
+  ];
+
+  const contactNumbers = [
+    { number: "+1 (929) 647-2372", link: "tel:+19296472372" },
+    { number: "+44 7474 782585", link: "https://wa.me/447474782585" },
   ];
 
   const fadeUp = {
@@ -43,12 +50,12 @@ const Footer = () => {
         className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"
       >
         {/* Logo */}
-        <NavLink to="/" className="flex items-center gap-3 w-fit">
-          <div className="w-3 h-3 rounded-full bg-[var(--color-primary)]" />
-          <h2 className="text-2xl font-semibold tracking-wide">
-            GetMeTutor
-          </h2>
-        </NavLink>
+         <NavLink
+                    to="/"
+                    className="sm:w-30 md:w-34 lg:w-40"
+                  >
+                    <img src="/images/Logo.png" alt="" />
+                  </NavLink>
 
         {/* Tagline */}
         <p className="text-gray-300 text-sm sm:text-base lg:text-right">
@@ -101,9 +108,24 @@ const Footer = () => {
           </h3>
 
           <div className="space-y-2 text-sm text-gray-400 leading-6">
-            <p>Lahore, Pakistan</p>
-            <p>Online Learning Platform</p>
-            <p>support@getmetutor.com</p>
+            <a
+              href="mailto:support@getmetutor.com"
+              className="text-gray-300 hover:text-[var(--color-primary)] transition-all duration-300 block"
+            >
+              support@getmetutor.com
+            </a>
+            {contactNumbers.map((item, i) => (
+              <div key={i}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-[var(--color-primary)] transition-all duration-300 block"
+                >
+                  {item.number}
+                </a>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -126,6 +148,9 @@ const Footer = () => {
                   whileTap={{ scale: 0.92 }}
                   key={i}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={item.label}
                   className="w-10 h-10 rounded-full border border-[#272727] flex items-center justify-center text-gray-300 hover:bg-[var(--color-primary)] hover:text-black hover:border-[var(--color-primary)] transition-all duration-300"
                 >
                   <Icon size={16} />

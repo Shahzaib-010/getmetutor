@@ -51,15 +51,15 @@ export default function Navbar() {
 
   const menuLinks = [
     
-    { to: "/syllabus", label: "Syllabus" },
+    { to: "/syllabus", label: "Curriculum" },
     { to: "/", label: "How it works", anchor: "howitworks" },
     { to: "/pricing", label: "Pricing" },
     { to: "/blogs", label: "Blogs" },
   ];
 
   const linkClass =
-    "text-sm font-semibold text-gray-600 transition-colors duration-200 hover:text-gray-900 leading-none";
-  const activeClass = "text-gray-900";
+    "text-md font-semibold text-gray-600 transition-colors duration-200 hover:text-gray-900 leading-none";
+  const activeClass = "text-orange-600";
 
   return (
     <div className="font-open-sans">
@@ -67,20 +67,20 @@ export default function Navbar() {
       <motion.nav
         animate={{ y: hide ? -64 : 0, opacity: hide ? 0 : 1 }}
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed top-0 z-50 w-full bg-white/45 supports-backdrop-filter:bg-white/35 backdrop-blur-xl backdrop-saturate-150 border-b border-white/40 shadow-[0_1px_12px_rgba(0,0,0,0.06)] ring-1 ring-black/5 antialiased"
+        className="fixed top-0 z-50 w-full  bg-white border-b border-white/40 shadow-[0_1px_12px_rgba(0,0,0,0.06)] ring-1 ring-black/5 antialiased"
       >
-        <div className="w-[90%] mx-auto h-16 flex items-center justify-between">
+        <div className="w-[90%] mx-auto h-20 flex items-center justify-between">
 
           {/* Logo */}
           <NavLink
             to="/"
-            className="text-base font-bold tracking-tight text-gray-900 select-none leading-none"
+            className="sm:w-30 md:w-34 lg:w-40"
           >
-            GETMETUTOR
+            <img src="/images/Logo.png" alt="" />
           </NavLink>
 
           {/* Center links — hidden on tablet & below */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-7">
             {menuLinks.map((link) => (
               link.anchor ? (
                 <button
@@ -107,20 +107,14 @@ export default function Navbar() {
           </div>
 
           {/* CTA — hidden on tablet & below */}
-          <div className="hidden md:flex items-center">
-           <Link
-							to="/demo"
-							className=" inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-[12px]  text-white transition hover:bg-orange-500"
-						>
-							Book Free Demo
-							<ArrowRight size={15} />
-						</Link>
+          <div className="hidden lg:flex items-center">
+          <Button to="/demo" text="Book Free Trial" />
           </div>
 
           {/* Hamburger — visible on tablet & below */}
           <button
             onClick={() => setIsOpen((p) => !p)}
-            className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.25 focus:outline-none"
+            className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.25 focus:outline-none"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>

@@ -11,6 +11,7 @@ import Syllabus from "../pages/Syllabus";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Terms from "../pages/Terms";
 import About from "../pages/About";
+import RefundPolicy from "../pages/RefundPolicy";
 
 export function getRouter() {
   return createBrowserRouter([
@@ -62,6 +63,10 @@ export function getRouter() {
         {
           path: "terms",
           element: <Terms />,
+        },
+        {
+          path: "refund-policy",
+          element: <RefundPolicy />,
         },
       ],
     },
