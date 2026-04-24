@@ -1238,6 +1238,326 @@ const createSubject = (countryName, subjectName) => {
     };
   }
 
+  if (countryName === "UK" && subjectName === "English") {
+    const englishGrades = [
+      {
+        id: `${countryName.toLowerCase()}-english-reception`,
+        title: "Reception (Early Years)",
+        summary:
+          "In Reception English (UK curriculum), children begin developing early literacy skills through phonics, listening, speaking, and simple reading activities.",
+        overview:
+          "In Reception English (UK curriculum), children begin developing early literacy skills through phonics, listening, speaking, and simple reading activities.",
+        whatStudentsLearn: [
+          "Letter recognition and phonics sounds",
+          "Basic vocabulary development",
+          "Listening and speaking skills",
+          "Recognizing simple words",
+          "Early reading and storytelling",
+          "Understanding simple instructions",
+        ],
+        keySkillsDeveloped: [
+          "Early reading readiness",
+          "Listening comprehension",
+          "Vocabulary building",
+          "Confidence in speaking",
+        ],
+        howWeHelp:
+          "We use phonics-based learning and interactive activities to make early English fun and engaging.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-1`,
+        title: "Year 1",
+        summary:
+          "Year 1 English focuses on phonics, basic reading, and simple sentence writing.",
+        overview:
+          "Year 1 English focuses on phonics, basic reading, and simple sentence writing.",
+        whatStudentsLearn: [
+          "Phonics and word decoding",
+          "Reading simple sentences",
+          "Writing basic sentences",
+          "Introduction to punctuation",
+          "Vocabulary building",
+        ],
+        keySkillsDeveloped: [
+          "Reading fluency",
+          "Sentence formation",
+          "Basic comprehension",
+        ],
+        howWeHelp:
+          "We guide students step-by-step to build strong reading and writing foundations.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-2`,
+        title: "Year 2",
+        summary:
+          "Year 2 English builds on reading fluency and introduces structured writing and grammar basics.",
+        overview:
+          "Year 2 English builds on reading fluency and introduces structured writing and grammar basics.",
+        whatStudentsLearn: [
+          "Reading short stories with understanding",
+          "Writing short paragraphs",
+          "Grammar basics (nouns, verbs, adjectives)",
+          "Punctuation and sentence structure",
+          "Answering comprehension questions",
+        ],
+        keySkillsDeveloped: [
+          "Reading comprehension",
+          "Writing clarity",
+          "Grammar understanding",
+        ],
+        howWeHelp:
+          "We focus on improving fluency and helping students express ideas clearly.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-3`,
+        title: "Year 3",
+        summary:
+          "Year 3 English introduces structured reading and writing, focusing on comprehension and paragraph writing.",
+        overview:
+          "Year 3 English introduces structured reading and writing, focusing on comprehension and paragraph writing.",
+        whatStudentsLearn: [
+          "Reading comprehension strategies",
+          "Writing structured paragraphs",
+          "Vocabulary development",
+          "Grammar and sentence structure",
+          "Story writing basics",
+        ],
+        keySkillsDeveloped: [
+          "Analytical reading",
+          "Structured writing",
+          "Vocabulary usage",
+        ],
+        howWeHelp:
+          "We help students improve comprehension and writing through guided practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-4`,
+        title: "Year 4",
+        summary:
+          "Year 4 English focuses on deeper comprehension and developing writing skills.",
+        overview:
+          "Year 4 English focuses on deeper comprehension and developing writing skills.",
+        whatStudentsLearn: [
+          "Reading longer texts",
+          "Writing paragraphs and short essays",
+          "Grammar rules and punctuation",
+          "Vocabulary building",
+          "Identifying key ideas",
+        ],
+        keySkillsDeveloped: [
+          "Reading analysis",
+          "Writing organization",
+          "Grammar accuracy",
+        ],
+        howWeHelp:
+          "We guide students in structuring their writing and improving clarity.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-5`,
+        title: "Year 5",
+        summary:
+          "Year 5 English develops advanced comprehension and introduces essay-style writing.",
+        overview:
+          "Year 5 English develops advanced comprehension and introduces essay-style writing.",
+        whatStudentsLearn: [
+          "Reading and analyzing texts",
+          "Writing structured essays",
+          "Grammar and punctuation",
+          "Vocabulary development",
+          "Identifying themes and ideas",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Essay writing",
+          "Text analysis",
+        ],
+        howWeHelp:
+          "We support students in writing clearly and understanding complex texts.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-6`,
+        title: "Year 6",
+        summary:
+          "Year 6 English prepares students for KS2 SATs and secondary school.",
+        overview:
+          "Year 6 English prepares students for KS2 SATs and secondary school.",
+        whatStudentsLearn: [
+          "Reading comprehension (SATs focus)",
+          "Writing structured essays",
+          "Grammar and punctuation",
+          "Vocabulary and spelling",
+          "Answering exam-style questions",
+        ],
+        keySkillsDeveloped: [
+          "Exam readiness",
+          "Writing clarity",
+          "Reading accuracy",
+        ],
+        howWeHelp:
+          "We focus on SATs preparation, improving speed, accuracy, and confidence.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-7`,
+        title: "Year 7",
+        summary:
+          "Year 7 English builds secondary-level skills, focusing on reading analysis and structured writing.",
+        overview:
+          "Year 7 English builds secondary-level skills, focusing on reading analysis and structured writing.",
+        whatStudentsLearn: [
+          "Analyzing texts",
+          "Writing essays",
+          "Grammar and language use",
+          "Vocabulary expansion",
+          "Understanding tone and style",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Writing structure",
+          "Communication skills",
+        ],
+        howWeHelp:
+          "We help students transition smoothly into secondary-level English.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-8`,
+        title: "Year 8",
+        summary:
+          "Year 8 English develops deeper understanding of texts and improves writing skills.",
+        overview:
+          "Year 8 English develops deeper understanding of texts and improves writing skills.",
+        whatStudentsLearn: [
+          "Text analysis",
+          "Writing structured essays",
+          "Grammar and punctuation",
+          "Vocabulary building",
+          "Comparing texts",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Writing clarity",
+          "Text interpretation",
+        ],
+        howWeHelp:
+          "We help students strengthen analysis and writing skills through guided practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-9`,
+        title: "Year 9",
+        summary:
+          "Year 9 English prepares students for GCSE by developing advanced reading and writing skills.",
+        overview:
+          "Year 9 English prepares students for GCSE by developing advanced reading and writing skills.",
+        whatStudentsLearn: [
+          "Analyzing literature",
+          "Writing essays and responses",
+          "Grammar and language use",
+          "Understanding themes and characters",
+          "Argument writing",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Essay writing",
+          "GCSE readiness",
+        ],
+        howWeHelp:
+          "We build strong foundations for GCSE English success.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-10`,
+        title: "Year 10 (GCSE)",
+        summary:
+          "Year 10 English begins GCSE preparation with focus on literature and language analysis.",
+        overview:
+          "Year 10 English begins GCSE preparation with focus on literature and language analysis.",
+        whatStudentsLearn: [
+          "Literature texts (novels, plays, poetry)",
+          "Language analysis",
+          "Writing essays and responses",
+          "Grammar and vocabulary",
+          "Exam techniques",
+        ],
+        keySkillsDeveloped: [
+          "Text analysis",
+          "Essay writing",
+          "Exam preparation",
+        ],
+        howWeHelp:
+          "We provide structured GCSE preparation with practice and guidance.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-11`,
+        title: "Year 11 (GCSE)",
+        summary:
+          "Year 11 English focuses on final GCSE preparation and exam success.",
+        overview:
+          "Year 11 English focuses on final GCSE preparation and exam success.",
+        whatStudentsLearn: [
+          "Advanced text analysis",
+          "Writing exam responses",
+          "Past paper practice",
+          "Exam strategies",
+        ],
+        keySkillsDeveloped: [
+          "Exam confidence",
+          "Time management",
+          "Analytical thinking",
+        ],
+        howWeHelp:
+          "We focus on targeted revision and exam performance improvement.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-12`,
+        title: "Year 12 (A-Level)",
+        summary:
+          "Year 12 English introduces A-Level concepts, focusing on deeper literary analysis and writing.",
+        overview:
+          "Year 12 English introduces A-Level concepts, focusing on deeper literary analysis and writing.",
+        whatStudentsLearn: [
+          "Advanced literature study",
+          "Essay writing",
+          "Language analysis",
+          "Critical thinking",
+          "Research skills",
+        ],
+        keySkillsDeveloped: [
+          "Analytical reasoning",
+          "Advanced writing",
+          "Interpretation skills",
+        ],
+        howWeHelp:
+          "We guide students through complex texts and improve writing skills.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-english-13`,
+        title: "Year 13 (A-Level)",
+        summary:
+          "Year 13 English prepares students for final A-Level exams and university-level study.",
+        overview:
+          "Year 13 English prepares students for final A-Level exams and university-level study.",
+        whatStudentsLearn: [
+          "Advanced literary analysis",
+          "Critical essays",
+          "Research-based writing",
+          "Exam preparation",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced communication",
+          "Exam readiness",
+        ],
+        howWeHelp:
+          "We provide structured support and exam-focused preparation for top performance.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-english`,
+      name: "English",
+      shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: englishGrades,
+    };
+  }
+
   // Canada-specific English syllabus (custom grade content)
   if (countryName === "Canada" && subjectName === "English") {
     const englishGrades = [
@@ -1794,6 +2114,328 @@ const createSubject = (countryName, subjectName) => {
       name: "English",
       shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
       grades: englishGrades.map((grade) => normalizeGradeShape(grade)),
+    };
+  }
+
+  if (countryName === "UK" && subjectName === "Science") {
+    const scienceGrades = [
+      {
+        id: `${countryName.toLowerCase()}-science-reception`,
+        title: "Reception (Early Years)",
+        summary:
+          "In Reception Science, children explore the world around them through observation, play, and simple investigations.",
+        overview:
+          "In Reception Science, children explore the world around them through observation, play, and simple investigations. The focus is on curiosity and understanding basic natural concepts.",
+        whatStudentsLearn: [
+          "Identifying plants and animals",
+          "Understanding weather and seasons",
+          "Using senses to explore",
+          "Recognizing patterns in nature",
+          "Simple cause and effect",
+        ],
+        keySkillsDeveloped: [
+          "Observation",
+          "Curiosity",
+          "Basic questioning",
+          "Understanding surroundings",
+        ],
+        howWeHelp:
+          "We make science fun and engaging through visuals and simple real-life examples.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-1`,
+        title: "Year 1",
+        summary:
+          "Year 1 Science introduces basic concepts of living things, materials, and everyday phenomena.",
+        overview:
+          "Year 1 Science introduces basic concepts of living things, materials, and everyday phenomena.",
+        whatStudentsLearn: [
+          "Living and non-living things",
+          "Basic plant structure",
+          "Seasonal changes",
+          "Materials and their properties",
+          "Simple experiments",
+        ],
+        keySkillsDeveloped: [
+          "Observation",
+          "Comparison",
+          "Early scientific thinking",
+        ],
+        howWeHelp:
+          "We use simple explanations and examples to build strong foundational understanding.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-2`,
+        title: "Year 2",
+        summary:
+          "Year 2 Science develops understanding of life processes, habitats, and materials.",
+        overview:
+          "Year 2 Science develops understanding of life processes, habitats, and materials.",
+        whatStudentsLearn: [
+          "Life cycles (plants and animals)",
+          "Habitats and environments",
+          "Uses of materials",
+          "Basic health and body awareness",
+          "Simple scientific investigations",
+        ],
+        keySkillsDeveloped: [
+          "Logical thinking",
+          "Observation",
+          "Understanding relationships",
+        ],
+        howWeHelp:
+          "We help students connect concepts through structured lessons and visuals.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-3`,
+        title: "Year 3",
+        summary:
+          "Year 3 Science introduces structured topics like forces, light, and plants.",
+        overview:
+          "Year 3 Science introduces structured topics like forces, light, and plants.",
+        whatStudentsLearn: [
+          "Forces and motion",
+          "Light and shadows",
+          "Plant life and growth",
+          "Rocks and soils",
+          "Basic scientific experiments",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Observation",
+          "Scientific understanding",
+        ],
+        howWeHelp:
+          "We simplify concepts and help students understand real-world applications.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-4`,
+        title: "Year 4",
+        summary:
+          "Year 4 Science focuses on electricity, sound, and ecosystems.",
+        overview:
+          "Year 4 Science focuses on electricity, sound, and ecosystems.",
+        whatStudentsLearn: [
+          "Electricity basics",
+          "Sound and vibrations",
+          "Food chains and ecosystems",
+          "States of matter",
+          "Scientific enquiry",
+        ],
+        keySkillsDeveloped: [
+          "Problem-solving",
+          "Understanding systems",
+          "Data interpretation",
+        ],
+        howWeHelp:
+          "We guide students through experiments and concept-based learning.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-5`,
+        title: "Year 5",
+        summary:
+          "Year 5 Science explores space, forces, and living systems in more detail.",
+        overview:
+          "Year 5 Science explores space, forces, and living systems in more detail.",
+        whatStudentsLearn: [
+          "Earth and space",
+          "Forces (gravity, air resistance)",
+          "Human life cycles",
+          "Materials and changes",
+          "Scientific investigations",
+        ],
+        keySkillsDeveloped: [
+          "Logical reasoning",
+          "Analytical thinking",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We help students understand complex ideas through clear explanations.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-6`,
+        title: "Year 6",
+        summary:
+          "Year 6 Science prepares students for secondary school with advanced topics and reasoning.",
+        overview:
+          "Year 6 Science prepares students for secondary school with advanced topics and reasoning.",
+        whatStudentsLearn: [
+          "Evolution and inheritance",
+          "Electricity (advanced)",
+          "Human body systems",
+          "Light and reflection",
+          "Scientific enquiry",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Scientific reasoning",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We strengthen understanding and prepare students for KS3.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-7`,
+        title: "Year 7",
+        summary:
+          "Year 7 Science introduces secondary-level biology, chemistry, and physics concepts.",
+        overview:
+          "Year 7 Science introduces secondary-level biology, chemistry, and physics concepts.",
+        whatStudentsLearn: [
+          "Cells and body systems",
+          "Particles and matter",
+          "Forces and motion",
+          "Energy basics",
+          "Scientific investigations",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "Scientific reasoning",
+          "Experiment skills",
+        ],
+        howWeHelp:
+          "We ensure smooth transition to secondary science with clear explanations.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-8`,
+        title: "Year 8",
+        summary:
+          "Year 8 Science develops deeper understanding of scientific concepts across all disciplines.",
+        overview:
+          "Year 8 Science develops deeper understanding of scientific concepts across all disciplines.",
+        whatStudentsLearn: [
+          "Chemical reactions",
+          "Energy transfers",
+          "Human body systems",
+          "Ecology",
+          "Waves and sound",
+        ],
+        keySkillsDeveloped: [
+          "Logical reasoning",
+          "Data analysis",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We break down complex topics and improve understanding through structured practice.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-9`,
+        title: "Year 9",
+        summary:
+          "Year 9 Science prepares students for GCSE by strengthening core concepts.",
+        overview:
+          "Year 9 Science prepares students for GCSE by strengthening core concepts.",
+        whatStudentsLearn: [
+          "Advanced biology concepts",
+          "Chemical reactions",
+          "Forces and energy",
+          "Scientific analysis",
+          "Practical skills",
+        ],
+        keySkillsDeveloped: [
+          "Analytical thinking",
+          "GCSE readiness",
+          "Problem-solving",
+        ],
+        howWeHelp:
+          "We build strong foundations for GCSE science success.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-10`,
+        title: "Year 10 (GCSE)",
+        summary:
+          "Year 10 Science begins GCSE preparation, covering biology, chemistry, and physics topics in depth.",
+        overview:
+          "Year 10 Science begins GCSE preparation, covering biology, chemistry, and physics topics in depth.",
+        whatStudentsLearn: [
+          "Cell biology and genetics",
+          "Chemical reactions and bonding",
+          "Forces, energy, and electricity",
+          "Scientific experiments",
+          "Exam techniques",
+        ],
+        keySkillsDeveloped: [
+          "Problem-solving",
+          "Scientific reasoning",
+          "Exam preparation",
+        ],
+        examBoards: ["AQA", "Edexcel (Pearson)", "OCR", "WJEC / Eduqas"],
+        howWeHelp:
+          "We provide exam-focused tutoring with past paper practice and targeted support.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-11`,
+        title: "Year 11 (GCSE)",
+        summary:
+          "Year 11 Science focuses on final GCSE preparation and exam performance.",
+        overview:
+          "Year 11 Science focuses on final GCSE preparation and exam performance.",
+        whatStudentsLearn: [
+          "Advanced topic revision",
+          "Practical-based questions",
+          "Exam strategies",
+          "Past paper practice",
+        ],
+        keySkillsDeveloped: [
+          "Exam confidence",
+          "Time management",
+          "Accuracy",
+        ],
+        examBoards: ["AQA", "Edexcel", "OCR", "WJEC"],
+        howWeHelp:
+          "We focus on revision, exam strategies, and improving weak areas.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-12`,
+        title: "Year 12 (A-Level)",
+        summary:
+          "Year 12 Science focuses on advanced concepts in biology, chemistry, or physics depending on subject choice.",
+        overview:
+          "Year 12 Science focuses on advanced concepts in biology, chemistry, or physics depending on subject choice.",
+        whatStudentsLearn: [
+          "Advanced theory",
+          "Practical experiments",
+          "Data analysis",
+          "Subject-specific topics",
+        ],
+        keySkillsDeveloped: [
+          "Analytical reasoning",
+          "Scientific thinking",
+          "Problem-solving",
+        ],
+        examBoards: ["AQA", "Edexcel", "OCR"],
+        howWeHelp:
+          "We guide students through advanced topics and help build strong understanding.",
+      },
+      {
+        id: `${countryName.toLowerCase()}-science-13`,
+        title: "Year 13 (A-Level)",
+        summary:
+          "Year 13 Science prepares students for final A-Level exams and higher education.",
+        overview:
+          "Year 13 Science prepares students for final A-Level exams and higher education.",
+        whatStudentsLearn: [
+          "Advanced concepts",
+          "Research-based topics",
+          "Exam-focused practice",
+          "Complex problem-solving",
+        ],
+        keySkillsDeveloped: [
+          "Critical thinking",
+          "Advanced analysis",
+          "Exam readiness",
+        ],
+        examBoards: ["AQA", "Edexcel", "OCR"],
+        howWeHelp:
+          "We provide structured revision and exam-focused preparation for top results.",
+      },
+    ];
+
+    return {
+      id: `${countryName.toLowerCase()}-science`,
+      name: "Science",
+      shortDescription: `Science pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      grades: scienceGrades,
     };
   }
 
