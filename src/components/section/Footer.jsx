@@ -7,7 +7,7 @@ const Footer = () => {
     quick: [
       { name: "Home", path: "/" },
       { name: "About Us", path: "/about" },
-      { name: "Demo", path: "/demo" },
+      { name: "Book Free Trial", path: "/demo" },
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Terms & Conditions", path: "/terms" },
       { name: "Refund Policy", path: "/refund-policy" },
@@ -149,10 +149,10 @@ const Footer = () => {
 
           <div className="space-y-2 text-sm text-gray-400 leading-6">
             <a
-              href="mailto:support@getmetutor.com"
+              href="mailto:support@getmetutor.online"
               className="text-gray-300 hover:text-[var(--color-primary)] transition-all duration-300 block"
             >
-              support@getmetutor.com
+              support@getmetutor.online
             </a>
             {contactNumbers.map((item, i) => (
               <div key={i}>

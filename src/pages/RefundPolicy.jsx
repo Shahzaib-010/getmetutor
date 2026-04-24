@@ -31,7 +31,7 @@ function RefundPolicy() {
           <section className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-slate-900">7-Day Money-Back Guarantee</h2>
             <p className="mt-3 text-slate-600">
-              We offer a 7-day money-back guarantee for all new enrollments. If you are not fully satisfied after your first paid session, simply contact us at <strong>info@getmetutor.com</strong> within 7 days of your first session to request a full refund for any unused sessions.
+              We offer a 7-day money-back guarantee for all new enrollments. If you are not fully satisfied after your first paid session, simply contact us at <strong>info@getmetutor.online</strong> within 7 days of your first session to request a full refund for any unused sessions.
             </p>
             <p className="mt-3 text-slate-600">
               Refunds will be processed using the original payment method within 5–10 business days of approval.
@@ -89,8 +89,8 @@ function RefundPolicy() {
             </p>
             <div className="flex items-center gap-2 text-slate-700">
               <span className="text-xl">📧</span>
-              <a href="mailto:info@getmetutor.com" className="font-semibold text-orange-600 hover:text-orange-700 underline">
-                info@getmetutor.com
+              <a href="mailto:info@getmetutor.online" className="font-semibold text-orange-600 hover:text-orange-700 underline">
+                info@getmetutor.online
               </a>
             </div>
           </section>

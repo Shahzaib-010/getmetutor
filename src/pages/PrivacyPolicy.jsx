@@ -96,9 +96,9 @@ function PrivacyPolicy() {
               <div>
                 <p className="text-slate-600">If you have questions about this Privacy Policy or how your data is handled, please contact us:</p>
                 <ul className="mt-3 list-none text-slate-600">
-                  <li>📧 <a href="mailto:support@getmetutor.com" className="text-orange-600">support@getmetutor.com</a></li>
+                  <li>📧 <a href="mailto:support@getmetutor.online" className="text-orange-600">support@getmetutor.online</a></li>
                   <li>📞 +1 089461 55123</li>
-                  <li>🌐 <a href="https://www.getmetutor.com" target="_blank" rel="noreferrer" className="text-orange-600">https://www.getmetutor.com</a></li>
+                  <li>🌐 <a href="https://www.getmetutor.online" target="_blank" rel="noreferrer" className="text-orange-600">https://www.getmetutor.online</a></li>
                 </ul>
               </div>
 

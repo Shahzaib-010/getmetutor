@@ -88,7 +88,7 @@ const REGIONS = {
     footerLine1: "Prices in GBP. VAT may apply.",
     footerLine2: "Secure checkout · Works on modern browsers",
     refundNote:
-      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
+      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.online.",
     plans: {
       personal: {
         name: "Standard Plan",
@@ -150,7 +150,7 @@ const REGIONS = {
     footerLine1: "Prices in CAD. Taxes may apply.",
     footerLine2: "Secure checkout · Works on modern browsers",
     refundNote:
-      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
+      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.online.",
     plans: {
       personal: {
         name: "Standard Plan",
@@ -212,7 +212,7 @@ const REGIONS = {
     footerLine1: "Prices in AUD. GST may apply.",
     footerLine2: "Secure checkout · Works on modern browsers",
     refundNote:
-      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.com.",
+      "If you're not happy with GetmeTutor, we'll refund you—no questions asked. Email support@getmetutor.online.",
     plans: {
       personal: {
         name: "Standard Plan",

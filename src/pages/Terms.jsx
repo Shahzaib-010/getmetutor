@@ -52,7 +52,7 @@ function Terms() {
 
         <section className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Discontinuation of Services by Student</h3>
-          <p className="mt-2 text-slate-600">If you wish to cancel your tutoring program, please provide a 15-day written notice via email at <a href="mailto:support@getmetutor.com" className="text-orange-600">support@getmetutor.com</a>. We will process your request promptly and securely close your account.</p>
+          <p className="mt-2 text-slate-600">If you wish to cancel your tutoring program, please provide a 15-day written notice via email at <a href="mailto:support@getmetutor.online" className="text-orange-600">support@getmetutor.online</a>. We will process your request promptly and securely close your account.</p>
         </section>
 
         <section className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
@@ -67,7 +67,7 @@ function Terms() {
 
         <section className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Login Credentials & Tutor Assignment</h3>
-          <p className="mt-2 text-slate-600">After registration, you’ll receive your username and password. You are responsible for keeping these credentials confidential. If you suspect unauthorized access to your account, contact us immediately at <a href="mailto:support@getmetutor.com" className="text-orange-600">support@getmetutor.com</a>. GetMeTutor ensures each student is matched with a suitable, qualified tutor. We reserve the right to change tutors if necessary due to scheduling, subject expertise, or operational reasons. For safety and privacy, students and parents must not share personal contact details with tutors outside the platform.</p>
+          <p className="mt-2 text-slate-600">After registration, you’ll receive your username and password. You are responsible for keeping these credentials confidential. If you suspect unauthorized access to your account, contact us immediately at <a href="mailto:support@getmetutor.online" className="text-orange-600">support@getmetutor.online</a>. GetMeTutor ensures each student is matched with a suitable, qualified tutor. We reserve the right to change tutors if necessary due to scheduling, subject expertise, or operational reasons. For safety and privacy, students and parents must not share personal contact details with tutors outside the platform.</p>
         </section>
 
         <section className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
@@ -87,7 +87,7 @@ function Terms() {
 
         <section className="rounded-xl bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Contact Us</h3>
-          <p className="mt-2 text-slate-600">For questions, concerns, or clarification regarding these Terms, please reach out: <a href="mailto:support@getmetutor.com" className="text-orange-600">support@getmetutor.com</a> or visit <a href="https://www.getmetutor.com" target="_blank" rel="noreferrer" className="text-orange-600">https://www.getmetutor.com</a>.</p>
+          <p className="mt-2 text-slate-600">For questions, concerns, or clarification regarding these Terms, please reach out: <a href="mailto:support@getmetutor.online" className="text-orange-600">support@getmetutor.online</a> or visit <a href="https://www.getmetutor.online" target="_blank" rel="noreferrer" className="text-orange-600">https://www.getmetutor.online</a>.</p>
         </section>
 
       </main>
