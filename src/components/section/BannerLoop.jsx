@@ -21,7 +21,7 @@ function BannerLoop({
   items = DEFAULT_ITEMS,
   bg = "#ffffff",
   speedSeconds = 18,
-  className = "h-23 flex justify-center items-center",
+  className = "h-11 md:h-23 flex justify-center items-center",
 }) {
   const shouldReduceMotion = useReducedMotion();
   const viewportRef = useRef(null);

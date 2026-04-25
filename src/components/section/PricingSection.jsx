@@ -389,6 +389,13 @@ function  PricingSection({ className = "" }) {
 function PricingCard({ plan, region, orange, dark, onCardClick }) {
   const Icon = plan.icon;
   const isFeatured = plan.featured;
+  const perLessonFeature = plan.features.find((feature) =>
+    /per lesson/i.test(feature.text)
+  );
+  const perLessonRate = perLessonFeature
+    ? perLessonFeature.text.replace(/\s*per lesson\s*/i, "").trim()
+    : "Custom";
+  const perLessonLabel = perLessonFeature ? "per lesson" : "tailored rate";
 
   return (
     <motion.article
@@ -472,7 +479,7 @@ function PricingCard({ plan, region, orange, dark, onCardClick }) {
       <div className="mt-8 flex items-baseline gap-1.5">
         <AnimatePresence mode="wait">
           <motion.span
-            key={`${region.code}-${plan.price}`}
+            key={`${region.code}-${plan.name}-${perLessonRate}`}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
@@ -481,15 +488,15 @@ function PricingCard({ plan, region, orange, dark, onCardClick }) {
               isFeatured ? "text-white" : "text-gray-900"
             }`}
           >
-            {region.formatPrice(plan.price)}
+            {perLessonRate}
           </motion.span>
         </AnimatePresence>
         <span
-          className={`text-sm line-through ${
+          className={`text-xs font-medium uppercase tracking-wide ${
             isFeatured ? "text-gray-500" : "text-gray-400"
           }`}
         >
-          {region.formatPrice(plan.was)}
+          {perLessonLabel}
         </span>
       </div>
 
