@@ -13,9 +13,9 @@ import Button from "../components/ui/Button";
 const CALENDLY_EVENT_URL = "https://calendly.com/getmetutoronline/60min";
 
 const heroStats = [
-  { value: "1:1", label: "live tutor attention" },
-  { value: "60m", label: "focused demo session" },
-  { value: "Fast", label: "booking confirmation" },
+  { value: "1:1", label: "Dedicated tutor focused only on your child" },
+  { value: "60m", label: "Full one to one learning session" },
+  { value: "Fast", label: "Choose a time and get confirmation easily" },
 ];
 
 function Demo() {
@@ -32,13 +32,11 @@ function Demo() {
             
 
             <h1 className="mx-auto mt-5 w-[90%] text-balance text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl md:text-5xl lg:text-6xl">
-              Book a free trial <br/> Experience personalised tutoring live
+              Start Your Free Trial <br/> and See Real Academic Progress
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-              Claim a complimentary 60-minute trial with a tutor matched to your needs.
-              Reserve your free slot now — booking takes under a minute with instant
-              confirmation.
+              Get a complimentary 60 minute one to one session with a tutor matched to your child’s subject and level. Experience clear explanations, structured learning and real results from the first lesson.
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">

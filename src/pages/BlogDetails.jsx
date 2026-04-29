@@ -1,18 +1,10 @@
 import React, { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, Clock3 } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { useBlogs } from "../context/BlogContext";
 
-function estimateReadTime(blog) {
-  const contentText = String(blog?.content || "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  const wordCount = contentText ? contentText.split(" ").length : 0;
-  return `${Math.max(3, Math.ceil(wordCount / 180) || 3)} min read`;
-}
 
 function formatDate(date) {
   if (!date) return "Recently published";
@@ -105,11 +97,6 @@ export default function BlogDetails() {
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/80">
                   <span>{formatDate(blog.created_at)}</span>
-                  <span className="h-1 w-1 rounded-full bg-white/50" />
-                  <span className="inline-flex items-center gap-2">
-                    <Clock3 size={15} />
-                    {estimateReadTime(blog)}
-                  </span>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowRight, Clock3, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 import { useBlogs } from "../../context/BlogContext";
 import Button from "../ui/Button";
@@ -10,14 +10,6 @@ const WHATSAPP_URL =
   "https://wa.me/923160479437?text=" +
   encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
-function estimateReadTime(blog) {
-  const contentText = String(blog?.content || "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  const wordCount = contentText ? contentText.split(" ").length : 0;
-  return `${Math.max(3, Math.ceil(wordCount / 180) || 3)} min read`;
-}
 
 function formatDate(date) {
   if (!date) return "Recently published";
@@ -71,11 +63,10 @@ export default function BlogsPreviewSection() {
               From the blog
             </div>
             <h2 className="mt-5 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-              Helpful reads for parents and students.
+              Expert Study Tips and Academic Guidance for Students
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              A quick preview of the latest guidance, study insights, and academic support
-              articles from GetMeTutor.
+              Explore expert advice on exams, study techniques and subject support to help your child succeed in school.
             </p>
           </div>
 
@@ -84,10 +75,10 @@ export default function BlogsPreviewSection() {
 
 <div className="flex gap-3">
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" text="Contact Us" />
+          <Button href="/demo" target="_blank" rel="noopener noreferrer" text="Book Free Trial" />
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button href="/blogs" target="_blank" rel="noopener noreferrer" text="See More" />
+          <Button href="/blogs" target="_blank" rel="noopener noreferrer" text="Explore All Articles" />
         </div>
 
         </div>
@@ -113,9 +104,8 @@ export default function BlogsPreviewSection() {
                   <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-slate-400">
                     <span>{formatDate(blog.created_at)}</span>
                     <span className="h-1 w-1 rounded-full bg-slate-300" />
-                    <span className="inline-flex items-center gap-1.5">
-                      <Clock3 size={13} />
-                      {estimateReadTime(blog)}
+                    <span>
+                      {formatDate(blog.created_at)}
                     </span>
                   </div>
                   <h3 className="mt-4 line-clamp-2 text-xl font-semibold leading-tight text-slate-900 transition group-hover:text-orange-600">

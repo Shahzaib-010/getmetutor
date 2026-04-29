@@ -55,6 +55,8 @@ const REGIONS = {
         features: [
           { text: "12 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
+          { text: "Faster progress and better results" },
+          { text: "Priority tutor matching" },
           { text: "Monthly billing" },
           { text: "$22 per lesson" },
         ],
@@ -68,9 +70,10 @@ const REGIONS = {
         devices: "Custom schedule",
         icon: Trophy,
         features: [
-          { text: "We can build a plan that fits your child’s schedule.", highlight: true },
-          { text: "Flexible scheduling" },
-          { text: "Tailored lesson counts & pacing" },
+          { text: "Flexible schedule", highlight: true },
+          { text: "Choose number of sessions" },
+          { text: "Suitable for exam prep or specific subjects" },
+          { text: "Personalised learning plan" },
         ],
       },
     },
@@ -117,6 +120,8 @@ const REGIONS = {
         features: [
           { text: "12 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
+          { text: "Faster progress and better results" },
+          { text: "Priority tutor matching" },
           { text: "Monthly billing" },
           { text: "£18 per lesson" },
         ],
@@ -130,9 +135,10 @@ const REGIONS = {
         devices: "Custom schedule",
         icon: Trophy,
         features: [
-          { text: "We can build a plan that fits your child’s schedule.", highlight: true },
-          { text: "Flexible scheduling" },
-          { text: "Tailored lesson counts & pacing" },
+          { text: "Flexible schedule", highlight: true },
+          { text: "Choose number of sessions" },
+          { text: "Suitable for exam prep or specific subjects" },
+          { text: "Personalised learning plan" },
         ],
       },
     },
@@ -179,6 +185,8 @@ const REGIONS = {
         features: [
           { text: "12 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
+          { text: "Faster progress and better results" },
+          { text: "Priority tutor matching" },
           { text: "Monthly billing" },
           { text: "$22 per lesson" },
         ],
@@ -192,9 +200,10 @@ const REGIONS = {
         devices: "Custom schedule",
         icon: Trophy,
         features: [
-          { text: "We can build a plan that fits your child’s schedule.", highlight: true },
-          { text: "Flexible scheduling" },
-          { text: "Tailored lesson counts & pacing" },
+          { text: "Flexible schedule", highlight: true },
+          { text: "Choose number of sessions" },
+          { text: "Suitable for exam prep or specific subjects" },
+          { text: "Personalised learning plan" },
         ],
       },
     },
@@ -241,6 +250,8 @@ const REGIONS = {
         features: [
           { text: "12 Lessons / Month", highlight: true },
           { text: "50-minute 1-to-1 lessons" },
+          { text: "Faster progress and better results" },
+          { text: "Priority tutor matching" },
           { text: "Monthly billing" },
           { text: "$22 per lesson" },
         ],
@@ -254,9 +265,10 @@ const REGIONS = {
         devices: "Custom schedule",
         icon: Trophy,
         features: [
-          { text: "We can build a plan that fits your child’s schedule.", highlight: true },
-          { text: "Flexible scheduling" },
-          { text: "Tailored lesson counts & pacing" },
+          { text: "Flexible schedule", highlight: true },
+          { text: "Choose number of sessions" },
+          { text: "Suitable for exam prep or specific subjects" },
+          { text: "Personalised learning plan" },
         ],
       },
     },
@@ -294,9 +306,9 @@ function  PricingSection({ className = "" }) {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-[2rem] font-extrabold tracking-tight text-gray-900 leading-snug">
-            Small investment
+            Affordable Plans Designed for 
             <br />
-            <span style={{ color: ORANGE }}>Huge learning boost</span>
+            <span style={{ color: ORANGE }}>Real Academic</span>Progress
           </h2>
           <div className="mt-3.5 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 text-[11px] sm:text-xs text-gray-600">
            
@@ -322,7 +334,7 @@ function  PricingSection({ className = "" }) {
                 ))}
               </div>
               <span className="text-gray-600">
-                from <strong className="text-gray-900 font-semibold">1,000+</strong> happy learners
+                4.9 rating from 1000+  happy students worldwide
               </span>
             </div>
           </div>

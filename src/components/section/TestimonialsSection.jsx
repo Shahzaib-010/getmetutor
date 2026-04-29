@@ -120,14 +120,13 @@ export default function TestimonialsSection({ className = "" }) {
             className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-primary)">
-              Testimonials
+              Real Results Real Confidence
             </p>
             <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-(--color-text) sm:text-4xl">
-              Real students. <span className="text-(--color-primary)">Real progress.</span>
+              Trusted by Students and Parents Worldwide 
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-600 sm:text-base">
-              Learners and parents trust GetmeTutor for clear explanations, structured support,
-              and tutors who show up prepared every time.
+              Students and parents trust Get Me Tutor for clear explanations, structured lessons and consistent progress across GCSE A Levels and K 12.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-gray-200/90 pt-8">
@@ -145,10 +144,10 @@ Trusted by students & parents in UK, USA, Canada & Australia
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
-                href={WHATSAPP_URL}
+                href="/demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                text="Contact Us"
+                text="Book Free Trial"
               />
             </div>
           </motion.div>

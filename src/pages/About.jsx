@@ -4,6 +4,7 @@ import BannerLoop from "../components/section/BannerLoop";
 import Faq from "../components/section/Faq";
 import Button from "../components/ui/Button";
 import PricingSection from "../components/section/PricingSection";
+import HowItWorksSection from "../components/section/HowItWorksSection";
 
 function About() {
   return (
@@ -14,11 +15,15 @@ function About() {
             <div className="max-w-3xl">
               <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">About GetMeTutor</h1>
               <p className="mt-3 text-lg text-slate-700">
-                GetMeTutor is a trusted online tutoring platform connecting students with qualified tutors for personalized, effective, and flexible learning. We help every learner build confidence and achieve academic success.
+                 GetMeTutor is a trusted online tutoring platform helping students across the UK, USA and Canada achieve better academic results. We connect learners with experienced tutors for personalised one to one sessions in Maths, English Science and more.
+                 <br />
+                 <br/>
+                 Our approach focuses on clear explanations, structured learning and building confidence so every student can succeed in school exams and beyond.
+
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button href="/demo" text="Book a Free Demo" className="bg-orange-500" />
+                <Button href="/demo" text="Book Free Trial" className="bg-orange-500" />
                
               </div>
             </div>
@@ -26,10 +31,11 @@ function About() {
             <div className="mt-6 lg:mt-0 flex w-full max-w-xs flex-col gap-3 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
               <h4 className="text-sm font-semibold text-slate-900">Why Choose GetMeTutor</h4>
               <ul className="mt-2 space-y-2 text-sm text-slate-600">
-                <li>Verified, experienced tutors</li>
-                <li>Personalised lesson plans</li>
+                <li>Experienced and verified tutors</li>
+                <li>1-to-1 personalised sessions</li>
+                <li>Support for GCSE A Level and K12</li>
                 <li>Flexible scheduling to suit your routine</li>
-                <li>Secure, easy-to-use online platform</li>
+                <li>Interactive and easy to use online platform</li>
               </ul>
             </div>
           </div>
@@ -40,68 +46,31 @@ function About() {
         <section className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-slate-900">Who We Are</h2>
-            <p className="text-slate-600">GetMeTutor connects qualified tutors with students seeking high-quality, personalised education. We’re committed to making learning accessible, reliable, and results-driven. Through verified educators, customised lesson plans, and structured guidance, we help every student improve academically and enjoy learning.</p>
+            <p className="text-slate-600">GetMeTutor is a trusted online tutoring platform supporting students across the UK, USA and Canada. We connect learners with experienced tutors for one to one personalised sessions in Maths, English Science and more.
+            <br/>
+              Our focus is on clear explanations, structured learning and building confidence so every student can improve academically and perform better in exams such as GCSE A Levels and K12 assessments.
+</p>
 
             <h3 className="text-lg font-semibold text-slate-900">Our Mission</h3>
-            <p className="text-slate-600">Our mission is to make quality education accessible for every learner by connecting students with passionate tutors who provide personalised guidance and engaging lessons.</p>
+            <p className="text-slate-600">Our mission is to make high quality education accessible to every student through personalised support expert tutors and flexible online learning. We aim to help every learner build confidence, improve results and reach their full potential.</p>
 
-            <h3 className="text-lg font-semibold text-slate-900">How It Works</h3>
-            <ol className="mt-3 list-decimal pl-5 text-slate-600 space-y-3">
-              <li>
-                <strong>Book a Free Demo</strong> — Start by booking a free demo session at your preferred time to experience our teaching approach.
-              </li>
-              <li>
-                <strong>Attend the Demo</strong> — Join a live demo with your child and see how our tutors guide and motivate students.
-              </li>
-              <li>
-                <strong>Choose Your Package</strong> — Select a plan that fits your goals and schedule.
-              </li>
-              <li>
-                <strong>Check Availability</strong> — We'll confirm tutor availability and finalise times.
-              </li>
-              <li>
-                <strong>Complete Enrollment</strong> — Secure your plan with a quick payment.
-              </li>
-              <li>
-                <strong>Begin Regular Sessions</strong> — Start consistent, interactive lessons with your assigned tutor.
-              </li>
-            </ol>
+           
           </div>
 
           <aside className="space-y-6">
             <div className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900">Our Values</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Our Approach</h3>
               <ul className="mt-3 space-y-2 text-slate-600">
-                <li>Verified Tutors</li>
-                <li>Personalised Learning</li>
-                <li>Flexible Scheduling</li>
-                <li>Secure Platform</li>
-                <li>Progress Tracking</li>
-                <li>24x7 Support</li>
+                <li>Experienced and verified tutors</li>
+                <li>One to one personalised learning</li>
+                <li>Support for GCSE A Levels and K12</li>
+                <li>Flexible scheduling that fits your routine</li>
+                <li>Secure and easy to use online platform</li>
+                <li>Regular progress tracking and feedback</li>
               </ul>
             </div>
 
-            <div className="overflow-hidden rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900">Some Numbers</h3>
-              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-slate-200 bg-white p-4 text-center">
-                  <div className="text-2xl font-bold text-slate-900">999+</div>
-                  <div className="text-sm text-slate-600">Students Tutored</div>
-                </div>
-                <div className="rounded-lg border border-slate-200 bg-white p-4 text-center">
-                  <div className="text-2xl font-bold text-slate-900">350+</div>
-                  <div className="text-sm text-slate-600">Successful Courses</div>
-                </div>
-                <div className="rounded-lg border border-slate-200 bg-white p-4 text-center">
-                  <div className="text-2xl font-bold text-slate-900">50+</div>
-                  <div className="text-sm text-slate-600">Experienced Tutors</div>
-                </div>
-                <div className="rounded-lg border border-slate-200 bg-white p-4 text-center">
-                  <div className="text-2xl font-bold text-slate-900">98%</div>
-                  <div className="text-sm text-slate-600">Student Satisfaction</div>
-                </div>
-              </div>
-            </div>
+            
 
             <div className="rounded-xl bg-gradient-to-r from-orange-50 to-white p-6 text-center shadow-sm">
               <h4 className="text-lg font-semibold text-slate-900">Ready to Begin?</h4>
@@ -114,7 +83,17 @@ function About() {
         </section>
 
 
-        <section className="mt-12">
+        
+      </main>
+      <section className="mt-12 w-full">
+
+        <div>
+          <BannerLoop />
+        </div>
+
+          <div className="w-full">
+            <HowItWorksSection />
+          </div>
           
           <div className="mt-4">
             <PricingSection />
@@ -124,7 +103,6 @@ function About() {
         <section className="mt-12">
           <Faq />
         </section>
-      </main>
     </div>
   );
 }

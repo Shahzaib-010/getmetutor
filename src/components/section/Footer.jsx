@@ -8,6 +8,7 @@ const Footer = () => {
       { name: "Home", path: "/" },
       { name: "About Us", path: "/about" },
       { name: "Book Free Trial", path: "/demo" },
+      { name: "Holidays", path: "/holiday" },
       { name: "Privacy Policy", path: "/privacy-policy" },
       { name: "Terms & Conditions", path: "/terms" },
       { name: "Refund Policy", path: "/refund-policy" },
@@ -90,7 +91,7 @@ const Footer = () => {
               <NavLink
                 key={i}
                 to={item.path}
-                className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
+                className="block text-sm text-gray-400 hover:text-(--color-primary) transition-all duration-300"
               >
                 {item.name}
               </NavLink>
@@ -116,7 +117,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href={item.path}
-                  className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
+                  className="block text-sm text-gray-400 hover:text-(--color-primary) transition-all duration-300"
                 >
                   {item.name}
                 </a>
@@ -124,7 +125,7 @@ const Footer = () => {
                 <NavLink
                   key={i}
                   to={item.path}
-                  className="block text-sm text-gray-400 hover:text-[var(--color-primary)] transition-all duration-300"
+                  className="block text-sm text-gray-400 hover:text-(--color-primary) transition-all duration-300"
                 >
                   {item.name}
                 </NavLink>
@@ -150,7 +151,7 @@ const Footer = () => {
           <div className="space-y-2 text-sm text-gray-400 leading-6">
             <a
               href="mailto:support@getmetutor.online"
-              className="text-gray-300 hover:text-[var(--color-primary)] transition-all duration-300 block"
+              className="text-gray-300 hover:text-(--color-primary) transition-all duration-300 block"
             >
               support@getmetutor.online
             </a>
@@ -160,7 +161,7 @@ const Footer = () => {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-[var(--color-primary)] transition-all duration-300 block"
+                  className="text-gray-300 hover:text-(--color-primary) transition-all duration-300 block"
                 >
                   {item.number}
                 </a>
@@ -192,7 +193,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={item.label}
-                  className="w-10 h-10 rounded-full border border-[#272727] flex items-center justify-center text-gray-300 hover:bg-[var(--color-primary)] hover:text-black hover:border-[var(--color-primary)] transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-[#272727] flex items-center justify-center text-gray-300 hover:bg-(--color-primary) hover:text-black hover:border-(--color-primary) transition-all duration-300"
                 >
                   <Icon size={16} />
                 </motion.a>
@@ -230,7 +231,7 @@ const Footer = () => {
             <NavLink
               key={i}
               to={item.path}
-              className="text-xs sm:text-sm text-gray-500 hover:text-[var(--color-primary)] transition-all duration-300"
+              className="text-xs sm:text-sm text-gray-500 hover:text-(--color-primary) transition-all duration-300"
             >
               {item.name}
             </NavLink>

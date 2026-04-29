@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Button from "../components/ui/Button";
 
 function PrivacyPolicy() {
@@ -10,7 +9,7 @@ function PrivacyPolicy() {
           <div className="flex flex-col gap-3">
             
             <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">Privacy Policy</h1>
-            <p className="text-sm text-slate-700">Last updated: <strong>October 10, 2025</strong></p>
+            <p className="text-sm text-slate-700">Last updated: <strong>April 18, 2026</strong></p>
             <p className="text-base text-slate-600 max-w-2xl">
               At GetMeTutor we take your privacy seriously. Below we explain what information we collect, how we use it and the choices you have.
             </p>
@@ -100,6 +99,7 @@ function PrivacyPolicy() {
                   <li>📞 +1 089461 55123</li>
                   <li>🌐 <a href="https://www.getmetutor.online" target="_blank" rel="noreferrer" className="text-orange-600">https://www.getmetutor.online</a></li>
                 </ul>
+                <p className="mt-3 text-sm text-slate-500">We aim to respond within 24 hours.</p>
               </div>
 
               <div className="flex">

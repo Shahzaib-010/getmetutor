@@ -82,6 +82,25 @@ function Syllabus() {
     [countryContent.subjects, selectedSubject],
   );
 
+  const gradeRangeLabel = useMemo(() => {
+    if (!selectedSubjectData?.grades?.length) {
+      return "";
+    }
+
+    const firstGrade = selectedSubjectData.grades[0]?.title ?? "";
+    const lastGrade =
+      selectedSubjectData.grades[selectedSubjectData.grades.length - 1]?.title ??
+      firstGrade;
+
+    if (!firstGrade) {
+      return "";
+    }
+
+    return firstGrade === lastGrade
+      ? `Covers ${firstGrade}`
+      : `Covers ${firstGrade} to ${lastGrade}`;
+  }, [selectedSubjectData]);
+
   const activeGradeData = useMemo(() => {
     if (!selectedSubjectData) {
       return null;
@@ -150,11 +169,10 @@ function Syllabus() {
             Curriculum Explorer
           </div>
           <h1 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Choose Your Curriculum
+            Choose Your Country and Explore Subjects by Grade
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Select your country to explore available subjects and curriculum.
-          </p>
+Explore subjects and learning levels across UK USA and Canadian curricula from early years to GCSE A Levels and K12.          </p>
         </motion.div>
 
         <motion.div
@@ -234,7 +252,7 @@ function Syllabus() {
                 {countryContent.label} curriculum pathways
               </div>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                Explore subjects for {countryContent.label}
+                Explore Subjects by Grade in the  {countryContent.label} Curriculum
               </h2>
               <p className="mt-3 text-base leading-7 text-slate-600">
                 {countryContent.approach}
@@ -339,15 +357,14 @@ function Syllabus() {
                     {selectedSubjectData.name} curriculum roadmap
                   </h2>
                   <p className="mt-3 text-base leading-7 text-slate-600">
-                    Pick a grade from the bar below and the curriculum overview
-                    will update instantly in the section underneath.
+                    Select your child’s grade to see what they will learn at each level.
                   </p>
                 </div>
                 <div
                   className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}
                 >
                   <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
-                    {selectedSubjectData.grades.length} grade levels available
+                    {gradeRangeLabel || `${selectedSubjectData.grades.length} grade levels available`}
                   </div>
                 </div>
               </div>
@@ -408,7 +425,7 @@ function Syllabus() {
                       className={`rounded-2xl bg-gradient-to-r ${countryContent.accent} p-[1px]`}
                     >
                       <div className="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700">
-                        Selected level
+                        Current level
                       </div>
                     </div>
                   </div>

@@ -109,31 +109,31 @@ const baseGradeThemes = {
 
 const countryProfiles = {
   USA: {
-    label: "USA",
-    helper: "Standards-aligned pathways with broad elective-ready progression.",
+    label: "🇺🇸 USA",
+    helper: "SK12 curriculum covering Maths English Science and more with clear grade progression.",
     accent: "from-orange-500 via-amber-500 to-yellow-400",
     gradesLabel: "Grades K-12",
     summaryPrefix: "US curriculum",
     approach:
-      "Balances foundational standards, classroom participation, projects, and college-readiness skills.",
+      "Browse subjects and see what students learn at each level from elementary to high school.",
   },
   UK: {
-    label: "UK",
-    helper: "National Curriculum inspired flow with structured academic depth.",
+    label: "🇬🇧 UK",
+    helper: "Aligned with GCSE and A Level standards including Maths, English and Science subjects.",
     accent: "from-sky-500 via-cyan-500 to-teal-400",
     gradesLabel: "Years mapped to K-12 style progression",
     summaryPrefix: "UK curriculum",
     approach:
-      "Emphasises mastery, analytical writing, knowledge sequencing, and exam confidence.",
+      "Browse subjects and see what students learn at each level from elementary to high school.",
   },
   Canada: {
-    label: "Canada",
-    helper: "Inquiry-rich learning with strong literacy, numeracy, and applied thinking.",
+    label: "🇨🇦 Canada",
+    helper: "Structured curriculum with focus on literacy numeracy and subject development across grades.",
     accent: "from-rose-500 via-red-500 to-orange-400",
     gradesLabel: "Kindergarten to Grade 12",
     summaryPrefix: "Canadian curriculum",
     approach:
-      "Blends concept mastery with collaborative projects, reflection, and real-world application.",
+      "Browse subjects and see what students learn at each level from elementary to high school.",
   },
 };
 
@@ -145,6 +145,19 @@ const subjectOrder = [
   "Chemistry",
   "Biology",
 ];
+
+const subjectShortDescriptions = {
+  English:
+    "Reading, writing, comprehension and language skills across all grade levels",
+  Maths: "Core topics including arithmetic, algebra, geometry and problem solving",
+  Science:
+    "General science covering key concepts in physical and life sciences",
+  Physics:
+    "Advanced concepts including motion, energy, forces and problem solving",
+  Chemistry: "Topics including reactions, formulas and laboratory concepts",
+  Biology:
+    "Study of living systems including cells, human body and ecosystems",
+};
 
 const buildLearnPoints = (subjectName, gradeTitle) => [
   `Core ${subjectName.toLowerCase()} concepts taught for ${gradeTitle}.`,
@@ -517,7 +530,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-maths`,
       name: "Maths",
-      shortDescription: `Maths pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Core topics including arithmetic algebra geometry and problem solving",
       grades: mathGrades,
     };
   }
@@ -822,7 +835,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-maths`,
       name: "Maths",
-      shortDescription: `Maths pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Core topics including arithmetic algebra geometry and problem solving",
       grades: ukMathGrades,
     };
   }
@@ -1184,7 +1197,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-maths`,
       name: "Maths",
-      shortDescription: `Maths pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Core topics including arithmetic, algebra, geometry and problem solving",
       grades: mathGrades,
     };
   }
@@ -1233,7 +1246,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-maths`,
       name: "Maths",
-      shortDescription: `Maths pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Core topics including arithmetic, algebra, geometry and problem solving",
       grades: mathsGrades,
     };
   }
@@ -1553,7 +1566,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-english`,
       name: "English",
-      shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Reading, writing, comprehension and language skills across all grade levels",
       grades: englishGrades,
     };
   }
@@ -1891,7 +1904,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-english`,
       name: "English",
-      shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Reading, writing, comprehension and language skills across all grade levels",
       grades: englishGrades.map((grade) => normalizeGradeShape(grade)),
     };
   }
@@ -1901,7 +1914,7 @@ const createSubject = (countryName, subjectName) => {
     const englishGrades = [
       {
         id: `${countryName.toLowerCase()}-english-0`,
-        title: "Kindergarten",
+        title: "Kindergarten (KG)",
         summary: "In Kindergarten, students begin developing early literacy skills through phonics, listening, speaking, and simple reading activities.",
         details:
           "Overview:\nIn Kindergarten, students begin developing early literacy skills through phonics, listening, speaking, and simple reading activities. The focus is on building familiarity with letters, sounds, and basic communication.\n\nKey skills developed:\nStrong early reading readiness, listening comprehension, vocabulary building, confidence in speaking, and basic communication skills.\n\nHow we help at Get Me Tutor:\nWe use interactive activities, phonics-based learning, and simple reading exercises to help children build strong early literacy skills in a fun and engaging way.",
@@ -2112,7 +2125,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-english`,
       name: "English",
-      shortDescription: `English pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Reading, writing, comprehension and language skills across all grade levels",
       grades: englishGrades.map((grade) => normalizeGradeShape(grade)),
     };
   }
@@ -2434,7 +2447,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-science`,
       name: "Science",
-      shortDescription: `Science pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "General science covering key concepts in physical and life sciences",
       grades: scienceGrades,
     };
   }
@@ -2771,7 +2784,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-science`,
       name: "Science",
-      shortDescription: `Science pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "General science covering key concepts in physical and life sciences",
       grades: scienceGrades,
     };
   }
@@ -3095,7 +3108,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-science`,
       name: "Science",
-      shortDescription: `Science pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "General science covering key concepts in physical and life sciences",
       grades: scienceGrades,
     };
   }
@@ -3207,7 +3220,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-physics`,
       name: "Physics",
-      shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Advanced concepts including motion, energy, forces and problem solving",
       grades: physicsGrades,
     };
   }
@@ -3319,7 +3332,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-physics`,
       name: "Physics",
-      shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Advanced concepts including motion, energy, forces, and problem solving",
       grades: physicsGrades,
     };
   }
@@ -3457,7 +3470,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-physics`,
       name: "Physics",
-      shortDescription: `Physics pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Advanced concepts including motion, energy, forces and problem solving",
       grades: ukPhysicsGrades,
     };
   }
@@ -3573,7 +3586,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-chemistry`,
       name: "Chemistry",
-      shortDescription: `Chemistry pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Topics including reactions, formulas and laboratory concepts",
       grades: chemistryGrades,
     };
   }
@@ -3689,7 +3702,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-chemistry`,
       name: "Chemistry",
-      shortDescription: `Chemistry pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Topics including reactions, formulas and laboratory concepts",
       grades: chemistryGrades,
     };
   }
@@ -3766,7 +3779,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-chemistry`,
       name: "Chemistry",
-      shortDescription: `Chemistry pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Study of living systems including cells, human body and ecosystems",
       grades: ukChemistryGrades,
     };
   }
@@ -3845,7 +3858,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-biology`,
       name: "Biology",
-      shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Study of living systems including cells, human body and ecosystems",
       grades: ukBiologyGrades,
     };
   }
@@ -3961,7 +3974,8 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-biology`,
       name: "Biology",
-      shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription:
+        "Study of living systems including cells, human body and ecosystems",
       grades: biologyGrades,
     };
   }
@@ -4077,7 +4091,7 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-biology`,
       name: "Biology",
-      shortDescription: `Biology pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription: "Study of living systems including cells, human body and ecosystems",
       grades: biologyGrades,
     };
   }
@@ -4093,7 +4107,8 @@ const createSubject = (countryName, subjectName) => {
     return {
       id: `${countryName.toLowerCase()}-${subjectName.toLowerCase().replace(/\s+/g, "-")}`,
       name: subjectName,
-      shortDescription: `${subjectName} pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+      shortDescription:
+        subjectShortDescriptions[subjectName] || `${subjectName} pathway tailored to ${countryProfiles[countryName].label} expectations.`,
       grades: hsGrades,
     };
   }
@@ -4101,7 +4116,8 @@ const createSubject = (countryName, subjectName) => {
   return {
     id: `${countryName.toLowerCase()}-${subjectName.toLowerCase().replace(/\s+/g, "-")}`,
     name: subjectName,
-    shortDescription: `${subjectName} pathway tailored to ${countryProfiles[countryName].label} expectations.`,
+    shortDescription:
+      subjectShortDescriptions[subjectName] || `${subjectName} pathway tailored to ${countryProfiles[countryName].label} expectations.`,
     grades: gradeSequence.map((_, gradeIndex) =>
       createGradeContent(countryName, subjectName, gradeIndex)
     ),

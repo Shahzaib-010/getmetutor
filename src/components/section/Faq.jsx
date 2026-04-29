@@ -9,8 +9,8 @@ const WHATSAPP_URL =
   encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
 export default function Faq({
-  title = "Frequently Asked Questions",
-  subtitle = "Our learners have used Tutory to transition careers, secure promotions, and break into competitive industries.",
+  title = "Frequently Asked Questions About Online Tutoring",
+  subtitle = "Find quick answers about our tutoring sessions pricing curriculum and how to get started.",
   items,
   className = "bg-[var(--color-bg)]",
 }) {
@@ -21,7 +21,14 @@ export default function Faq({
         : [
             {
               q: "What subjects do you offer?",
-              a: "We cover Math, English, Physics, Chemistry, Biology, and Science.",
+              a: (
+                <>
+                  We cover Math, English, Physics, Chemistry, Biology, and Science.
+                  <a href="/curriculum" className="block mt-1.5 font-semibold underline decoration-orange-300 underline-offset-2 hover:text-orange-600 transition-colors">
+                    view all subjects
+                  </a>
+                </>
+              ),
             },
             {
               q: "Who are the tutors?",
@@ -29,15 +36,35 @@ export default function Faq({
             },
             {
               q: "How do online tutoring sessions work?",
-              a: "Sessions are conducted live online through an easy-to-use platform where students can interact with tutors in real time for questions, explanations, and guided practice.",
+              a: (
+                <>
+                  Sessions are conducted live online through an easy-to-use platform where students can interact with tutors in real time for questions, explanations, and guided practice.
+                  <a
+                    href="/demo"
+                    className="mt-2 block font-semibold underline decoration-orange-300 underline-offset-2 hover:text-orange-600 transition-colors"
+                  >
+                    Book Your First Session For Free
+                  </a>
+                </>
+              ),
             },
             {
               q: "Can I choose my tutor?",
-              a: "Yes — you can select a tutor based on subject expertise and availability. We also provide recommendations if you prefer our matching support.",
+              a: "Yes, you can select a tutor based on subject expertise and availability. We also provide recommendations if you prefer our matching support.",
             },
             {
               q: "Do you offer a free trial session?",
-              a: "Yes, we offer a free trial session so you can meet a tutor and experience our teaching approach before committing.",
+              a: (
+                <>
+                  Yes, we offer a free trial session so you can meet a tutor and experience our teaching approach before committing.
+                  <a
+                    href="/demo"
+                    className="mt-2 block font-semibold underline decoration-orange-300 underline-offset-2 hover:text-orange-600 transition-colors"
+                  >
+                    Book Your First Session For Free
+                  </a>
+                </>
+              ),
             },
             {
               q: "What grades or levels do you support?",
@@ -45,11 +72,33 @@ export default function Faq({
             },
             {
               q: "How do I schedule a session?",
-              a: "Book sessions directly online at your preferred time — click 'Book Now' to fill out a short form and our team will contact you to confirm.",
+              a: (
+                <>
+                  Book sessions directly online at your preferred time, click {' '}
+                  <a
+                    href="/demo"
+                    className="font-semibold underline decoration-orange-300 underline-offset-2 hover:text-orange-600 transition-colors"
+                  >
+                    Book Now
+                  </a>
+                  {' '}to fill out a short form and our team will contact you to confirm.
+                </>
+              ),
             },
             {
               q: "Is there a refund policy?",
-              a: "Yes, we have a refund policy. Please review our Refund Policy page or contact support for details.",
+              a: (
+                <>
+                  Yes, we have a refund policy. Please review our {' '}
+                  <a
+                    href="/refund-policy"
+                    className="font-semibold underline decoration-orange-300 underline-offset-2 hover:text-orange-600 transition-colors"
+                  >
+                    Refund Policy page
+                  </a>
+                  {' '}or contact support for details.
+                </>
+              ),
             },
           ],
     [items]

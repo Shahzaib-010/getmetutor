@@ -12,6 +12,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Terms from "../pages/Terms";
 import About from "../pages/About";
 import RefundPolicy from "../pages/RefundPolicy";
+import Holiday from "../pages/Holiday";
 
 export function getRouter() {
   return createBrowserRouter([
@@ -67,6 +68,10 @@ export function getRouter() {
         {
           path: "refund-policy",
           element: <RefundPolicy />,
+        },
+        {
+          path: "holiday",
+          element: <Holiday />,
         },
       ],
     },

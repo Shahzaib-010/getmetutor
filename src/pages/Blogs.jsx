@@ -1,14 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import {
-  ArrowRight,
-  Clock3,
-  MoveRight,
-  Search,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, MoveRight, Search, Sparkles, TrendingUp } from "lucide-react";
 
 import { useBlogs } from "../context/BlogContext";
 
@@ -21,14 +14,6 @@ const fadeUp = {
   },
 };
 
-function estimateReadTime(blog) {
-  const contentText = String(blog?.content || "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  const wordCount = contentText ? contentText.split(" ").length : 0;
-  return `${Math.max(3, Math.ceil(wordCount / 180) || 3)} min read`;
-}
 
 function formatDate(date) {
   if (!date) return "Recently published";
@@ -124,11 +109,10 @@ export default function Blogs() {
                 Blog Library
               </div>
               <h1 className="mt-6 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-7xl">
-                Insights designed to be easy to explore.
+                Helpful Study Guides for Students and Parents
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Discover practical academic guidance, tutoring insights, and student-focused
-                articles in a cleaner, more navigable reading experience.
+                Explore expert tips, exam preparation guides, and subject insights for GCSE, A Level, and K12 students.
               </p>
             </div>
           </div>
@@ -183,8 +167,6 @@ export default function Blogs() {
                     </p>
                     <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/80">
                       <span>{formatDate(featured.created_at)}</span>
-                      <span className="h-1 w-1 rounded-full bg-white/50" />
-                      <span>{estimateReadTime(featured)}</span>
                     </div>
                     <span className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition group-hover:bg-orange-500 group-hover:text-white">
                       Read article
@@ -231,10 +213,7 @@ export default function Blogs() {
                       <h4 className="mt-2 line-clamp-2 text-base font-semibold text-slate-900 transition group-hover:text-orange-600">
                         {blog.title}
                       </h4>
-                      <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-                        <Clock3 size={14} />
-                        <span>{estimateReadTime(blog)}</span>
-                      </div>
+                      
                     </div>
                   </Link>
                 ))}
@@ -276,8 +255,6 @@ export default function Blogs() {
                     <div className="p-6">
                       <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-slate-400">
                         <span>{formatDate(blog.created_at)}</span>
-                        <span className="h-1 w-1 rounded-full bg-slate-300" />
-                        <span>{estimateReadTime(blog)}</span>
                       </div>
                       <h4 className="mt-4 text-xl font-semibold leading-tight text-slate-900 transition group-hover:text-orange-600">
                         {blog.title}
@@ -338,8 +315,6 @@ export default function Blogs() {
                       <div className="p-6">
                         <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-slate-400">
                           <span>{formatDate(blog.created_at)}</span>
-                          <span className="h-1 w-1 rounded-full bg-slate-300" />
-                          <span>{estimateReadTime(blog)}</span>
                         </div>
                         <h4 className="mt-4 text-xl font-semibold leading-tight text-slate-900 transition group-hover:text-orange-600">
                           {blog.title}

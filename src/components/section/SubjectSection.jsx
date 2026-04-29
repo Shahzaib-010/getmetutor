@@ -5,18 +5,18 @@ import Button from "../ui/Button";
 
 const highlights = [
 	{
-		title: "Global curricula",
-		description: "Compare pathways across leading academic systems in one guided flow.",
+		title: "UK USA Canada Coverage",
+		description: "Aligned with GCSE A Level and K 12 standards.",
 		icon: Globe2,
 	},
 	{
-		title: "Subject depth",
-		description: "Explore core disciplines with clear progression from early years to senior grades.",
+		title: "All Core Subjects",
+		description: "Maths, English , Science, Physics , Chemistry and more.",
 		icon: BookOpen,
 	},
 	{
-		title: "Grade-by-grade clarity",
-		description: "Preview curriculum expectations before choosing the best-fit tutoring plan.",
+		title: "Clear Learning Path",
+		description: "From early years to advanced levels with structured progression.",
 		icon: GraduationCap,
 	},
 ];
@@ -35,11 +35,12 @@ function SubjectSection() {
 							Curriculum support
 						</p>
 						<h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-							Discover the curriculum flow before you book tutoring.
+							Explore UK, USA & Canadian Curriculum Before You Book a Tutor
+
 						</h2>
 						<p className="mt-4 pb-8 text-base leading-8 text-slate-600">
-							Navigate country-specific subjects, compare progression by grade, and understand what
-							students are expected to master at every stage.
+							Understand what your child will learn at every stage from early years to GCSE A Levels and K 12. Compare subjects grade levels and exam boards before choosing the right tutor.
+
 						</p>
 						<Button to="/demo" text="Book Free Trial" />
 					</div>

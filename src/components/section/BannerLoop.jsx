@@ -21,7 +21,7 @@ function BannerLoop({
   items = DEFAULT_ITEMS,
   bg = "#ffffff",
   speedSeconds = 18,
-  className = "h-11 md:h-23 flex justify-center items-center",
+  className = " flex justify-center items-center",
 }) {
   const shouldReduceMotion = useReducedMotion();
   const viewportRef = useRef(null);
@@ -36,8 +36,6 @@ function BannerLoop({
   const [copyCount, setCopyCount] = useState(2);
   const [copyWidth, setCopyWidth] = useState(0);
 
-  // Measure one "copy" width and ensure enough copies to fill the viewport (no gaps),
-  // even when items are few.
   useLayoutEffect(() => {
     const viewportEl = viewportRef.current;
     const firstEl = firstCopyRef.current;
@@ -63,12 +61,12 @@ function BannerLoop({
     return () => ro.disconnect();
   }, [safeItems, x]);
 
-  // Pixel-based, wrapped translation for a truly continuous loop (no jump).
+ 
   useAnimationFrame((_, delta) => {
     if (shouldReduceMotion) return;
     if (!copyWidth) return;
 
-    // px / second
+
     const speed = copyWidth / Math.max(6, speedSeconds);
     const next = x.get() - (delta / 1000) * speed;
     x.set(next <= -copyWidth ? next + copyWidth : next);
@@ -94,7 +92,7 @@ function BannerLoop({
                 return (
                   <div
                     key={`${copyIdx}-${item}-${idx}`}
-                    className="flex items-center py-2 sm:py-3 md:py-4"
+                    className="flex items-center py-2 sm:py-3 md:py-6"
                   >
                     {isImage ? (
                       <>
@@ -107,7 +105,7 @@ function BannerLoop({
                           draggable="false"
                         />
 
-                        {/* star separator (visible between logos) */}
+                       
                         <img
                           src="/images/star1.svg"
                           alt="separator"

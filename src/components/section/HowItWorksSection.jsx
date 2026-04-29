@@ -13,14 +13,14 @@ const steps = [
 	},
 	{
 		n: "02",
-		title: "Meet Your Tutor",
-		body: "We match your child with the right tutor based on subject and level.",
+		title: "Get Matched with the Right Tutor",
+		body: "We assign a tutor based on your child’s subject level and goals.",
 		icon: UserRound,
 	},
 	{
 		n: "03",
-		title: "Start Learning",
-		body: "Continue with regular 1-to-1 sessions and track progress.",
+		title: "Begin 1 to 1 Learning",
+		body: "Attend regular sessions track progress and improve results with expert guidance.",
 		icon: LineChart,
 	},
 ];
@@ -70,7 +70,7 @@ export default function HowItWorksSection({ className = "" }) {
 						How It Works
 					</p>
 					<h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem] md:leading-tight">
-						Get started in  <span className="text-[var(--color-primary)]"> 3 simple </span> steps
+						Start Learning with Expert Tutors in<span className="text-[var(--color-primary)]"> 3 simple </span> steps
 					</h2>
 				
 				</motion.div>
