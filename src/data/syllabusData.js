@@ -248,7 +248,7 @@ const createSubject = (countryName, subjectName) => {
     const mathGrades = [
       {
         id: `${countryName.toLowerCase()}-maths-0`,
-        title: "Kindergarten",
+        title: "Kindergarten (KG)",
         summary: "In Kindergarten, students begin developing early maths skills based on the Canada curriculum, focusing on number recognition, counting, shapes, and patterns through interactive learning.",
         overview:
           "In Kindergarten, students begin developing early maths skills based on the Canada curriculum, focusing on number recognition, counting, shapes, and patterns through interactive learning.",
@@ -2794,7 +2794,7 @@ const createSubject = (countryName, subjectName) => {
     const scienceGrades = [
       {
         id: `${countryName.toLowerCase()}-science-0`,
-        title: "Kindergarten",
+        title: "Kindergarten (KG)",
         summary: "In Kindergarten Science (Canada curriculum), students are introduced to basic scientific ideas through observation, exploration, and simple activities.",
         overview:
           "In Kindergarten Science (Canada curriculum), students are introduced to basic scientific ideas through observation, exploration, and simple activities. The focus is on understanding the natural world in an engaging and interactive way.",

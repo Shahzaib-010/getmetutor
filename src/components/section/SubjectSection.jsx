@@ -23,9 +23,8 @@ const highlights = [
 
 function SubjectSection() {
 	// WhatsApp contact used for card clicks (same as WhatsAppButton)
-	const phone = "+923130672552";
+	const phone = "+447474782585";
 	const defaultMessage = "Hi, I want to book a demo";
-
 	return (
 		<section className="bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
 			<div className="mx-auto w-[90%] overflow-hidden rounded-4xl border border-slate-200 bg-[linear-gradient(135deg,#fff8f1_0%,#ffffff_42%,#f8fafc_100%)] p-6 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.35)] sm:p-8 lg:p-10">

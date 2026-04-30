@@ -7,7 +7,7 @@ import { useBlogs } from "../../context/BlogContext";
 import Button from "../ui/Button";
 
 const WHATSAPP_URL =
-  "https://wa.me/923160479437?text=" +
+  "https://wa.me/447474782585?text=" +
   encodeURIComponent("Hi, I’m interested in Get Me Tutor tutoring. Can you share more details?");
 
 

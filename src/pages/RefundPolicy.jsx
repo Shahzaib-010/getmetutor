@@ -88,7 +88,8 @@ function RefundPolicy() {
             </p>
             <ul className="space-y-2 text-slate-600">
               <li>📧 <a href="mailto:support@getmetutor.online" className="font-semibold text-orange-600 hover:text-orange-700 underline">support@getmetutor.online</a></li>
-              <li>📞 +1 089461 55123</li>
+              <li>🇬🇧 UK WhatsApp & Calls: <a href="https://wa.me/447474782585" target="_blank" rel="noreferrer" className="font-semibold text-orange-600 hover:text-orange-700 underline">+44 7474 782585</a></li>
+              <li>🇺🇸 USA Calls Only: <a href="tel:+19296472372" className="font-semibold text-orange-600 hover:text-orange-700 underline">+1 929 647 2372</a></li>
               <li>🌐 <a href="https://www.getmetutor.online" target="_blank" rel="noreferrer" className="font-semibold text-orange-600 hover:text-orange-700 underline">https://www.getmetutor.online</a></li>
             </ul>
             <p className="mt-3 text-sm text-slate-500">We aim to respond within 24 hours.</p>

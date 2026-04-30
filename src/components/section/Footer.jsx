@@ -168,7 +168,9 @@ const Footer = () => {
 
         {/* Social */}
         <div className="lg:flex lg:flex-col lg:items-end">
-         
+          <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
+            Follow Us
+          </h3>
           <div className="flex gap-3 mb-6">
             {socials.map((item, i) => {
               const Icon = item.icon;

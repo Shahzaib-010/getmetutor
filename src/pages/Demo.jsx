@@ -15,7 +15,7 @@ const CALENDLY_EVENT_URL = "https://calendly.com/getmetutoronline/60min";
 const heroStats = [
   { value: "1:1", label: "Dedicated tutor focused only on your child" },
   { value: "60m", label: "Full one to one learning session" },
-  { value: "Fast", label: "Choose a time and get confirmation easily" },
+  { value: "Quick booking", label: "Choose a time and get confirmation easily" },
 ];
 
 function Demo() {

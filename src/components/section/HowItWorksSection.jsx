@@ -154,10 +154,8 @@ export default function HowItWorksSection({ className = "" }) {
 				</motion.div>
 
 				{/* CTA below steps */}
-				<div className="mt-10 text-center">
-					<button className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-black transition-colors duration-300 hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]">
-						Book Free Trial
-					</button>
+				<div className="mt-10 text-center ">
+			<Button to="/demo" text="Book Free Trial" className="!bg-[var(--color-primary)] !text-black hover:!bg-orange-700" />
 				</div>
 			</div>
 		</section>
