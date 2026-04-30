@@ -5,11 +5,13 @@ import Footer from "../components/section/Footer";
 import Background from "../components/ui/Background";
 import WhatsAppButton from "../components/ui/WhatsAppButton";
 import ScrollToTop from "../components/ScrollToTop";
+import RouteTracker from "../components/RouteTracker";
 
 function Layout() {
   return (
   
       <div className="min-h-full flex flex-col bg-[var(--color-bg)]">
+        <RouteTracker />
         <Navbar />
         <ScrollToTop />
         <main className="flex-1 pt-[64px]">

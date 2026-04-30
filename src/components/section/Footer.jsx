@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   const footerLinks = {
     quick: [
@@ -35,39 +34,37 @@ const Footer = () => {
   ];
 
   const contactNumbers = [
-    { number: "+1 (929) 647-2372", link: "tel:+19296472372" },
-    { number: "+44 7474 782585", link: "https://wa.me/447474782585" },
+    {
+      label: "UK WhatsApp & Calls:",
+      flagSrc: "/images/uk-flag.webp",
+      number: "+44 7474 782585",
+      link: "https://wa.me/447474782585",
+    },
+    {
+      label: "USA Calls Only:",
+      flagSrc: "/images/usa%20flag.webp",
+      number: "+1 929 647 2372",
+      link: "tel:+19296472372",
+    },
   ];
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 35 },
-    whileInView: { opacity: 1, y: 0 },
-  };
 
   return (
     <footer className="bg-black text-white font-open-sans px-5 sm:px-8 md:px-10 lg:px-16 xl:px-24 pt-14 pb-7 overflow-hidden">
       {/* Top */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="whileInView"
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"
-      >
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
         {/* Logo */}
          <NavLink
                     to="/"
-                    className="sm:w-30 md:w-34 lg:w-40"
+                    className="w-30 md:w-34 lg:w-40"
                   >
                     <img src="/images/Logo.png" alt="" />
                   </NavLink>
 
         {/* Tagline */}
         <p className="text-gray-300 text-sm sm:text-base lg:text-right">
-          Smarter learning, better results.
+          1 on 1 online Tutoring for UK, USA and Canadian students.
         </p>
-      </motion.div>
+      </div>
 
       {/* Divider */}
       <div className="h-px bg-[#272727] my-9" />
@@ -75,13 +72,7 @@ const Footer = () => {
       {/* Main Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Quick Links */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-        >
+        <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
             Quick Links
           </h3>
@@ -97,16 +88,10 @@ const Footer = () => {
               </NavLink>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Menu */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
+        <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
             Menu
           </h3>
@@ -132,20 +117,14 @@ const Footer = () => {
               )
             )}
           </div>
-        </motion.div>
+        </div>
 
        
 
         {/* Contact */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
+        <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider mb-5">
-            Contact
+            We're here to help
           </h3>
 
           <div className="space-y-2 text-sm text-gray-400 leading-6">
@@ -153,7 +132,10 @@ const Footer = () => {
               href="mailto:support@getmetutor.online"
               className="text-gray-300 hover:text-(--color-primary) transition-all duration-300 block"
             >
-              support@getmetutor.online
+              <span className="inline-flex items-center gap-2">
+                <FaEnvelope size={14} />
+                <span>support@getmetutor.online</span>
+              </span>
             </a>
             {contactNumbers.map((item, i) => (
               <div key={i}>
@@ -163,31 +145,36 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-(--color-primary) transition-all duration-300 block"
                 >
-                  {item.number}
+                  <span className="flex flex-col items-start gap-2">
+                   <span className="flex leading-5 gap-2">
+                    <img
+                      src={item.flagSrc}
+                      alt=""
+                      className="mt-0.5 h-4 w-4 shrink-0 object-contain"
+                    />
+                    
+                      <span className="font-medium text-gray-300">
+                        {item.label}
+                      </span>
+                      
+                    </span>
+                    <span className="text-gray-100">{item.number}</span> 
+                  </span>
                 </a>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Social */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="lg:flex lg:flex-col lg:items-end"
-        >
+        <div className="lg:flex lg:flex-col lg:items-end">
          
           <div className="flex gap-3 mb-6">
             {socials.map((item, i) => {
               const Icon = item.icon;
 
               return (
-                <motion.a
-                  whileHover={{ y: -4, scale: 1.08 }}
-                  whileTap={{ scale: 0.92 }}
+                <a
                   key={i}
                   href={item.link}
                   target="_blank"
@@ -196,32 +183,23 @@ const Footer = () => {
                   className="w-10 h-10 rounded-full border border-[#272727] flex items-center justify-center text-gray-300 hover:bg-(--color-primary) hover:text-black hover:border-(--color-primary) transition-all duration-300"
                 >
                   <Icon size={16} />
-                </motion.a>
+                </a>
               );
             })}
           </div>
 
           <div className="text-left lg:text-right">
-            <p className="text-gray-400 text-sm">Trusted Education</p>
-            <p className="text-white font-medium text-sm">
-              Platform Partner
-            </p>
+            <p className="text-gray-400 text-sm">Book your free trial today</p>
+            <p className="text-white font-medium text-sm">A free session and see the difference</p>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Divider */}
       <div className="h-px bg-[#272727] my-9" />
 
       {/* Bottom */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="whileInView"
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-      >
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <p className="text-xs sm:text-sm text-gray-500">
           All rights reserved 2026 © GetMeTutor
         </p>
@@ -237,7 +215,7 @@ const Footer = () => {
             </NavLink>
           ))}
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 };
